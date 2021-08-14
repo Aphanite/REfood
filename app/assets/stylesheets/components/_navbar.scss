@@ -1,23 +1,25 @@
 .navbar-bottom {
   background-color: white;
-  overflow: hidden;
   position: fixed;
   bottom: 0;
   width: 100%;
+  text-align: center;
 }
 
 .navbar-bottom a {
   display: inline-block;
-  float: left;
   color: black;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
-  text-align: center;
 
 }
 
 .navbar-bottom a:hover {
   background-color: #ddd;
   color: black;
+}
+
+.navbar-bottom a.active {
+  color: #04AA6D;
 }
