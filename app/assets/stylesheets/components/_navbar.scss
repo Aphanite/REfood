@@ -1,18 +1,17 @@
 .navbar-bottom {
   background-color: white;
-  position: fixed;
   bottom: 0;
   width: 100%;
   text-align: center;
+  position: fixed;
 }
 
-.navbar-bottom a {
+.fas {
   display: inline-block;
   color: black;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
-
 }
 
 .navbar-bottom a:hover {
