@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   resources :supermarkets, only: [:index, :show] do
     resources :products, only: [:index, :show]
   end
-  resources :orders, only: [:index, :show, :create]
+  resources :orders, only: [:index, :show]
 end
