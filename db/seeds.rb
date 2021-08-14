@@ -80,13 +80,14 @@ puts ""
     full_price: full_price, 
     discounted_price: full_price * 0.85,
     best_before_date: Faker::Date.forward(days: 5),  
-    category: "Fruits", 
+    category: "Fruits",
+    amount: rand(1..10),
     unit: ["100 gr", "250 gr", "500 gr", "750 gr", "1000 gr"].sample,
     supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd","Lidl" ].sample)
     )
 end
 
-puts "Finished creating #{Product.count}"
+
 
 #  VEGETABLES
 5.times do
@@ -95,13 +96,16 @@ puts "Finished creating #{Product.count}"
     name: Faker::Food.vegetables, 
     description: Faker::Food.description, 
     full_price: full_price, 
-    discounted_price: full_price * 0.85,
+    discounted_price: (full_price * 0.85).round(2),
     best_before_date: Faker::Date.forward(days: 5),  
     category: "Vegetables", 
+    amount: rand(1..10),
     unit: ["100 gr", "250 gr", "500 gr", "750 gr", "1000 gr"].sample,
     supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd","Lidl" ].sample)
     )
  end
+
+puts "Finished creating #{Product.count} new Products"
 
 # MEAT / FISH
 
