@@ -27,12 +27,16 @@ import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-import { toggleItems, toggleDisplay } from '../components/_toggle_display';
+import { renderPage, bindToggleButtons } from '../components/_toggle_display';
 
 
-// document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  // initSelect2();
-  toggleItems();
-  toggleDisplay();
-// });
+renderPage();
+bindToggleButtons();
+
+
+// // document.addEventListener('turbolinks:load', () => {
+//   // Call your functions here, e.g:
+//   // initSelect2();
+//   toggleItems();
+//   toggleDisplay();
+// // });
