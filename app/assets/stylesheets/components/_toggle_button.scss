@@ -1,0 +1,65 @@
+
+// third option
+.toggle-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.toggle-bar {
+  width: 330px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.toggle-btn {
+  width: 165px;
+  height: 40px;
+  text-align: center;
+  padding: 8px 14px;
+  transition: background 0.1s;
+  background-color: #E6F6E7;
+  font-size: 16px;
+  color: #808080;
+  font-weight: lighter;
+}
+
+.left {
+  border-radius: 33px 0 0 33px;
+}
+
+.right {
+  border-radius:  0 33px 33px 0;
+}
+
+.active {
+  color: #FFFFFF;
+  font-weight: 400;
+}
+
+.active.left {
+  // background: linear-gradient(30deg, #25a14d 0.01%, rgba(102, 198, 75, 0.48) 100%);
+  background: linear-gradient(83.26deg, #079145 44.99%, rgba(102, 198, 75, 0.48) 100%);
+}
+
+.active.right {
+  // background: linear-gradient(330deg, #3DD26D 0.01%, rgba(102, 198, 75, 0.48) 100%);
+  background: linear-gradient(276.66deg, #079145 44.5%, rgba(102, 198, 75, 0.48) 95.66%);
+}
+
+.toggle-btn.active:hover {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.toggle-btn:hover {
+  text-decoration: none;
+  color: #808080;
+}
+
+filter-btn {
+  width: 28.28px;
+  height: 24.68px;
+}

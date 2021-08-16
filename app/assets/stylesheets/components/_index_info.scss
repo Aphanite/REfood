@@ -1,0 +1,53 @@
+
+.index-container {
+  position: absolute;
+  top: 65px;
+  left: 42px;
+}
+
+
+.info {
+  // position: absolute;
+  width: 334px;
+  height: 63px;
+  // top: 65px;
+
+}
+
+h2 {
+  width: 100px;
+  height: 35px;
+  // left: 25px;
+  // top: 25px;
+
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 35px;
+  font-family: 'Mulish', sans-serif;
+}
+
+p {
+  width: 194px;
+  height: 20px;
+
+  font-size: 16px;
+  line-height: 20px;
+  padding-left: 4px;
+  color: #A9A8AB;
+  font-family: 'Mulish', sans-serif;
+}
+
+
+.filter-btn {
+  width: 110px;
+  height: 35px;
+
+  background: #E6F6E7;
+  border-radius: 33px;
+  text-align: center;
+  padding-top: 4px;
+  margin-top: 28px;
+  font-family: 'Mulish', sans-serif;
+  color: #A9A8AB;
+}
+
