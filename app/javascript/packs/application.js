@@ -4,7 +4,7 @@
 // that code so it'll be compiled.
 
 require("@rails/ujs").start()
-// require("turbolinks").start()
+require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
@@ -34,9 +34,7 @@ renderPage();
 bindToggleButtons();
 
 
-// // document.addEventListener('turbolinks:load', () => {
-//   // Call your functions here, e.g:
-//   // initSelect2();
-//   toggleItems();
-//   toggleDisplay();
-// // });
+document.addEventListener('turbolinks:load', () => {
+  // Call your functions here, e.g:
+  // initSelect2();
+});

@@ -1,5 +1,4 @@
-
-// third option
+// styling of toggle-container (containing two toggle-bars)
 .toggle-container {
   display: flex;
   flex-direction: column;
@@ -7,6 +6,7 @@
   margin-top: 30px;
 }
 
+// styling of toggle-bar (containing two toggle-buttons)
 .toggle-bar {
   width: 330px;
   display: flex;
@@ -14,6 +14,7 @@
   margin-bottom: 12px;
 }
 
+// styling of toggle-button
 .toggle-btn {
   width: 165px;
   height: 40px;
@@ -24,8 +25,15 @@
   font-size: 16px;
   color: #808080;
   font-weight: lighter;
+  border: none;
 }
 
+.toggle-btn:hover {
+  text-decoration: none;
+  color: #808080;
+}
+
+// styling of border of toggle-button depending if left or right
 .left {
   border-radius: 33px 0 0 33px;
 }
@@ -34,19 +42,10 @@
   border-radius:  0 33px 33px 0;
 }
 
-.active {
+// styling of toggle-button when active
+.toggle-btn.active {
   color: #FFFFFF;
   font-weight: 400;
-}
-
-.active.left {
-  // background: linear-gradient(30deg, #25a14d 0.01%, rgba(102, 198, 75, 0.48) 100%);
-  background: linear-gradient(83.26deg, #079145 44.99%, rgba(102, 198, 75, 0.48) 100%);
-}
-
-.active.right {
-  // background: linear-gradient(330deg, #3DD26D 0.01%, rgba(102, 198, 75, 0.48) 100%);
-  background: linear-gradient(276.66deg, #079145 44.5%, rgba(102, 198, 75, 0.48) 95.66%);
 }
 
 .toggle-btn.active:hover {
@@ -54,12 +53,15 @@
   text-decoration: none;
 }
 
-.toggle-btn:hover {
-  text-decoration: none;
-  color: #808080;
+.toggle-btn.active.left {
+  background: linear-gradient(83.26deg, #079145 44.99%, rgba(102, 198, 75, 0.48) 100%);
 }
 
-filter-btn {
-  width: 28.28px;
-  height: 24.68px;
+.toggle-btn.active.right {
+  background: linear-gradient(276.66deg, #079145 44.5%, rgba(102, 198, 75, 0.48) 95.66%);
 }
+
+// filter-btn {
+//   width: 28.28px;
+//   height: 24.68px;
+// }
