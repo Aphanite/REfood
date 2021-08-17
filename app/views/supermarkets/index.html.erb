@@ -1,0 +1,27 @@
+<div id="inner">
+  <div class="index-container">
+    <%= render 'shared/index_info'%>
+    <%= render 'shared/toggle_button'%>
+
+    <div id="content-container">
+
+      <div data-name="supermarkets">
+        <% @supermarkets.each do |supermarket| %>
+          <div class="supermarket-card">
+            <div class="supermarket-card__logo">
+              <%= image_tag "rewe_logo.png"%>
+            </div>
+            <div class="supermarket-card__info">
+              <span class="supermarket-card__info__city"><%= supermarket.name %></span>
+              <span class="supermarket-card__info__address"><%= supermarket.address %></span>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+       <div data-name="items">items</div>
+       <div data-name="map">map</div>
+    </div>
+  </div>
+
+</div>
