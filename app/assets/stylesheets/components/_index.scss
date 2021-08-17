@@ -2,3 +2,13 @@
 @import "alert";
 @import "avatar";
 @import "navbar";
+@import "btn";
+
+
+body {
+  font-family: 'Varela', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #E6F6E7;
+}
