@@ -18,11 +18,11 @@ puts "Finished creating #{User.count} new Users"
 puts ""
 
 # creating Supermarkets instances
-supermarket_1 = Supermarket.create!(
+Supermarket.create!(
   name: "Rewe", 
   address: "Friedrichstraße 100, Berlin"
 )
-supermarket_2 = Supermarket.create!(
+Supermarket.create!(
   name: "Rewe", 
   address: "Tempelhofer Weg 11, Berlin"
 )
@@ -77,25 +77,23 @@ puts ""
     Product.create!(
     name: Faker::Food.fruits, 
     description: Faker::Food.description, 
-    full_price: full_price, 
-    discounted_price: full_price * 0.85,
+    full_price: full_price,
+    discounted_price: (full_price * 0.85).round(2),
     best_before_date: Faker::Date.forward(days: 5),  
     category: "Fruits",
     amount: rand(1..10),
     unit: ["100 gr", "250 gr", "500 gr", "750 gr", "1000 gr"].sample,
-    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd","Lidl" ].sample)
+    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl" ].sample)
     )
 end
 
-
-
-#  VEGETABLES
+# VEGETABLES
 5.times do
     full_price = rand(1.0..4.5).round(2)
     Product.create!(
     name: Faker::Food.vegetables, 
     description: Faker::Food.description, 
-    full_price: full_price, 
+    full_price: full_price,
     discounted_price: (full_price * 0.85).round(2),
     best_before_date: Faker::Date.forward(days: 5),  
     category: "Vegetables", 
@@ -107,10 +105,4 @@ end
 
 puts "Finished creating #{Product.count} new Products"
 
-# MEAT / FISH
-
-# DAIRY
-
-# PASTRIES
-
-# GROCERIES
+# if time, complete with other categories
