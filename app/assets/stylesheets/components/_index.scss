@@ -4,6 +4,7 @@
 @import "navbar";
 @import "toggle_button";
 @import "index_info";
+@import "supermarket_card";
 
 body {
   font-family: 'Mulish', sans-serif;
@@ -20,7 +21,9 @@ body {
   right: 0;
   display: flex;
   justify-content: center;
-  margin: 10px;
+  margin-top: 32px;
+  margin-left: 8vw;
+  margin-right: 8vw;
   // background: #ccc;
 
 }
