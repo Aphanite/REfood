@@ -3,10 +3,6 @@
 
 import { state } from "../config";
 
-state.itemMode = 'supermarket'
-state.displayMode = 'list'
-state.tab = 'supermarkets'
-
 const toggleItemContainer = document.getElementById("item-selection");
 const toggleDisplayContainer = document.getElementById("display-selection");
 const contentContainer = document.getElementById("content-container");
@@ -15,14 +11,6 @@ const itemButtons = toggleItemContainer.getElementsByClassName('toggle-btn')
 const displayButtons = toggleDisplayContainer.getElementsByClassName('toggle-btn')
 const contentTabs = contentContainer.children
 
-export const renderPage = () => {
-  console.log(state);
-
-  toggleActiveClass(itemButtons, state.itemMode);
-  toggleActiveClass(displayButtons, state.displayMode);
-
-  toggleVisibleTab();
-}
 
 const toggleActiveClass = (buttons, name) => {
   for (const button of buttons) {
@@ -34,22 +22,6 @@ const toggleActiveClass = (buttons, name) => {
   }
 };
 
-const bindButtons = (buttons, kind) => {
-  for (const button of buttons) {
-    button.addEventListener("click", function() {
-      state[kind] = button.dataset.name
-
-      if (state.displayMode === 'map') {
-        state.tab = 'map'
-      } else {
-        state.tab = 'items'
-      }
-
-      renderPage()
-    })
-  }
-};
-
 const toggleVisibleTab = () => {
  for (const tab of contentTabs) {
   if (tab.dataset.name === state.tab) {
@@ -58,9 +30,39 @@ const toggleVisibleTab = () => {
         tab.hidden = true
       }
  }
-}
+};
+
+export const renderPage = () => {
+  console.log(state);
+
+  toggleActiveClass(itemButtons, state.itemMode);
+  toggleActiveClass(displayButtons, state.displayMode);
+
+  toggleVisibleTab();
+};
+
+
+const bindButtons = (buttons, kind) => {
+  for (const button of buttons) {
+    button.addEventListener("click", function() {
+      state[kind] = button.dataset.name
+
+      if (state.displayMode === 'map') {
+        state.tab = 'map'
+      } else {
+        if (state.itemMode === 'supermarket') {
+          state.tab = 'supermarkets'
+        } else {
+          state.tab = 'items'
+        }
+      }
+
+      renderPage()
+    })
+  }
+};
 
 export const bindToggleButtons = () => {
   bindButtons(itemButtons, 'itemMode');
   bindButtons(displayButtons, 'displayMode');
-}
+};

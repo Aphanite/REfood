@@ -1,0 +1,25 @@
+.supermarket-card {
+  width: 331px;
+  height: 152px;
+
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.supermarket-card__logo {
+  width: 331px;
+  height: 102px;
+
+  background: #CC0000;
+  border-radius: 33px 33px 0px 0px;
+}
+
+.supermarket-card__info {
+  width: 331px;
+  height: 50px;
+
+  background: #FFFFFF;
+  opacity: 0.3;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 0px 0px 33px 33px;
+}

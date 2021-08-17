@@ -8,6 +8,19 @@
 body {
   font-family: 'Mulish', sans-serif;
   background-color: #FBFDFF;
-  width: 414px;
-  height: 896px;
+  // width: 414px;
+  // height: 896px;
+}
+
+#inner {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  background: #ccc;
+
 }

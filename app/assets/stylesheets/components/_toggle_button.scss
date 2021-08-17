@@ -8,7 +8,7 @@
 
 // styling of toggle-bar (containing two toggle-buttons)
 .toggle-bar {
-  width: 330px;
+  // width: 330px;
   display: flex;
   justify-content: center;
   margin-bottom: 12px;
@@ -16,10 +16,11 @@
 
 // styling of toggle-button
 .toggle-btn {
-  width: 165px;
-  height: 40px;
+  width: 45vw;
+  height: 35px;
+  line-height: 35px;
   text-align: center;
-  padding: 8px 14px;
+
   transition: background 0.1s;
   background-color: #E6F6E7;
   font-size: 16px;
