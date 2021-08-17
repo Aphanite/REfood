@@ -1,24 +1,14 @@
-.navbar-bottom {
-  background-color: white;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
+.navbar {
+  overflow: hidden;
   position: fixed;
+  bottom: 0;
+  width: 80%;
 }
 
-.fas {
-  display: inline-block;
-  color: black;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
+.fas fa-search {
+  color: green;
 }
 
-.navbar-bottom a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.navbar-bottom a.active {
-  color: #04AA6D;
+.fas fa-shopping-cart {
+  color: orange;
 }
