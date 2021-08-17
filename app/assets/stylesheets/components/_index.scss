@@ -9,8 +9,6 @@
 body {
   font-family: 'Mulish', sans-serif;
   background-color: #FBFDFF;
-  // width: 414px;
-  // height: 896px;
 }
 
 #inner {
@@ -25,5 +23,14 @@ body {
   margin-left: 8vw;
   margin-right: 8vw;
   // background: #ccc;
+}
 
+//  setup to make scrollbar invisible
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
 }
