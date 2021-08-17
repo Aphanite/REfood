@@ -2,3 +2,35 @@
 @import "alert";
 @import "avatar";
 @import "navbar";
+@import "toggle_button";
+@import "index_info";
+@import "supermarket_card";
+
+body {
+  font-family: 'Mulish', sans-serif;
+  background-color: #FBFDFF;
+}
+
+#inner {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+  margin-left: 8vw;
+  margin-right: 8vw;
+  // background: #ccc;
+}
+
+//  setup to make scrollbar invisible
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
