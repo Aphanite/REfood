@@ -1,9 +1,9 @@
-<div class="product-content">
+<%# <div class="product-content"> %>
     <div class="product-img">
       <% if @product.category == "Fruits" %>
-        <img src="https://source.unsplash.com/featured/?fruit">
+        <img src="https://source.unsplash.com/featured/?fruit?orientation=squarish">
       <% else %>
-        <img src="https://source.unsplash.com/featured/?vegetable">
+        <img src="https://source.unsplash.com/featured/?vegetable?orientation=squarish">
       <% end %>
     </div>
 
@@ -19,7 +19,7 @@
           <%= @product.description %>
         </p>
     </div>
-</div>
+<%# </div> %>
 
 <div class="bottom-page">
   <div class="price">
