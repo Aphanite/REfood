@@ -1,25 +1,33 @@
-<% if @product.category == "Fruits" %>
-  <img src="https://source.unsplash.com/featured/?fruit">
-<% else %>
-  <img src="https://source.unsplash.com/featured/?vegetable">
-<% end %>
+<div class="product-content">
+    <div class="product-img">
+        <% if @product.category == "Fruits" %>
+        <img src="https://source.unsplash.com/featured/?fruit">
+        <% else %>
+        <img src="https://source.unsplash.com/featured/?vegetable">
+        <% end %>
+    </div>
 
-<h1><%= @product.name %></h1>
-<h3><%= @product.unit %></h3>
-<h3><%= @product.amount %></h3>
+    <div class="product-title">
+        <h1><%= @product.name %></h1>
+        <h3><%= @product.unit %></h3>
+        <h3><%= @product.amount %></h3>
+    </div>
 
-<h2>Description</h2>
-  <p>
-    <%= @product.description %>
-  </p>
+    <div class="product-description">
+      <h2>Description</h2>
+        <p>
+          <%= @product.description %>
+        </p>
+    </div>
+</div>
 
-<div class="container">
+<div class="bottom-page">
   <div class="price">
     <div><%= @product.discounted_price %></div>
-    <div><%= @product.full_price %></div>
+    <div style="text-decoration:line-through"><%= @product.full_price %></div>
   </div>
 
-  <div class="add-to-cart">
+  <div class="product-btn">
     <div>Add to Cart</div>
   </div>
 </div>
