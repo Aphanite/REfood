@@ -1,5 +1,7 @@
 # cleaning the database for Users, Supermarkets, Products
 puts "cleaning the database"
+OrderedItem.destroy_all
+Order.destroy_all
 Product.destroy_all
 Supermarket.destroy_all
 User.destroy_all
@@ -13,6 +15,13 @@ User.destroy_all
     points: rand(1..100)
     )
 end
+
+User.create!(
+  name: "Florian", 
+  email: "florian@fake.com", 
+  password: "florian@fake.com", 
+  points: rand(1..100)
+)
 
 puts "Finished creating #{User.count} new Users"
 puts ""
@@ -106,3 +115,41 @@ end
 puts "Finished creating #{Product.count} new Products"
 
 # if time, complete with other categories
+
+
+# creating order instances
+Order.create!(
+  user: User.find_by(name: "Florian"),
+  date: Faker::Date.backward(days: 5)
+)
+
+Order.create!(
+  user: User.find_by(name: "Florian"),
+  date: Faker::Date.backward(days: 4)
+)
+
+puts "Finished creating #{Order.count} new orders"
+
+# creating ordered_items instances
+
+OrderedItem.create!(
+  order: Order.last,
+  product: Product.last
+)
+
+OrderedItem.create!(
+  order: Order.last,
+  product: Product.last
+)
+
+OrderedItem.create!(
+  order: Order.last,
+  product: Product.last
+)
+
+OrderedItem.create!(
+  order: Order.last,
+  product: Product.last
+)
+
+puts "Finished creating #{OrderedItem.count} new ordered items"
