@@ -1,0 +1,58 @@
+#content-container {
+  height: 57%;
+  overflow-y: scroll;
+}
+
+
+.supermarket-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 12px;
+  margin-bottom: 24px;
+
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.supermarket-card__logo {
+  // width: 322px;
+  width: 84vw;
+  height: 94px;
+
+  background: #CC0000;
+  border-radius: 33px 33px 0px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 189px;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+.supermarket-card__info {
+  width: 84vw;
+  height: 64px;
+
+  background: #FFFFFF;
+  // opacity: 0.3;
+  // border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 0px 0px 33px 33px;
+  display: flex;
+  flex-direction: column;
+  padding: 8px 16px;
+
+  font-size: 16px;
+
+  .supermarket-card__info__city {
+    margin-left: 12px;
+  }
+
+  .supermarket-card__info__address {
+    font-weight: lighter;
+    margin-left: 12px;
+  }
+}
