@@ -38,5 +38,5 @@
     <div class="discounted-price"><%= @product.discounted_price %></div>
     <div class="full-price" style="text-decoration:line-through"><%= @product.full_price %></div>
   </div>
-  <%= link_to "Add to cart", order_path %>
+  <%= link_to "Add to cart", order_path, class: "product-btn" %>
 </div>
