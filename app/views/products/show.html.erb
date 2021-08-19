@@ -1,25 +1,19 @@
+
+  <% if @product.category == "Fruits" %>
+    <img class="product-image" src="https://source.unsplash.com/featured/?fruit?orientation=squarish">
+  <% else %>
+    <img class="product-image" src="https://source.unsplash.com/featured/?vegetable?orientation=squarish">
+  <% end %>
+
 <div class="product-content">
-    <div class="product-img">
-      <% if @product.category == "Fruits" %>
-        <img src="https://source.unsplash.com/featured/?fruit?orientation=squarish">
-      <% else %>
-        <img src="https://source.unsplash.com/featured/?vegetable?orientation=squarish">
-      <% end %>
-    </div>
-
-    <div class="d-flex flex-row">
-
-      <div class="product-information">
-        <h1 class="product-name"><%= @product.name %></h1>
-        <h2 class="product-unit"><%= @product.unit %></h2>
-      </div>
-
-    <div class="d-flex flex-row pt-4">
-      <div>
-        <button class="minus-button" type="button" data-quantity="minus" data-field="quantity">
-          <i id="minus-icon" class="fa fa-minus" aria-hidden="true"></i>
-        </button>
-      </div>
+  <div class="product-information">
+    <h1 class="product-name"><%= @product.name %></h1>
+      <div class="d-flex flex-row">
+        <div>
+          <button class="minus-button" type="button" data-quantity="minus" data-field="quantity">
+            <i id="minus-icon" class="fa fa-minus" aria-hidden="true"></i>
+          </button>
+        </div>
       <input class="input-group-field" type="number" name="quantity" value="1">
         <div>
           <button class ="plus-button" type="button" data-quantity="plus" data-field="quantity">
@@ -27,10 +21,11 @@
           </button>
         </div>
       </div>
-    </div>
-  
+     </div>
 
-    <div class="product-info">
+    <h2 class="product-unit"><%= @product.unit %></h2>
+
+    <div class="product-info pt-2">
       <h2 class="product-text">Description</h2>
         <p class="product-description">
           <%= @product.description %>
@@ -38,13 +33,10 @@
     </div>
 </div>
 
-<div class="bottom-page d-flex flex-row p-4">
-  <div class="d-flex align-self-start">
+<div class="bottom-page p-4">
+  <div class="prices d-flex">
     <div class="discounted-price"><%= @product.discounted_price %></div>
     <div class="full-price" style="text-decoration:line-through"><%= @product.full_price %></div>
   </div>
-
-  <div class="product-btn d-flex align-self-end">
-    <div> <%= link_to "Add to cart", order_path %></div>
-  </div>
+  <%= link_to "Add to cart", order_path %>
 </div>
