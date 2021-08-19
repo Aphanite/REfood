@@ -7,11 +7,28 @@
       <% end %>
     </div>
 
-    <div class="product-box">
+    <div class="d-flex flex-row">
+
+      <div class="product-information">
         <h1 class="product-name"><%= @product.name %></h1>
         <h2 class="product-unit"><%= @product.unit %></h2>
-        <h3 class="product-quantity"><%= @product.amount %></h3>
+      </div>
+
+    <div class="d-flex flex-row pt-4">
+      <div>
+        <button class="minus-button" type="button" data-quantity="minus" data-field="quantity">
+          <i id="minus-icon" class="fa fa-minus" aria-hidden="true"></i>
+        </button>
+      </div>
+      <input class="input-group-field" type="number" name="quantity" value="1">
+        <div>
+          <button class ="plus-button" type="button" data-quantity="plus" data-field="quantity">
+            <i id="plus-icon" class="fa fa-plus" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
     </div>
+  
 
     <div class="product-info">
       <h2 class="product-text">Description</h2>
@@ -21,13 +38,13 @@
     </div>
 </div>
 
-<div class="bottom-page">
-  <div class="d-flex flex-row p-2">
-    <div class="discounted-price p-2"><%= @product.discounted_price %></div>
-    <div class="full-price p-2" style="text-decoration:line-through"><%= @product.full_price %></div>
+<div class="bottom-page d-flex flex-row p-4">
+  <div class="d-flex align-self-start">
+    <div class="discounted-price"><%= @product.discounted_price %></div>
+    <div class="full-price" style="text-decoration:line-through"><%= @product.full_price %></div>
   </div>
 
-  <div class="product-btn">
-    <div>Add to Cart</div>
+  <div class="product-btn d-flex align-self-end">
+    <div> <%= link_to "Add to cart", order_path %></div>
   </div>
 </div>
