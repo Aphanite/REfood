@@ -1,0 +1,33 @@
+<div class="product-content">
+    <div class="product-img">
+      <% if @product.category == "Fruits" %>
+        <img src="https://source.unsplash.com/featured/?fruit?orientation=squarish">
+      <% else %>
+        <img src="https://source.unsplash.com/featured/?vegetable?orientation=squarish">
+      <% end %>
+    </div>
+
+    <div class="product-box">
+        <h1 class="product-name"><%= @product.name %></h1>
+        <h2 class="product-unit"><%= @product.unit %></h2>
+        <h3 class="product-quantity"><%= @product.amount %></h3>
+    </div>
+
+    <div class="product-description">
+      <h2>Description</h2>
+        <p>
+          <%= @product.description %>
+        </p>
+    </div>
+</div>
+
+<div class="bottom-page">
+  <div class="price">
+    <div><%= @product.discounted_price %></div>
+    <div style="text-decoration:line-through"><%= @product.full_price %></div>
+  </div>
+
+  <div class="product-btn">
+    <div>Add to Cart</div>
+  </div>
+</div>
