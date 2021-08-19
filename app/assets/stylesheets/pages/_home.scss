@@ -1,8 +1,54 @@
 // Specific CSS for your home-page
 
-.cover {
-  margin: 0;
-    height: 100vh;
-    width: 100vw;
-    background: linear-gradient(180deg, #E6F6E7 45%, white 55%);
+body {
+  background:#E6F6E7;
+}
+
+.container {
+  margin: 3rem auto;
+  width: 90%;
+}
+
+.label {
+  display: block;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.logo-container {
+  margin: 0 auto 6rem auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.panel {
+  padding: 6rem 2rem 0 2rem;
+  position: relative;
+  text-align: center;
+  z-index: 2;
+}
+
+.panel__header {
+  color: #fff;
+  height: 220px;
+  line-height: 1.35;
+}
+
+.panel__title {
+  color: #fff;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
+  text-shadow: 0px 1px 4px #bbb;
+}
+
+
+.panel__main {
+  font-size: 15px;
+}
+
+.panel__footer {
+  margin-top: 3rem;
 }
