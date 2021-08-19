@@ -13,18 +13,18 @@
         <h3 class="product-quantity"><%= @product.amount %></h3>
     </div>
 
-    <div class="product-description">
-      <h2>Description</h2>
-        <p>
+    <div class="product-info">
+      <h2 class="product-text">Description</h2>
+        <p class="product-description">
           <%= @product.description %>
         </p>
     </div>
 </div>
 
 <div class="bottom-page">
-  <div class="price">
-    <div><%= @product.discounted_price %></div>
-    <div style="text-decoration:line-through"><%= @product.full_price %></div>
+  <div class="d-flex flex-row p-2">
+    <div class="discounted-price p-2"><%= @product.discounted_price %></div>
+    <div class="full-price p-2" style="text-decoration:line-through"><%= @product.full_price %></div>
   </div>
 
   <div class="product-btn">
