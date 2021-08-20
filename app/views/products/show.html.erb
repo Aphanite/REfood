@@ -39,5 +39,5 @@
     <div class="discounted-price"><%= @product.discounted_price %></div>
     <div class="full-price" style="text-decoration:line-through"><%= @product.full_price %></div>
   </div>
-  <%= link_to "Add to cart", add_to_cart_supermarket_product_path(@product.supermarket, @product), class: "product-btn", method: :post, with: "'count=' + $('#counter').innerText"%>
+  <div class="product-btn">Add to cart</div>
 </div>
