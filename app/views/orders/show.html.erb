@@ -1,0 +1,23 @@
+<body style="background: #E6F6E7;">
+  <div>
+    navbar
+  </div>
+
+  <div class="container m-4">
+    <h1>Cart</h1>
+   <% @order.ordered_items.each do |item| %>
+    <div class="card-product mb-2">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+    <div class="card-product-infos">
+        <h2><%= Product.find_by(id: item.product_id).name %></h2>
+        <p><%= Product.find_by(id: item.product_id).best_before_date %></p>
+        <p style="color: #7DD070;"><%= Product.find_by(id: item.product_id).discounted_price %>€</p>
+    </div>
+    </div>
+    <% end %>
+
+  </div>
+
+
+
+</body>
