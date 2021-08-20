@@ -83,7 +83,7 @@ puts ""
 # VEGETABLES
 full_price = rand(1.0..4.5).round(2)
 Product.create!(
-    name: "Tomato",
+    name: "Tomatoes",
     description: "Tomatoes are the Germans' favorite vegetable. From a botanical point of view, they belong to the berries. As a nightshade plant, they are a warmth-loving plant. Although tomatoes come in many shapes, the round ones are the most common in the world. Mainly from Spain, Italy, France, the Netherlands and Morocco. Fruity, piquant and spicy. Particularly suitable for salads.",
     full_price: full_price,
     discounted_price: (full_price * 0.85).round(2),
@@ -96,7 +96,7 @@ Product.create!(
 
 full_price = rand(1.0..4.5).round(2)
 Product.create!(
-    name: "Cucumber",
+    name: "Cucumbers",
     description: "Cucumbers belong to the cucurbit family. Originally coming from the tropics, they have high temperature requirements and are almost exclusively planted in greenhouses. The fruits are about 30-40 cm long, slender and tapered at the ends. The skin is usually smooth and dark in color. Mainly grown in Greece, Spain, the Netherlands, Belgium and Germany.",
     full_price: full_price,
     discounted_price: (full_price * 0.85).round(2),
