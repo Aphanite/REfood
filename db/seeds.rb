@@ -96,6 +96,24 @@ puts ""
     )
 end
 
+
+Product.create!(
+    name: "Tomato",
+    description: "Country of origin and class may vary depending on the offer. Tomatoes are the Germans' favorite vegetable. From a botanical point of view, they belong to the berries. As a nightshade plant, they are a warmth-loving plant. Although tomatoes come in many shapes, the round tomato is the most common in the world. Mainly from Spain, Italy, France, the Netherlands and Morocco. Fruity, piquant and spicy. Particularly suitable for salads.",
+    full_price: rand(1.0..4.5).round(2),
+    discounted_price: (full_price * 0.85).round(2),
+    best_before_date: Faker::Date.forward(days: 5),
+    category: "Fruits",
+    amount: rand(1..10),
+    unit: ["100 gr", "250 gr", "500 gr", "750 gr", "1000 gr"].sample,
+    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl" ].sample)
+    )
+
+
+
+
+
+
 # VEGETABLES
 5.times do
     full_price = rand(1.0..4.5).round(2)
