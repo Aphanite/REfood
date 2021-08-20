@@ -2,7 +2,7 @@ class SupermarketsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @supermarkets = policy_scope(Supermarket).order(created_at: :desc)
+    @supermarkets = policy_scope(Supermarket).order(name: :desc)
   end
 
   def show
