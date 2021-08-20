@@ -109,8 +109,8 @@ Product.create!(
 
 full_price = rand(1.0..4.5).round(2)
 Product.create!(
-    name: "Broccoli",
-    description: "Broccoli is a vegetable related to cauliflower. Mainly grown in Germany, Italy, Spain, France, the Netherlands and England. More hearty than cauliflower, only a slight cabbage taste. Broccoli is prepared in a similar way to cauliflower.",
+    name: "Beets",
+    description: "Beets, or beetroots, are jewel-toned root vegetables. The leaves and roots of beets are packed with nutrition, including antioxidants that fight cell damage and reduce the risk of heart disease. They’re one of the few vegetables that contain betalains, a powerful antioxidant that gives beets their vibrant color.",
     full_price: full_price,
     discounted_price: (full_price * 0.85).round(2),
     best_before_date: Faker::Date.forward(days: 5),
@@ -122,8 +122,8 @@ Product.create!(
 
 full_price = rand(1.0..4.5).round(2)
 Product.create!(
-    name: "Carrots",
-    description: "Fresh carrots should be firm and crisp, with smooth and unblemished skin. Bright-orange colour indicates high carotene content; smaller types are the most tender. Carrots are used in salads and as relishes and are served as cooked vegetables and in stews and soups.",
+    name: "Peas",
+    description: "Green peas, or “garden peas,” are the small, spherical seeds that come from pods produced by the Pisum sativum plant.",
     full_price: full_price,
     discounted_price: (full_price * 0.85).round(2),
     best_before_date: Faker::Date.forward(days: 5),
@@ -135,8 +135,8 @@ Product.create!(
 
 full_price = rand(1.0..4.5).round(2)
 Product.create!(
-    name: "Romaine Lettuce",
-    description: "Romaine lettuce has a tall, loose head. Its long, broad leaves are firm. The leaf margins are smooth, the central ribs are fleshy and pronounced. On the outside, the leaves are usually strong green and become lighter and yellowish towards the inside. Mainly grown in Germany, Italy, the Netherlands, France and Spain. Slightly tart, aromatic and hearty.",
+    name: "Onions",
+    description: "Onions have a light, golden-brown shell that surrounds a white or red, juicy flesh. Mainly grown in Spain, furthermore Chile and Egypt. Mild and slightly sweet. Onions can be used raw or cooked. Suitable for salads, soups, omelets.",
     full_price: full_price,
     discounted_price: (full_price * 0.85).round(2),
     best_before_date: Faker::Date.forward(days: 5),
@@ -150,8 +150,8 @@ Product.create!(
 
 full_price = rand(1.0..4.5).round(2)
 Product.create!(
-    name: "Mango",
-    description: "Mangoes grow on the tropical mango tree that is native to Central America, Africa and the Far East. The fruit peel can be green to red, is waxy and inedible. The color of the mango depends on the variety and has nothing to do with the degree of ripeness of the fruit. Growing area is Mainly Brazil, South Africa and Costa Rica. Sweet and sour with a peach aroma.",
+    name: "Bananas",
+    description: "Mainly grown in Ecuador, Panama, Costa Rica, Colombia and Dominican Republic. Meaty, aromatic and, depending on the degree of ripeness, from slightly sour to very sweet.",
     full_price: full_price,
     discounted_price: (full_price * 0.85).round(2),
     best_before_date: Faker::Date.forward(days: 5),
@@ -163,8 +163,8 @@ Product.create!(
 
 full_price = rand(1.0..4.5).round(2)
 Product.create!(
-    name: "Peaches",
-    description: "Peaches are very juicy and aromatic due to their nutritious and refreshing flesh. Mainly grown in Italy, Greece, Spain and France. Juicy and sweet, highly aromatic. White-fleshed varieties have the most intense taste. Mainly consumed raw, e.g. for fruit salads, or for compotes, cold bowls, punch bowls and jams.",
+    name: "Grapes",
+    description: "Wine grapes are the varieties of grapevine grown for making wine. Table grapes are varieties grown for fresh consumption that are as low in seeds as possible and with large berries. Grown worldwide, mainly Italy, Greece, South Africa, Spain and France (Germany produces almost exclusively wine grapes). Juicy, depending on the variety, sweet, sour or with a nutmeg aroma.",
     full_price: full_price,
     discounted_price: (full_price * 0.85).round(2),
     best_before_date: Faker::Date.forward(days: 5),
@@ -176,8 +176,8 @@ Product.create!(
 
 full_price = rand(1.0..4.5).round(2)
 Product.create!(
-    name: "Watermelon",
-    description: "The watermelon has a spherical or oval shape and can weigh up to 15 kg. Black seeds are embedded in the red pulp. Mainly grown in Spain. Juicy, refreshing, sweet, sometimes a bit bland.",
+    name: "Oranges",
+    description: "Oranges are by far the most popular type of citrus. Mainly grown in Spain, Morocco, Turkey, USA, South Africa, South America and Greece. Very juicy, aromatic, tender and sweet. Mainly consumed raw and pure as well as for fruit salads, desserts, cake toppings or jams.",
     full_price: full_price,
     discounted_price: (full_price * 0.85).round(2),
     best_before_date: Faker::Date.forward(days: 5),
@@ -202,8 +202,8 @@ Product.create!(
 
 full_price = rand(1.0..4.5).round(2)
 Product.create!(
-    name: "Pineapple",
-    description: "The pineapple fruit grows on a perennial plant and looks like a large pine cone. This is where the English name pineapple comes from. The fruit weighs 1-4 kg. Since pineapples only grow ideally under high temperatures, they are mainly grown in the tropics. Sweet with a fine acidity, juicy and aromatic.",
+    name: "Raspberries",
+    description: "A small, deep colored berries which have a tender texture, a sweet delicate taste and a pleasant aroma. Raspberries are eaten raw, or used in cakes and jams.",
     full_price: full_price,
     discounted_price: (full_price * 0.85).round(2),
     best_before_date: Faker::Date.forward(days: 5),
