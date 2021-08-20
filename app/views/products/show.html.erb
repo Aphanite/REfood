@@ -1,33 +1,42 @@
+
+  <% if @product.category == "Fruits" %>
+    <img class="product-image" src="https://source.unsplash.com/featured/?fruit?orientation=squarish">
+  <% else %>
+    <img class="product-image" src="https://source.unsplash.com/featured/?vegetable?orientation=squarish">
+  <% end %>
+
 <div class="product-content">
-    <div class="product-img">
-      <% if @product.category == "Fruits" %>
-        <img src="https://source.unsplash.com/featured/?fruit?orientation=squarish">
-      <% else %>
-        <img src="https://source.unsplash.com/featured/?vegetable?orientation=squarish">
-      <% end %>
-    </div>
+  <div class="product-information">
+    <h1 class="product-name"><%= @product.name %></h1>
+      <div class="d-flex flex-row">
+        <div>
+          <button class="minus-button" type="button" data-quantity="minus" data-field="quantity">
+            <i id="minus-icon" class="fa fa-minus" aria-hidden="true"></i>
+          </button>
+        </div>
+      <input class="input-group-field" type="number" name="quantity" value="1">
+        <div>
+          <button class ="plus-button" type="button" data-quantity="plus" data-field="quantity">
+            <i id="plus-icon" class="fa fa-plus" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+     </div>
 
-    <div class="product-box">
-        <h1 class="product-name"><%= @product.name %></h1>
-        <h2 class="product-unit"><%= @product.unit %></h2>
-        <h3 class="product-quantity"><%= @product.amount %></h3>
-    </div>
+    <h2 class="product-unit"><%= @product.unit %></h2>
 
-    <div class="product-description">
-      <h2>Description</h2>
-        <p>
+    <div class="product-info pt-2">
+      <h2 class="product-text">Description</h2>
+        <p class="product-description">
           <%= @product.description %>
         </p>
     </div>
 </div>
 
-<div class="bottom-page">
-  <div class="price">
-    <div><%= @product.discounted_price %></div>
-    <div style="text-decoration:line-through"><%= @product.full_price %></div>
+<div class="bottom-page p-4">
+  <div class="prices d-flex">
+    <div class="discounted-price"><%= @product.discounted_price %></div>
+    <div class="full-price" style="text-decoration:line-through"><%= @product.full_price %></div>
   </div>
-
-  <div class="product-btn">
-    <div>Add to Cart</div>
-  </div>
+  <%= link_to "Add to cart", order_path, class: "product-btn" %>
 </div>
