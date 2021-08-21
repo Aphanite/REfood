@@ -217,7 +217,6 @@ puts "Finished creating #{Product.count} new Products"
 
 # if time, complete with other categories
 
-
 # creating order instances
 Order.create!(
   user: User.find_by(name: "Florian"),
