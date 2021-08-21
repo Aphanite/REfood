@@ -4,19 +4,20 @@ var counter = 1;
 var counterEl;
 
 export const bindCounterButton = () => {
+  if (!window.product_id) return
+
   const buttons = document.getElementsByClassName('incrementer');
-  if (!buttons) return
 
   counterEl = document.getElementById("counter");
   for (const button of buttons) {
-    button.addEventListener('click', handleButtonClck);
+    button.addEventListener('click', handleButtonClick);
   }
 
   const cartButton = document.getElementsByClassName("product-cart-btn")[0];
   cartButton.addEventListener('click', handleAddToCart);
 };
 
-const handleButtonClck = (event) => {
+const handleButtonClick = (event) => {
   const offset = Number.parseInt(event.currentTarget.dataset.offset, 10);
   counter += offset;
 
@@ -28,8 +29,5 @@ const handleButtonClck = (event) => {
 };
 
 const handleAddToCart = () => {
-  const productId = window.product_id;
-  if (!productId) return
-
-  adjustCount(productId, counter);
+  adjustCount(window.product_id, counter);
 }
