@@ -6,7 +6,7 @@
     <h1>Cart</h1>
     <% @order.ordered_items.each do |item| %>
     <div class="card-product mb-2">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+    <img src="https://source.unsplash.com/1600x900/?fruits,red" />
     <div class="card-product-infos">
         <h2><%= Product.find_by(id: item.product_id).name %> <%= Product.find_by(id: item.product_id).unit %></h2>
         <p>best before <%= Product.find_by(id: item.product_id).best_before_date %></p>
