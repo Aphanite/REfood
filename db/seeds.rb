@@ -90,7 +90,7 @@ Product.create!(
     best_before_date: Faker::Date.forward(days: 5),
     category: "Vegetables",
     amount: rand(1..10),
-    unit: ["100 gr", "250 gr", "500 gr", "750 gr", "1000 gr"].sample,
+    unit: ["100g", "250g", "500g", "750g", "1000g"].sample,
     supermarket: Supermarket.find_by(name: ["Rewe"])
     )
 
@@ -103,7 +103,7 @@ Product.create!(
     best_before_date: Faker::Date.forward(days: 5),
     category: "Vegetables",
     amount: rand(1..10),
-    unit: ["100 gr", "250 gr", "500 gr", "750 gr", "1000 gr"].sample,
+    unit: ["100g", "250g", "500g", "750g", "1000g"].sample,
     supermarket: Supermarket.find_by(name: ["Rewe"])
     )
 
@@ -116,7 +116,7 @@ Product.create!(
     best_before_date: Faker::Date.forward(days: 5),
     category: "Vegetables",
     amount: rand(1..10),
-    unit: ["100 gr", "250 gr", "500 gr", "750 gr", "1000 gr"].sample,
+    unit: ["100g", "250g", "500g", "750g", "1000g"].sample,
     supermarket: Supermarket.find_by(name: ["Rewe"])
     )
 
@@ -129,7 +129,7 @@ Product.create!(
     best_before_date: Faker::Date.forward(days: 5),
     category: "Vegetables",
     amount: rand(1..10),
-    unit: ["100 gr", "250 gr", "500 gr", "750 gr", "1000 gr"].sample,
+    unit: ["100g", "250g", "500g", "750g", "1000g"].sample,
     supermarket: Supermarket.find_by(name: ["Rewe"])
     )
 
@@ -142,7 +142,7 @@ Product.create!(
     best_before_date: Faker::Date.forward(days: 5),
     category: "Vegetables",
     amount: rand(1..10),
-    unit: ["100 gr", "250 gr", "500 gr", "750 gr", "1000 gr"].sample,
+    unit: ["100g", "250g", "500g", "750g", "1000g"].sample,
     supermarket: Supermarket.find_by(name: ["Rewe"])
     )
 
@@ -157,7 +157,7 @@ Product.create!(
     best_before_date: Faker::Date.forward(days: 5),
     category: "Fruits",
     amount: rand(1..10),
-    unit: ["100 gr", "250 gr", "500 gr", "750 gr", "1000 gr"].sample,
+    unit: ["100g", "250g", "500g", "750g", "1000g"].sample,
     supermarket: Supermarket.find_by(name: ["Rewe"])
     )
 
@@ -170,7 +170,7 @@ Product.create!(
     best_before_date: Faker::Date.forward(days: 5),
     category: "Fruits",
     amount: rand(1..10),
-    unit: ["100 gr", "250 gr", "500 gr", "750 gr", "1000 gr"].sample,
+    unit: ["100g", "250g", "500g", "750g", "1000g"].sample,
     supermarket: Supermarket.find_by(name: ["Rewe"])
     )
 
@@ -183,7 +183,7 @@ Product.create!(
     best_before_date: Faker::Date.forward(days: 5),
     category: "Fruits",
     amount: rand(1..10),
-    unit: ["100 gr", "250 gr", "500 gr", "750 gr", "1000 gr"].sample,
+    unit: ["100g", "250g", "500g", "750g", "1000g"].sample,
     supermarket: Supermarket.find_by(name: ["Rewe"])
     )
 
@@ -196,7 +196,7 @@ Product.create!(
     best_before_date: Faker::Date.forward(days: 5),
     category: "Fruits",
     amount: rand(1..10),
-    unit: ["100 gr", "250 gr", "500 gr", "750 gr", "1000 gr"].sample,
+    unit: ["100g", "250g", "500g", "750g", "1000g"].sample,
     supermarket: Supermarket.find_by(name: ["Rewe"])
     )
 
@@ -209,7 +209,7 @@ Product.create!(
     best_before_date: Faker::Date.forward(days: 5),
     category: "Fruits",
     amount: rand(1..10),
-    unit: ["100 gr", "250 gr", "500 gr", "750 gr", "1000 gr"].sample,
+    unit: ["100g", "250g", "500g", "750g", "1000g"].sample,
     supermarket: Supermarket.find_by(name: ["Rewe"])
     )
 
