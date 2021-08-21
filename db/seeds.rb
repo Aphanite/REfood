@@ -93,9 +93,6 @@ Product.create!(
     unit: ["100 gr", "250 gr", "500 gr", "750 gr", "1000 gr"].sample,
     supermarket: Supermarket.find_by(name: ["Rewe"])
     )
-#.image.attach(io: File.open('app/assets/images/vegetables'), filename: 'tomatoes.jpg')
-
-
 
 full_price = rand(1.0..4.5).round(2)
 Product.create!(
@@ -109,8 +106,6 @@ Product.create!(
     unit: ["100 gr", "250 gr", "500 gr", "750 gr", "1000 gr"].sample,
     supermarket: Supermarket.find_by(name: ["Rewe"])
     )
-#.image.attach(io: File.open('/app/assets/images/vegetables'), filename: 'cucumbers.jpeg')
-
 
 full_price = rand(1.0..4.5).round(2)
 Product.create!(
@@ -124,7 +119,6 @@ Product.create!(
     unit: ["100 gr", "250 gr", "500 gr", "750 gr", "1000 gr"].sample,
     supermarket: Supermarket.find_by(name: ["Rewe"])
     )
-#.image.attach(io: File.open('/app/assets/images/vegetables'), filename: 'beets.jpeg')
 
 full_price = rand(1.0..4.5).round(2)
 Product.create!(
@@ -138,7 +132,6 @@ Product.create!(
     unit: ["100 gr", "250 gr", "500 gr", "750 gr", "1000 gr"].sample,
     supermarket: Supermarket.find_by(name: ["Rewe"])
     )
-#.image.attach(io: File.open('/app/assets/images/vegetables'), filename: 'peas.jpeg')
 
 full_price = rand(1.0..4.5).round(2)
 Product.create!(
@@ -152,7 +145,6 @@ Product.create!(
     unit: ["100 gr", "250 gr", "500 gr", "750 gr", "1000 gr"].sample,
     supermarket: Supermarket.find_by(name: ["Rewe"])
     )
-#.image.attach(io: File.open('/app/assets/images/vegetables'), filename: 'onions.jpeg')
 
 # FRUITS
 
@@ -168,7 +160,6 @@ Product.create!(
     unit: ["100 gr", "250 gr", "500 gr", "750 gr", "1000 gr"].sample,
     supermarket: Supermarket.find_by(name: ["Rewe"])
     )
-#.image.attach(io: File.open('/app/assets/images/fruits'), filename: 'bananas.jpeg')
 
 full_price = rand(1.0..4.5).round(2)
 Product.create!(
@@ -182,7 +173,6 @@ Product.create!(
     unit: ["100 gr", "250 gr", "500 gr", "750 gr", "1000 gr"].sample,
     supermarket: Supermarket.find_by(name: ["Rewe"])
     )
-#.image.attach(io: File.open('/app/assets/images/fruits'), filename: 'grapes.jpeg')
 
 full_price = rand(1.0..4.5).round(2)
 Product.create!(
@@ -196,7 +186,6 @@ Product.create!(
     unit: ["100 gr", "250 gr", "500 gr", "750 gr", "1000 gr"].sample,
     supermarket: Supermarket.find_by(name: ["Rewe"])
     )
-#.image.attach(io: File.open('/app/assets/images/fruits'), filename: 'oranges.jpeg')
 
 full_price = rand(1.0..4.5).round(2)
 Product.create!(
@@ -210,7 +199,6 @@ Product.create!(
     unit: ["100 gr", "250 gr", "500 gr", "750 gr", "1000 gr"].sample,
     supermarket: Supermarket.find_by(name: ["Rewe"])
     )
-#.image.attach(io: File.open('/app/assets/images/fruits'), filename: 'lemons.jpeg')
 
 full_price = rand(1.0..4.5).round(2)
 Product.create!(
@@ -224,7 +212,6 @@ Product.create!(
     unit: ["100 gr", "250 gr", "500 gr", "750 gr", "1000 gr"].sample,
     supermarket: Supermarket.find_by(name: ["Rewe"])
     )
-#.image.attach(io: File.open('/app/assets/images/fruits'), filename: 'raspberries.jpg')
 
 puts "Finished creating #{Product.count} new Products"
 
