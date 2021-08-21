@@ -1,27 +1,38 @@
-const updateCounter = (counter, count) => {
-  counter.dataset.count = count;
-  counter.innerText = count;
-};
+import { adjustCount } from '../cart'
 
-const updateForm = (event) => {
-  const offset = Number.parseInt(event.currentTarget.dataset.offset, 10);
-  const counter = document.getElementById('counter');
-  const count = Number.parseInt(counter.dataset.count, 10) + offset;
+var counter = 1;
+var counterEl;
 
-  if (count >= 1) {
-    updateCounter(counter, count);
-  } else {
-    event.preventDefault();
+export const bindCounterButton = () => {
+  const buttons = document.getElementsByClassName('incrementer');
+  if (!buttons) return
+
+  counterEl = document.getElementById("counter");
+  for (const button of buttons) {
+    button.addEventListener('click', handleButtonClck);
   }
+
+  const cartButton = document.getElementsByClassName("product-cart-btn")[0];
+  cartButton.addEventListener('click', handleAddToCart);
 };
 
-const updateFormOnButtonClick = (button) => {
-  button.addEventListener('click', updateForm);
+const handleButtonClck = (event) => {
+  const offset = Number.parseInt(event.currentTarget.dataset.offset, 10);
+  counter += offset;
+
+  if (counter < 1) {
+    counter = 1
+  }
+
+  counterEl.innerText = counter;
 };
 
-export const adjustCounter = () => {
-  const buttons = document.querySelectorAll('.incrementer');
-  if (buttons) {
-    buttons.forEach(updateFormOnButtonClick);
-  };
-};
+const handleAddToCart = () => {
+  const productId = window.product_id
+  if (!productId) return
+
+  adjustCount(productId, counter)
+
+  alert("Added to cart")
+
+}
