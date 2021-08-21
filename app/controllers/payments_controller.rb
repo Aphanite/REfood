@@ -5,13 +5,13 @@ class PaymentsController < ApplicationController
     end
 
     def stripe_session
-        Stripe.api_key = 'sk_test_51JQqGpAmhtIuoFRVI8SamhN9tGEReWmkuSpfNuIxHr2yYReNwhIsxerGbd6IH512ujDK3q6BLQBtmNXFVfbCp9YN00g4DX2iKX'
+        Stripe.api_key = ENV['STRIPE_SECRET_KEY']
         @stripe_session = Stripe::Checkout::Session.create(
           payment_method_types: ['card'],
           line_items: [{
             name: "Product",
             description: "Payment",
-            amount: "1000",
+            amount: 1000,
             currency: 'eur',
             quantity: 1,
           }],

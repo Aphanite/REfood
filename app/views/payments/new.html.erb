@@ -1,14 +1,20 @@
 <div class="container">
   <div class="row py-4">
     <div class="col">
-      <h1>Checkout summary</h1>
-      <button id="pay" class="btn btn-primary">Pay</button>
+      <h1 class="summary">Select payment method</h1>
+
+      <div class="payment-buttons">
+        <button id="pay" class="btn btn-primary">Credit Card</button>
+        <button class="btn btn-primary">Paypal</button>
+      </div>
+
+      <h1 class="summary">Order recap</h1>
 
       <script src="https://js.stripe.com/v3/"></script>
       <script>
         const paymentButton = document.getElementById('pay');
         paymentButton.addEventListener('click', () => {
-          const stripe = Stripe('pk_test_51JQqGpAmhtIuoFRV5Pd5LsdB7O2GJia2BezHmPOX2a2X9at86OTlK8mmwESrviGwx6O3q4G3SObk0J2gSyyhgSPg004d8Dd86g');
+          const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
             stripe.redirectToCheckout({
               sessionId: '<%= @checkout_session_id  %>'
             });
