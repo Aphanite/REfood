@@ -27,7 +27,8 @@ import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-import { renderPage, bindToggleButtons } from '../components/_toggle_display';
+// import { renderPage, bindToggleButtons } from '../components/_toggle_display';
+import '../components/_location_form';
 
 
 renderPage();

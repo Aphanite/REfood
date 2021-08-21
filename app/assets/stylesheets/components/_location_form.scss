@@ -1,3 +1,11 @@
 body {
   background:#E6F6E7;
 }
+
+.location-form {
+  display: none;
+  position: absolute;
+  height: 100vh;
+  background:#E6F6E7;
+  z-index: 10;
+}
