@@ -30,11 +30,12 @@ import "bootstrap";
 import { renderPage, bindToggleButtons } from '../components/_toggle_display';
 
 
-renderPage();
-bindToggleButtons();
+
 
 
 document.addEventListener('turbolinks:load', () => {
+  renderPage();
+  bindToggleButtons();
   // Call your functions here, e.g:
   // initSelect2();
 });

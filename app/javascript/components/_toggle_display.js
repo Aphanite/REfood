@@ -3,15 +3,6 @@
 
 import { state } from "../config";
 
-const toggleItemContainer = document.getElementById("item-selection");
-const toggleDisplayContainer = document.getElementById("display-selection");
-const contentContainer = document.getElementById("content-container");
-
-const itemButtons = toggleItemContainer.getElementsByClassName('toggle-btn')
-const displayButtons = toggleDisplayContainer.getElementsByClassName('toggle-btn')
-const contentTabs = contentContainer.children
-
-
 const toggleActiveClass = (buttons, name) => {
   for (const button of buttons) {
       if (button.dataset.name === name) {
@@ -23,17 +14,23 @@ const toggleActiveClass = (buttons, name) => {
 };
 
 const toggleVisibleTab = () => {
- for (const tab of contentTabs) {
-  if (tab.dataset.name === state.tab) {
-        tab.hidden = false
-      } else {
-        tab.hidden = true
-      }
- }
+  const contentContainer = document.getElementById("content-container");
+  const contentTabs = contentContainer.children
+  for (const tab of contentTabs) {
+    if (tab.dataset.name === state.tab) {
+          tab.hidden = false
+        } else {
+          tab.hidden = true
+        }
+  }
 };
 
 export const renderPage = () => {
   console.log(state);
+  const toggleItemContainer = document.getElementById("item-selection");
+    if (!toggleItemContainer) return
+      const itemButtons = toggleItemContainer.getElementsByClassName('toggle-btn')
+      const displayButtons = toggleDisplayContainer.getElementsByClassName('toggle-btn')
 
   toggleActiveClass(itemButtons, state.itemMode);
   toggleActiveClass(displayButtons, state.displayMode);
@@ -63,6 +60,13 @@ const bindButtons = (buttons, kind) => {
 };
 
 export const bindToggleButtons = () => {
+  const toggleItemContainer = document.getElementById("item-selection");
+    if (!toggleItemContainer) return
+  const toggleDisplayContainer = document.getElementById("display-selection");
+
+  const itemButtons = toggleItemContainer.getElementsByClassName('toggle-btn')
+  const displayButtons = toggleDisplayContainer.getElementsByClassName('toggle-btn')
+  
   bindButtons(itemButtons, 'itemMode');
   bindButtons(displayButtons, 'displayMode');
 };
