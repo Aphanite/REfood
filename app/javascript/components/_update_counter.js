@@ -28,11 +28,8 @@ const handleButtonClck = (event) => {
 };
 
 const handleAddToCart = () => {
-  const productId = window.product_id
+  const productId = window.product_id;
   if (!productId) return
 
-  adjustCount(productId, counter)
-
-  alert("Added to cart")
-
+  adjustCount(productId, counter);
 }

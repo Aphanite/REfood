@@ -1,34 +1,26 @@
-import store from 'storejs'
-
-
-export const initCart = () => {
-  // initialize a cart to {} if it doesn't exist yet
-  if (!store.get("?cart")) {
-    store.set('cart', "{}");
-  }
-}
-
-export const getCart = () => {
-  return JSON.parse(store.get('cart'))
-}
-
-export const setCart = (newCart) => {
-  store.set('cart', JSON.stringify(newCart))
-}
-
-export const getCount = (productId) => {
-  const cart = getCart()
-  return cart[productId] || 0
-}
-
-export const setCount = (productId, count) => {
-  const newCart = getCart()
-  newCart[productId] = count
-  setCart(cart)
-}
 
 export const adjustCount = (productId, offset) => {
-  const currentCount = getCount(productId)
-  const newCount = currentCount + offset
-  setCount(productId, newCount)
+  const csrfToken = document.querySelector("[name='csrf-token']").content
+  const data = { productId, offset };
+  console.log(data);
+
+  fetch('/json/adjust_cart', {
+    method: 'POST',
+    headers: {
+      "X-CSRF-Token": csrfToken,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log('Success:', data);
+    if (true)
+    {
+      alert("You need to be logged in to perform this action.")
+    }
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+  });
 }
