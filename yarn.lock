@@ -6860,11 +6860,6 @@ stdout-stream@^1.4.0:
   dependencies:
     readable-stream "^2.0.1"
 
-storejs@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/storejs/-/storejs-1.1.0.tgz#f63be43c747c14be3a7b17018392938091d64679"
-  integrity sha512-RCQ7dhTmaRJ8IYW6zprhESmSij6Dy4lGvAaRFgHhhYvhIb8B+WHmvim+ELub07AuF7vHgB79pYgsTQBRLtEOew==
-
 stream-browserify@^2.0.1:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/stream-browserify/-/stream-browserify-2.0.2.tgz#87521d38a44aa7ee91ce1cd2a47df0cb49dd660b"
