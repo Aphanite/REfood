@@ -29,7 +29,6 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 import { renderPage, bindToggleButtons } from '../components/_toggle_display';
 
-
 document.addEventListener('turbolinks:load', () => {
   renderPage();
   bindToggleButtons();

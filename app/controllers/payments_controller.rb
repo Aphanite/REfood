@@ -16,7 +16,7 @@ class PaymentsController < ApplicationController
             quantity: 1,
           }],
           mode: 'payment',
-          success_url: "http://localhost:3000/",
+          success_url: "http://localhost:3000/", # customize success URL
           cancel_url: "http://localhost:3000/",
         )
         return @stripe_session
