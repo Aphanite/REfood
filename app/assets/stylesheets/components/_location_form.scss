@@ -9,3 +9,53 @@ body {
   background:#E6F6E7;
   z-index: 10;
 }
+
+.location-form h2 {
+font-family: Mulish;
+font-size: 20px;
+line-height: 30px;
+text-align: center;
+font-weight: bold;
+margin-top: 100px;
+}
+
+.logo-left-corner {
+text-align: right
+}
+
+
+.search-container {
+  position: relative;
+}
+
+.search-form-control .form-control {
+  position: absolute;
+  left: 32%;
+  height: 3.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  background-color:white;
+  border: none;
+  border-radius: 32px;
+  width: 35%;
+  display: flex;
+  justify-content: space-between;
+
+  input {
+    padding-left: 8px;
+    width: 100%;
+    opacity: 0.7;
+    border: none;
+    background-color: transparent;
+    outline: none;
+
+  }
+
+  .btn-custom {
+    color: white;
+    background-color: #FC7A1E;
+    border-radius: 50%;
+  }
+  .btn-custom:hover {
+    background-color: #df5e02;
+  }
+}
