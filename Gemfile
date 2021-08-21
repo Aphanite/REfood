@@ -23,6 +23,8 @@ gem 'redis', '~> 4.0'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'faker'
 
+gem 'pg_search', '~> 2.3.0'
+
 gem 'pundit'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
