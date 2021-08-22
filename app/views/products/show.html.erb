@@ -36,8 +36,8 @@
 
 <div class="bottom-page p-4">
   <div class="prices d-flex">
-    <div class="discounted-price"><%= @product.discounted_price %></div>
-    <div class="full-price" style="text-decoration:line-through"><%= @product.full_price %></div>
+    <div class="discounted-price"><%= humanized_money_with_symbol(@product.discounted_price) %></div>
+    <div class="full-price" style="text-decoration:line-through"><%= humanized_money_with_symbol(@product.full_price) %></div>
   </div>
   <div class="product-btn product-cart-btn">Add to cart</div>
 </div>
