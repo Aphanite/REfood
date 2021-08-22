@@ -35,7 +35,7 @@ const toggleVisibleTab = () => {
 };
 
 export const renderPage = () => {
-  if(toggleDisplayContainer) {
+  if(toggleItemContainer) {
     console.log(state);
 
     toggleActiveClass(itemButtons, state.itemMode);
