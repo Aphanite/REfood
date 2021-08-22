@@ -6,12 +6,20 @@ class OrdersController < ApplicationController
   end
 
   def show
-    @order = Order.find(params[:id])
     authorize @order
+    @order = current_user.orders.find(params[:id])
   end
 
+  def new
+    @product = Product.find(params[:garden_id])
+    @order = Order.new
+    authorize @order
+  end
+  
   def create
+    @product = Product.find(params[:product_id])
     @order = Order.new(order_params)
+    @order.user = current_user
     @order.save
     authorize @order
   end

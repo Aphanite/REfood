@@ -7,10 +7,12 @@ const toggleItemContainer = document.getElementById("item-selection");
 const toggleDisplayContainer = document.getElementById("display-selection");
 const contentContainer = document.getElementById("content-container");
 
-const itemButtons = toggleItemContainer.getElementsByClassName('toggle-btn')
-const displayButtons = toggleDisplayContainer.getElementsByClassName('toggle-btn')
-const contentTabs = contentContainer.children
-
+// only do next steps if on the correct page
+if (toggleItemContainer) {
+  const itemButtons = toggleItemContainer.getElementsByClassName('toggle-btn')
+  const displayButtons = toggleDisplayContainer.getElementsByClassName('toggle-btn')
+  const contentTabs = contentContainer.children
+};
 
 const toggleActiveClass = (buttons, name) => {
   for (const button of buttons) {
@@ -33,12 +35,14 @@ const toggleVisibleTab = () => {
 };
 
 export const renderPage = () => {
-  console.log(state);
+  if(toggleDisplayContainer) {
+    console.log(state);
 
-  toggleActiveClass(itemButtons, state.itemMode);
-  toggleActiveClass(displayButtons, state.displayMode);
+    toggleActiveClass(itemButtons, state.itemMode);
+    toggleActiveClass(displayButtons, state.displayMode);
 
-  toggleVisibleTab();
+    toggleVisibleTab();
+  };
 };
 
 
@@ -63,6 +67,8 @@ const bindButtons = (buttons, kind) => {
 };
 
 export const bindToggleButtons = () => {
-  bindButtons(itemButtons, 'itemMode');
-  bindButtons(displayButtons, 'displayMode');
+  if(toggleDisplayContainer) {
+    bindButtons(itemButtons, 'itemMode');
+    bindButtons(displayButtons, 'displayMode');
+  };
 };
