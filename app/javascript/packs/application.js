@@ -28,9 +28,14 @@ import "bootstrap";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { renderPage, bindToggleButtons } from '../components/_toggle_display';
+import { bindCounterButton } from '../components/_update_counter';
+// import { initCart } from '../cart';
 
+// initCart();
 renderPage();
 bindToggleButtons();
+bindCounterButton();
+
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:

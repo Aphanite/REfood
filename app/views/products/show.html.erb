@@ -10,13 +10,14 @@
     <h1 class="product-name"><%= @product.name %></h1>
       <div class="d-flex flex-row">
         <div>
-          <button class="minus-button" type="button" data-quantity="minus" data-field="quantity">
+          <button class="minus-button incrementer minus" type="button" data-offset="-1">
             <i id="minus-icon" class="fa fa-minus" aria-hidden="true"></i>
           </button>
         </div>
-      <input class="input-group-field" type="number" name="quantity" value="1">
+      <!-- <input class="input-group-field" type="number" name="quantity" value="1"> -->
+        <span id="counter" data-count="1">1</span>
         <div>
-          <button class ="plus-button" type="button" data-quantity="plus" data-field="quantity">
+          <button class ="plus-button incrementer" type="button" data-offset="1">
             <i id="plus-icon" class="fa fa-plus" aria-hidden="true"></i>
           </button>
         </div>
@@ -38,9 +39,9 @@
     <div class="discounted-price"><%= humanized_money_with_symbol(@product.discounted_price) %></div>
     <div class="full-price" style="text-decoration:line-through"><%= humanized_money_with_symbol(@product.full_price) %></div>
   </div>
-
-  <%= form_tag order_path do %>
-    <%= hidden_field_tag 'product_id', @product.id %>
-    <%= submit_tag 'Add to cart', class: 'product-btn' %>
-  <% end %>
+  <div class="product-btn product-cart-btn">Add to cart</div>
 </div>
+
+<script>
+  product_id=<%= @product.id %>
+</script>

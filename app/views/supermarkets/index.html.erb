@@ -20,9 +20,41 @@
         <% end %>
       </div>
 
-       <div data-name="items">items</div>
+       <div data-name="items">
+        <% @supermarkets.each do |supermarket| %>
+          <% unless supermarket.products.empty? %>
+            <%= supermarket.name %>
+            <div class="supermarket-product-cards">
+
+              <% supermarket.products.each do |product| %>
+                <div class="product-card">
+                  <div class="product-card__image">
+                    <%= image_tag "vegetables/tomatoes.jpg"%>
+                  </div>
+
+                  <div class="product-card__info">
+                    <div class="product-card__info__header">
+                      <span class="product-card__info__header__name"><%= product.name %></span>
+                      <span class="product-card__info__header__unit"><%= product.unit %></span>
+                    </div>
+                    <div class="product-card__info__body">
+                      <div class="product-card__info__body__prices">
+                        <span class="product-card__info__body__prices__discount"><%= product.discounted_price %></span>
+                        <span class="product-card__info__body__prices__normal"><%= product.full_price %></span>
+                      </div>
+                      <button class="product-card__info__body__button"><i class="fas fa-shopping-cart" style="color: white;"></i></button>
+                    </div>
+                  </div>
+
+                </div>
+              <% end %>
+
+            </div>
+          <% end %>
+        <% end%>
+       </div>
        <div data-name="map">map</div>
     </div>
   </div>
-
+  <%= render 'shared/navbar'%>
 </div>

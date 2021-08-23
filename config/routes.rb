@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   resources :supermarkets, only: [:index, :show] do
     resources :products, only: [:index, :show]
   end
+
   resources :orders, only: [:index, :show] do
     resources :payments, only: :new
   end
+
+  post "/json/adjust_cart", to: "carts#adjust_cart"
 end
