@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   end
 
   post "/json/adjust_cart", to: "carts#adjust_cart"
+  get "/cart", to: "carts#show"
 end
