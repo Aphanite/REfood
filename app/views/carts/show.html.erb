@@ -4,18 +4,20 @@
 
   <div class="container p-4">
     <h1>Cart</h1>
-    <% @order.ordered_items.each do |item| %>
+    <% session[:cart].each do |item| %>
+      <% product = Product.find(item["productId"]) %>
       <div class="card-product mb-2">
-        <img src="https://source.unsplash.com/1600x900/?fruits,red" />
+        <%= image_tag "#{product.category.downcase}/#{product.name.downcase}.jpg"%>
         <div class="card-product-infos">
-            <h2><%= Product.find_by(id: item.product_id).name %> <%= Product.find_by(id: item.product_id).unit %></h2>
-            <p>best before <%= Product.find_by(id: item.product_id).best_before_date %></p>
-            <p style="color: #7DD070;"><%= Product.find_by(id: item.product_id).discounted_price %>€</p>
+            <h2><%= product.name %> <%= product.unit %></h2>
+            <p>best before <%= product.best_before_date %></p>
+            <p style="color: #7DD070;"><%= product.discounted_price_cents %>€</p>
         </div>
       </div>
     <% end %>
 
-    <% discounted_price = 0 %>
+
+<!--     <% discounted_price = 0 %>
     <% @order.ordered_items.each do |item| %>
       <% discounted_price += Product.find_by(id: item.product_id).discounted_price %>
     <% end %>
@@ -25,9 +27,10 @@
       <% full_price += Product.find_by(id: item.product_id).full_price %>
     <% end %>
 
-    
 
-    <div style="background: #9cffa28f; width: 100%; height: 4px;" class="mt-4"></div>
+
+    <div style="background: #9cffa28f; width: 100%; height: 4px;" class="mt-4">
+    </div>
     <div class="p-1">
       <div class="d-flex justify-content-between mt-2">
         <h3>Total</h3>
@@ -42,6 +45,6 @@
         <h5 style="color: #7DD070;">5 points</h5>
       </div>
     </div>
-    <div class="btn-gradient">Go to checkout</div>
+    <div class="btn-gradient">Go to checkout</div> -->
   </div>
 </body>

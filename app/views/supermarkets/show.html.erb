@@ -20,7 +20,9 @@
               <% @supermarket.products.each do |product| %>
                 <div class="product-card">
                   <div class="product-card__image">
-                    <%= image_tag "vegetables/tomatoes.jpg"%>
+                    <% category = product.category.downcase %>
+                    <% name = product.name.downcase %>
+                    <%= image_tag "#{category}/#{name}.jpg"%>
                   </div>
 
                   <div class="product-card__info">
@@ -42,10 +44,12 @@
             <span class="supermarket-product-title">Most popular</span>
             <div class="supermarket-product-cards">
 
-              <% @supermarket.products.each do |product| %>
+              <% @supermarket.products.reverse.each do |product| %>
                 <div class="product-card">
                   <div class="product-card__image">
-                    <%= image_tag "vegetables/tomatoes.jpg"%>
+                    <% category = product.category.downcase %>
+                    <% name = product.name.downcase %>
+                    <%= image_tag "#{category}/#{name}.jpg"%>
                   </div>
 
                   <div class="product-card__info">
@@ -67,6 +71,7 @@
 
           <% end %>
        </div>
+        <div style="height:94px;"></div>
     </div>
   </div>
   <%= render 'shared/navbar'%>
