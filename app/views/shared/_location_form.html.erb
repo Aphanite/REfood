@@ -1,4 +1,5 @@
 <style>body{background: #E6F6E7}</style>
+
 <div class="location-form">
   <div class="logo-left-corner">
     <%= image_tag "refood-logo-no-text.png", :size => "100x100" %>
@@ -6,11 +7,11 @@
   <h2>Choose a location to see what's available</h2>
  <div class="search-container">
     <%= form_tag supermarkets_path, method: :get do %>
-    <%= text_field_tag :query, params[:query], placeholder: "Search for a city" %>
-    <button name="button" type="submit" class="btn btn-search">
+    <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Search for a city" %>
+    <% end %>
+    <button name="button" type="submit" class="btn btn-search">Apply
     </button>
       </div>
-    <% end %>
 </div>
 
 
