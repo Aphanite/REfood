@@ -20,10 +20,10 @@
                 <span><%= product.unit %></span>
               </div>
                 <p>best before <%= product.best_before_date.strftime("%B %e") %></p>
-                <p style="color: #7DD070; font-size: 16px; font-weight: normal; margin-top: 8px;"><%= product.discounted_price_cents/100.0 %>€</p>
+                <p style="color: #079145; font-size: 16px; font-weight: normal; margin-top: 8px;"><%= product.discounted_price_cents/100.0 %>€</p>
             </div>
             <!-- counter + amount display -->
-            <div class="d-flex flex-column" style="margin-left:32px;">
+            <div class="d-flex flex-column" style="margin-left:18px;">
               <div style="text-align: center;">
                 <button class="minus-button incrementer minus" type="button" data-offset="-1" style="margin-right: 0;">
                   <i id="minus-icon" class="fa fa-minus" aria-hidden="true"></i>
@@ -40,21 +40,24 @@
         <% end %>
       </div>
     <div class="order__checkout">
+      <hr>
       <div class="p-1">
         <div class="d-flex justify-content-between mt-2">
-          <h3>Total</h3>
-          <h3 class="font-weight-bold"><%= total_price/100.0 %> €</h3>
+          <h5 style="font-weight: bold; font-size: 22px;">Total</h5>
+          <h5 style="font-weight: bold; font-size: 22px;"><%= total_price/100.0 %> €</h5>
         </div>
         <div class="d-flex justify-content-between">
-          <h5>You safe!</h5>
+          <h5>You save!</h5>
           <h5><%= discount/100.0 %> €</h5>
         </div>
         <div class="d-flex justify-content-between">
-          <h5 style="color: #7DD070;">You gain!</h5>
-          <h5 style="color: #7DD070;">5 points</h5>
+          <h5 style="color: #079145;">You gain!</h5>
+          <h5 style="color: #079145;">5 points</h5>
         </div>
       </div>
-      <div class="btn-gradient">Go to checkout</div>
+      <div class="d-flex justify-content-center">
+        <button class="btn-gradient">Go to checkout</button>
+      </div>
     </div>
   </div>
 
