@@ -1,5 +1,5 @@
 class CartsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:adjust_cart]
+  skip_before_action :authenticate_user!, only: [:adjust_cart, :show]
 
   def adjust_cart
     init_cart
@@ -9,6 +9,10 @@ class CartsController < ApplicationController
 
     # p current_user
     render json: { cart: session[:cart]}
+  end
+
+  def show
+    @cart = session[:cart]
   end
 
   private
