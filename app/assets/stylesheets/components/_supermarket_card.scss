@@ -25,6 +25,23 @@
   width: 84vw;
   height: 94px;
 
+  background: white;
+  border-radius: 33px 33px 0px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 189px;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+.supermarket-card__rewe {
+  width: 84vw;
+  height: 94px;
+
   background: #CC0000;
   border-radius: 33px 33px 0px 0px;
   display: flex;
@@ -37,6 +54,7 @@
     object-fit: cover;
   }
 }
+
 
 .supermarket-card__info {
   width: 84vw;
