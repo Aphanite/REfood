@@ -8,7 +8,11 @@ class CartsController < ApplicationController
     end
 
     # p current_user
-    render json: { cart: session[:cart]}
+    render json: {
+      cart: session[:cart],
+      product: Product.find(params[:cart]["productId"]).name,
+      amount: params[:cart]["offset"]
+    }
   end
 
   def show
