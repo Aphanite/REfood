@@ -7,11 +7,13 @@ const toggleItemContainer = document.getElementById("item-selection");
 const toggleDisplayContainer = document.getElementById("display-selection");
 const contentContainer = document.getElementById("content-container");
 
+var itemButtons, displayButtons, contentTabs;
+
 // only do next steps if on the correct page
 if (toggleItemContainer) {
-  const itemButtons = toggleItemContainer.getElementsByClassName('toggle-btn')
-  const displayButtons = toggleDisplayContainer.getElementsByClassName('toggle-btn')
-  const contentTabs = contentContainer.children
+  itemButtons = toggleItemContainer.getElementsByClassName('toggle-btn')
+  displayButtons = toggleDisplayContainer.getElementsByClassName('toggle-btn')
+  contentTabs = contentContainer.children
 };
 
 const toggleActiveClass = (buttons, name) => {

@@ -1,50 +1,64 @@
-<body style="background: #ffffff;">
+  <div id="inner">
+    <div class="order-container">
+      <div class="order__header">Cart</div>
 
-  <div>navbar</div>
-
-  <div class="container p-4">
-    <h1>Cart</h1>
-    <% session[:cart].each do |item| %>
-      <% product = Product.find(item["productId"]) %>
-      <div class="card-product mb-2">
-        <%= image_tag "#{product.category.downcase}/#{product.name.downcase}.jpg"%>
-        <div class="card-product-infos">
-            <h2><%= product.name %> <%= product.unit %></h2>
-            <p>best before <%= product.best_before_date %></p>
-            <p style="color: #7DD070;"><%= product.discounted_price_cents %>€</p>
+      <!-- initialize total price and discount -->
+      <% total_price = 0 %>
+      <% discount = 0 %>
+      <div class="order__content">
+        <% session[:cart].each do |item| %>
+          <% product = Product.find(item["productId"]) %>
+          <!-- increment total price and discount by the amount spent/saved for current product -->
+          <% total_price += product.discounted_price_cents * item["offset"]%>
+          <% discount += (product.full_price_cents - product.discounted_price_cents) * item["offset"]%>
+          <!-- get details from all items in session cart -->
+          <div class="order__content__item">
+            <%= image_tag "#{product.category.downcase}/#{product.name.downcase}.jpg"%>
+            <div class="order__content__item__info">
+              <div class="order__content__item__info__header">
+                <h2><%= product.name %></h2>
+                <span><%= product.unit %></span>
+              </div>
+                <p>best before <%= product.best_before_date.strftime("%B %e") %></p>
+                <p style="color: #079145; font-size: 16px; font-weight: normal; margin-top: 8px;"><%= product.discounted_price_cents/100.0 %>€</p>
+            </div>
+            <!-- counter + amount display -->
+            <div class="d-flex flex-column" style="margin-left:18px;">
+              <div style="text-align: center;">
+                <button class="minus-button incrementer minus" type="button" data-offset="-1" style="margin-right: 0;">
+                  <i id="minus-icon" class="fa fa-minus" aria-hidden="true"></i>
+                </button>
+              </div>
+              <span id="counter" data-count="1" style="font-size: 14px; margin: 4px 0; text-align: center;"><%= item["offset"] %></span>
+              <div style="text-align: center;">
+                <button class ="plus-button incrementer" type="button" data-offset="1" style="margin: 0;">
+                  <i id="plus-icon" class="fa fa-plus" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <div class="order__checkout">
+      <hr>
+      <div class="p-1">
+        <div class="d-flex justify-content-between mt-2">
+          <h5 style="font-weight: bold; font-size: 22px;">Total</h5>
+          <h5 style="font-weight: bold; font-size: 22px;"><%= total_price/100.0 %> €</h5>
+        </div>
+        <div class="d-flex justify-content-between">
+          <h5>You save!</h5>
+          <h5><%= discount/100.0 %> €</h5>
+        </div>
+        <div class="d-flex justify-content-between">
+          <h5 style="color: #079145;">You gain!</h5>
+          <h5 style="color: #079145;">5 points</h5>
         </div>
       </div>
-    <% end %>
-
-
-<!--     <% discounted_price = 0 %>
-    <% @order.ordered_items.each do |item| %>
-      <% discounted_price += Product.find_by(id: item.product_id).discounted_price %>
-    <% end %>
-
-    <% full_price = 0 %>
-    <% @order.ordered_items.each do |item| %>
-      <% full_price += Product.find_by(id: item.product_id).full_price %>
-    <% end %>
-
-
-
-    <div style="background: #9cffa28f; width: 100%; height: 4px;" class="mt-4">
-    </div>
-    <div class="p-1">
-      <div class="d-flex justify-content-between mt-2">
-        <h3>Total</h3>
-        <h3 class="font-weight-bold"><%= discounted_price %>€</h3>
-      </div>
-      <div class="d-flex justify-content-between">
-        <h5>You safe!</h5>
-        <h5><%= (full_price - discounted_price).round(2) %>€</h5>
-      </div>
-      <div class="d-flex justify-content-between">
-        <h5 style="color: #7DD070;">You gain!</h5>
-        <h5 style="color: #7DD070;">5 points</h5>
+      <div class="d-flex justify-content-center">
+        <button class="btn-gradient">Go to checkout</button>
       </div>
     </div>
-    <div class="btn-gradient">Go to checkout</div> -->
   </div>
-</body>
+
+  </div>
