@@ -25,14 +25,14 @@
             <!-- counter + amount display -->
             <div class="d-flex flex-column" style="margin-left:18px;">
               <div style="text-align: center;">
-                <button class="minus-button incrementer minus" type="button" data-offset="-1" style="margin-right: 0;">
-                  <i id="minus-icon" class="fa fa-minus" aria-hidden="true"></i>
+                <button class ="plus-button incrementer" type="button" data-offset="1" style="margin: 0;">
+                  <i id="plus-icon" class="fa fa-plus" aria-hidden="true"></i>
                 </button>
               </div>
               <span id="counter" data-count="1" style="font-size: 14px; margin: 4px 0; text-align: center;"><%= item["offset"] %></span>
               <div style="text-align: center;">
-                <button class ="plus-button incrementer" type="button" data-offset="1" style="margin: 0;">
-                  <i id="plus-icon" class="fa fa-plus" aria-hidden="true"></i>
+                <button class="minus-button incrementer minus" type="button" data-offset="-1" style="margin-right: 0;">
+                  <i id="minus-icon" class="fa fa-minus" aria-hidden="true"></i>
                 </button>
               </div>
             </div>
