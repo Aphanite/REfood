@@ -6,6 +6,7 @@ body {
   display: none;
   position: absolute;
   height: 100vh;
+  width: 100%;
   background:#E6F6E7;
   z-index: 10;
 }
@@ -25,9 +26,10 @@ body {
 }
 
 
-.form-container{
+.form-container {
   position: relative;
 }
+
 
 .form-container .form-control {
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
@@ -37,6 +39,9 @@ body {
   margin-top: 100px;
   width: 60%;
   margin-left: 80px;
+  height: 55px;
+  display: flex;
+  align-items: center;
 }
 
 input {
@@ -47,5 +52,11 @@ input {
   background-color: transparent;
   outline: none;
   text-align: center;
+  }
+
+  .btn-icon {
+    width: 50px !important;
+    height: 50px !important;
+    transform: translate(13px, -60px);
   }
 
