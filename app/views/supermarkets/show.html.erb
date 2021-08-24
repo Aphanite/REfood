@@ -33,8 +33,8 @@
                     </div>
                     <div class="product-card__info__body">
                       <div class="product-card__info__body__prices">
-                        <span class="product-card__info__body__prices__discount"><%= product.discounted_price %></span>
-                        <span class="product-card__info__body__prices__normal"><%= product.full_price %></span>
+                        <span class="product-card__info__body__prices__discount"><%= humanized_money_with_symbol(product.discounted_price) %></span>
+                        <span class="product-card__info__body__prices__normal"><%= humanized_money_with_symbol(product.full_price) %></span>
                       </div>
                       <button class="product-card__info__body__button"><i class="fas fa-shopping-cart" style="color: white;"></i></button>
                     </div>
@@ -61,8 +61,8 @@
                     </div>
                     <div class="product-card__info__body">
                       <div class="product-card__info__body__prices">
-                        <span class="product-card__info__body__prices__discount"><%= product.discounted_price %></span>
-                        <span class="product-card__info__body__prices__normal"><%= product.full_price %></span>
+                        <span class="product-card__info__body__prices__discount"><%= humanized_money_with_symbol(product.discounted_price) %></span>
+                        <span class="product-card__info__body__prices__normal"><%= humanized_money_with_symbol(product.full_price) %></span>
                       </div>
                       <button class="product-card__info__body__button"><i class="fas fa-shopping-cart" style="color: white;"></i></button>
                     </div>
