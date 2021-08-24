@@ -23,6 +23,7 @@
                     <% category = product.category.downcase %>
                     <% name = product.name.downcase %>
                     <%= image_tag "#{category}/#{name}.jpg"%>
+
                   </div>
 
                   <div class="product-card__info">
@@ -38,6 +39,7 @@
                       <button class="product-card__info__body__button"><i class="fas fa-shopping-cart" style="color: white;"></i></button>
                     </div>
                   </div>
+                  <%= link_to "", supermarket_product_path(product.supermarket, product), class: "stretched-link" %>
                 </div>
               <% end %>
             </div>
@@ -65,6 +67,7 @@
                       <button class="product-card__info__body__button"><i class="fas fa-shopping-cart" style="color: white;"></i></button>
                     </div>
                   </div>
+                  <%= link_to "", supermarket_product_path(product.supermarket, product), class: "stretched-link" %>
                 </div>
               <% end %>
             </div>

@@ -9,6 +9,8 @@
 
 .order__content {
   margin-top: 16px;
+  overflow-y: scroll;
+  padding-bottom: 220px;
 }
 
 .order__content__item {
@@ -58,9 +60,11 @@
   bottom: 0;
   left: 30px;
   right: 30px;
-  margin-bottom: 16px;
+  background-color: #FBFDFF;
+  padding-bottom: 16px;
 
   hr {
+    margin-top: 0;
     border: 1px solid #CCEDCE;
   }
 
