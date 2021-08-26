@@ -4,7 +4,7 @@
 // that code so it'll be compiled.
 
 require("@rails/ujs").start()
-require("turbolinks").start()
+// require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
@@ -36,12 +36,11 @@ import { bindCounterButton } from '../components/_update_counter';
 
 
 // initCart();
-renderPage();
-bindToggleButtons();
-bindCounterButton();
 
-
-document.addEventListener('turbolinks:load', () => {
+// document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-});
+  renderPage();
+  bindToggleButtons();
+  bindCounterButton();
+// });

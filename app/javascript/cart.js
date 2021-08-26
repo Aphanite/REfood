@@ -17,7 +17,8 @@ export const adjustCount = (productId, offset) => {
     console.log('Success:', data);
     if (true)
     {
-      alert(`${data.product} got added to your cart ${data.amount} times`)
+      $('#exampleModal').modal()
+      // alert(`${data.product} got added to your cart ${data.amount} times`)
     }
   })
   .catch((error) => {

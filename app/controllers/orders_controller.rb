@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index, :show, :confirm]
   
   def index
     @orders = policy_scope(Order).order(created_at: :desc)
@@ -29,6 +29,9 @@ class OrdersController < ApplicationController
     @order.update(order_params)
 
     redirect_to order_path(@order)
+  end
+
+  def confirm
   end
 
   private
