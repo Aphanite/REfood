@@ -36,16 +36,20 @@
 .button-homepage {
   // width: 237px;
   // height: 56px;
-  left: 89px;
-  top: 792px;
+  width: 70%;
+  height: 56px;
+  // left: 89px;
+  // top: 792px;
   background: linear-gradient(276.66deg, #079145 44.5%, rgba(102, 198, 75, 0.48) 95.66%);
   border-radius: 33px;
   color: white;
   font-family: 'Mulish';
   font-size: 24px;
   font-style: normal;
-  margin-top: 120px;
-  font-weight: bold;
+  margin-top: 90px;
+  line-height: 56px;
+  text-align: center;
+
 }
 
 
@@ -57,8 +61,13 @@
   min-height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
   margin: 36px 24px;
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
 }
 
 .splash-logo {
@@ -67,6 +76,7 @@
 
 .splash-slogan {
   text-align: center;
+  margin-top: 30px;
   p {
     font-size: 28px;
     font-weight: bold;
