@@ -11,9 +11,14 @@
 @import "card";
 @import "order";
 
+html {
+  height: 100%;
+}
+
 body {
   font-family: 'Mulish', sans-serif;
   background-color: #FBFDFF;
+  min-height: 100%;
 }
 
 #inner {

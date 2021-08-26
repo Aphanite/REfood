@@ -1,3 +1,12 @@
+<div class="navbar-top">
+  <%= link_to supermarket_path(@product.supermarket) do %>
+    <i class="fas fa-chevron-left"></i>
+  <% end %>
+  <%= link_to cart_path do %>
+    <i class="fas fa-shopping-cart"></i>
+  <% end %>
+</div>
+
 <%= image_tag "#{@product.category.downcase}/#{@product.name.downcase}.jpg", :class => "product-image" %>
 
 <div class="product-content">
@@ -39,6 +48,8 @@
   </div>
   <div class="product-btn product-cart-btn">Add to cart</div>
 </div>
+
+<%= render "shared/modal" %>
 
 <script>
   product_id=<%= @product.id %>
