@@ -5,12 +5,14 @@
 .order__header {
   font-weight: 600;
   font-size: 34px;
+  margin-left: 12px;
 }
 
 .order__content {
   margin-top: 16px;
   overflow-y: scroll;
   padding-bottom: 220px;
+  margin-left: 12px;
 }
 
 .order__content__item {
@@ -20,7 +22,7 @@
   display: flex;
   align-items: center;
   margin-bottom: 12px;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+  box-shadow: 0 0 12px rgba(0,0,0, 0.07);
   border-radius: 12px;
 
   img {
@@ -71,5 +73,10 @@
   h3, h5 {
     font-family: Mulish;
     font-weight: lighter;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
   }
 }

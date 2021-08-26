@@ -1,6 +1,5 @@
 
 // Loop through the buttons and add the active class to the current/clicked button
-
 import { state } from "../config";
 
 const toggleItemContainer = document.getElementById("item-selection");
@@ -15,6 +14,7 @@ if (toggleItemContainer) {
   displayButtons = toggleDisplayContainer.getElementsByClassName('toggle-btn')
   contentTabs = contentContainer.children
 };
+
 
 const toggleActiveClass = (buttons, name) => {
   for (const button of buttons) {
