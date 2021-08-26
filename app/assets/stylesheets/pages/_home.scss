@@ -16,6 +16,7 @@
 }
 
 .panel {
+  width: 100%;
   padding: 6rem 2rem 0 2rem;
   position: relative;
   text-align: center;
@@ -33,16 +34,51 @@
 }
 
 .button-homepage {
-  width: 237px;
+  // width: 237px;
+  // height: 56px;
+  width: 70%;
   height: 56px;
-  left: 89px;
-  top: 792px;
+  // left: 89px;
+  // top: 792px;
   background: linear-gradient(276.66deg, #079145 44.5%, rgba(102, 198, 75, 0.48) 95.66%);
   border-radius: 33px;
   color: white;
   font-family: 'Mulish';
   font-size: 24px;
   font-style: normal;
-  margin-top: 120px;
-  font-weight: bold;
+  margin-top: 90px;
+  line-height: 56px;
+  text-align: center;
+
+}
+
+
+
+
+// Enas styles
+
+.splash-container {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 36px 24px;
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.splash-logo {
+  text-align: center;
+}
+
+.splash-slogan {
+  text-align: center;
+  margin-top: 30px;
+  p {
+    font-size: 28px;
+    font-weight: bold;
+  }
 }
