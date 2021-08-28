@@ -107,7 +107,7 @@ Product.create!(
     supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
     )
     
-unit = [100, 250, 500, 750, 1000].sample
+unit = [250, 500, 750, 1000].sample
 Product.create!(
     name: "Cucumbers",
     description: "Cucumbers belong to the cucurbit family. Originally coming from the tropics, they have high temperature requirements and are almost exclusively planted in greenhouses. The fruits are about 30-40 cm long, slender and tapered at the ends. The skin is usually smooth and dark in color. Mainly grown in Greece, Spain, the Netherlands, Belgium and Germany.",
@@ -120,7 +120,7 @@ Product.create!(
     supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
     )
     
-unit = [100, 250, 500, 750, 1000].sample
+unit = [250, 500, 750, 1000].sample
 Product.create!(
     name: "Beets",
     description: "Beets, or beetroots, are jewel-toned root vegetables. The leaves and roots of beets are packed with nutrition, including antioxidants that fight cell damage and reduce the risk of heart disease. They’re one of the few vegetables that contain betalains, a powerful antioxidant that gives beets their vibrant color.",
@@ -133,7 +133,7 @@ Product.create!(
     supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
     )
 
-unit = [100, 250, 500, 750, 1000].sample
+unit = [250, 500, 750, 1000].sample
 Product.create!(
     name: "Peas",
     description: "Green peas, or garden peas, are the small, spherical seeds that come from pods produced by the Pisum sativum plant.",
@@ -146,7 +146,7 @@ Product.create!(
     supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
     )
 
-unit = [100, 250, 500, 750, 1000].sample
+unit = [250, 500, 750, 1000].sample
 Product.create!(
     name: "Onions",
     description: "Onions have a light, golden-brown shell that surrounds a white or red, juicy flesh. Mainly grown in Spain, furthermore Chile and Egypt. Mild and slightly sweet. Onions can be used raw or cooked. Suitable for salads, soups, omelets.",
@@ -160,7 +160,7 @@ Product.create!(
     )
 
 # FRUITS
-unit = [100, 250, 500, 750, 1000].sample
+unit = [250, 500, 750, 1000].sample
 Product.create!(
     name: "Bananas",
     description: "Mainly grown in Ecuador, Panama, Costa Rica, Colombia and Dominican Republic. Meaty, aromatic and, depending on the degree of ripeness, from slightly sour to very sweet.",
@@ -173,7 +173,7 @@ Product.create!(
     supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
     )
 
-unit = [100, 250, 500, 750, 1000].sample
+unit = [250, 500, 750, 1000].sample
 Product.create!(
     name: "Grapes",
     description: "Wine grapes are the varieties of grapevine grown for making wine. Table grapes are varieties grown for fresh consumption that are as low in seeds as possible and with large berries. Grown worldwide, mainly Italy, Greece, South Africa, Spain and France (Germany produces almost exclusively wine grapes). Juicy, depending on the variety, sweet, sour or with a nutmeg aroma.",
@@ -186,7 +186,7 @@ Product.create!(
     supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
     )
 
-unit = [100, 250, 500, 750, 1000].sample
+unit = [250, 500, 750, 1000].sample
 Product.create!(
     name: "Oranges",
     description: "Oranges are by far the most popular type of citrus. Mainly grown in Spain, Morocco, Turkey, USA, South Africa, South America and Greece. Very juicy, aromatic, tender and sweet. Mainly consumed raw and pure as well as for fruit salads, desserts, cake toppings or jams.",
@@ -199,7 +199,7 @@ Product.create!(
     supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
     )
 
-unit = [100, 250, 500, 750, 1000].sample
+unit = [250, 500, 750, 1000].sample
 Product.create!(
     name: "Lemons",
     description: "Lemon trees produce fruit all year round, so the lemons are available all year round. Mainly grown in Spain, Argentina, Italy and Turkey. Very sour. The pulp and juice are used, for example, for salad dressings, creams, baked goods and soft drinks. Halve the lemons and squeeze the two halves.",
@@ -212,7 +212,7 @@ Product.create!(
     supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
     )
 
-unit = [100, 250, 500, 750, 1000].sample
+unit = [250, 500, 750, 1000].sample
 Product.create!(
     name: "Raspberries",
     description: "A small, deep colored berries which have a tender texture, a sweet delicate taste and a pleasant aroma. Raspberries are eaten raw, or used in cakes and jams.",
@@ -226,7 +226,7 @@ Product.create!(
     )
 
 # MEAT / FISH
-unit = [100, 250, 500, 750, 1000].sample
+unit = [250, 500, 750, 1000].sample
 Product.create!(
     name: "Chicken",
     description: "Chicken is the most common type of poultry in the world.Owing to the relative ease and low cost of raising chickens—in comparison to mammals such as cattle or hogs—chicken meat and chicken eggs have become prevalent in numerous cuisines.",
@@ -239,7 +239,7 @@ Product.create!(
     supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
     )
 
-unit = [100, 250, 500, 750, 1000].sample
+unit = [250, 500, 750, 1000].sample
 Product.create!(
     name: "Turkey",
     description: "Turkey meat, commonly referred to as just turkey, is the meat from turkeys, typically domesticated turkeys but also wild turkeys. It is a popular poultry dish, especially in North America.",
@@ -252,7 +252,7 @@ Product.create!(
     supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
     )
 
-unit = [100, 250, 500, 750, 1000].sample
+unit = [250, 500, 750, 1000].sample
 Product.create!(
     name: "Beef",
     description: "Beef can be prepared in various ways; cuts are often used for steak, which can be cooked to varying degrees of doneness, while trimmings are often ground or minced, as found in most hamburgers. Beef contains protein, iron, and vitamin B12",
@@ -265,7 +265,7 @@ Product.create!(
     supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
     )
 
-unit = [100, 250, 500, 750, 1000].sample
+unit = [250, 500, 750, 1000].sample
 Product.create!(
     name: "Salmon",
     description: "Salmon is a common food fish classified as an oily fish with a rich content of protein and omega-3 fatty acids.",
@@ -278,7 +278,7 @@ Product.create!(
     supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
     )
 
-unit = [100, 250, 500, 750, 1000].sample
+unit = [250, 500, 750, 1000].sample
 Product.create!(
     name: "Herring",
     description: "These oily fish also have a long history as an important food fish, and are often salted, smoked, or pickled.",
@@ -291,7 +291,7 @@ Product.create!(
     supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
     )
 
-unit = [100, 250, 500, 750, 1000].sample
+unit = [250, 500, 750, 1000].sample
 Product.create!(
     name: "Swordfish",
     description: "Swordfish is a mild-tasting, white-fleshed fish with a meaty texture. It is sold exclusively in steaks. Its mild taste makes it a particularly good choice for those who are unsure if they like fish",
@@ -305,7 +305,7 @@ Product.create!(
     )
 
 # DAIRY
-unit = [100, 250, 500, 750, 1000].sample
+unit = [250, 500, 750, 1000].sample
 Product.create!(
     name: "Butter",
     description: "Butter is a dairy product made from the fat and protein components of churned cream. It is a semi-solid emulsion at room temperature, consisting of approximately 80% butterfat.",
@@ -318,7 +318,7 @@ Product.create!(
     supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
     )
 
-unit = [100, 250, 500, 750, 1000].sample
+unit = [250, 500, 750, 1000].sample
 Product.create!(
     name: "Milk",
     description: "Dairy products or milk products are a type of food produced from or containing the milk of mammals, most commonly cattle, water buffaloes, goats, sheep, and camels",
@@ -331,7 +331,7 @@ Product.create!(
     supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
     )
 
-unit = [100, 250, 500, 750, 1000].sample
+unit = [250, 500, 750, 1000].sample
 Product.create!(
     name: "Cheese",
     description: "Dairy products or milk products are a type of food produced from or containing the milk of mammals, most commonly cattle, water buffaloes, goats, sheep, and camels.",
@@ -344,7 +344,7 @@ Product.create!(
     supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
     )
 
-unit = [100, 250, 500, 750, 1000].sample
+unit = [250, 500, 750, 1000].sample
 Product.create!(
     name: "Yogurt",
     description: "Yogurt is a fermented milk product that contains the characteristic bacterial cultures Lactobacillus bulgaricus and Streptococcus thermophilus. All yogurt must contain at least 8.25% solids not fat.",
@@ -357,7 +357,7 @@ Product.create!(
     supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
     )
 
-unit = [100, 250, 500, 750, 1000].sample
+unit = [250, 500, 750, 1000].sample
 Product.create!(
     name: "Ice Cream",
     description: "Ice cream is a frozen dairy dessert obtained by freezing the ice cream mix with continuous agitation. It contains milk products, sweetening materials, stabilizers, colors, flavors, and egg products.",
