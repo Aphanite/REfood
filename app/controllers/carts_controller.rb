@@ -11,6 +11,7 @@ class CartsController < ApplicationController
     render json: {
       cart: session[:cart],
       product: Product.find(params[:cart]["productId"]).name,
+      supermarket: Supermarket.find(params[:cart]["supermarketId"]).name,
       amount: params[:cart]["offset"]
     }
   end
