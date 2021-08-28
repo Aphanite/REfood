@@ -147,7 +147,6 @@ Product.create!(
     )
 
 # FRUITS
-
 full_price = rand(100..450)
 Product.create!(
     name: "Bananas",
@@ -213,9 +212,86 @@ Product.create!(
     supermarket: Supermarket.find_by(name: ["Rewe"])
     )
 
-puts "Finished creating #{Product.count} new Products"
+# MEAT / FISH
+full_price = rand(100..450)
+Product.create!(
+    name: "Chicken",
+    description: "Chicken is the most common type of poultry in the world.Owing to the relative ease and low cost of raising chickens—in comparison to mammals such as cattle or hogs—chicken meat and chicken eggs have become prevalent in numerous cuisines.",
+    full_price_cents: full_price,
+    discounted_price_cents: (full_price * 0.85),
+    best_before_date: Faker::Date.forward(days: 5),
+    category: "Meat/Fish",
+    amount: rand(1..10),
+    unit: ["100g", "250g", "500g", "750g", "1000g"].sample,
+    supermarket: Supermarket.find_by(name: ["Rewe"])
+    )
+    
+full_price = rand(100..450)
+Product.create!(
+    name: "Turkey",
+    description: "Turkey meat, commonly referred to as just turkey, is the meat from turkeys, typically domesticated turkeys but also wild turkeys. It is a popular poultry dish, especially in North America.",
+    discounted_price_cents: (full_price * 0.85),
+    best_before_date: Faker::Date.forward(days: 5),
+    category: "Meat/Fish",
+    amount: rand(1..10),
+    unit: ["100g", "250g", "500g", "750g", "1000g"].sample,
+    supermarket: Supermarket.find_by(name: ["Rewe"])
+    )
 
-# if time, complete with other categories
+full_price = rand(100..450)
+Product.create!(
+    name: "Beef",
+    description: "Beef can be prepared in various ways; cuts are often used for steak, which can be cooked to varying degrees of doneness, while trimmings are often ground or minced, as found in most hamburgers. Beef contains protein, iron, and vitamin B12",
+    full_price_cents: full_price,
+    discounted_price_cents: (full_price * 0.85),
+    best_before_date: Faker::Date.forward(days: 5),
+    category: "Meat/Fish",
+    amount: rand(1..10),
+    unit: ["100g", "250g", "500g", "750g", "1000g"].sample,
+    supermarket: Supermarket.find_by(name: ["Rewe"])
+    )
+
+full_price = rand(100..450)
+Product.create!(
+    name: "Salmon",
+    description: "Salmon is a common food fish classified as an oily fish with a rich content of protein and omega-3 fatty acids.",
+    full_price_cents: full_price,
+    discounted_price_cents: (full_price * 0.85),
+    best_before_date: Faker::Date.forward(days: 5),
+    category: "Meat/Fish",
+    amount: rand(1..10),
+    unit: ["100g", "250g", "500g", "750g", "1000g"].sample,
+    supermarket: Supermarket.find_by(name: ["Rewe"])
+    )
+
+full_price = rand(100..450)
+Product.create!(
+    name: "Herring",
+    description: "These oily fish also have a long history as an important food fish, and are often salted, smoked, or pickled.",
+    full_price_cents: full_price,
+    discounted_price_cents: (full_price * 0.85),
+    best_before_date: Faker::Date.forward(days: 5),
+    category: "Meat/Fish",
+    amount: rand(1..10),
+    unit: ["100g", "250g", "500g", "750g", "1000g"].sample,
+    supermarket: Supermarket.find_by(name: ["Rewe"])
+    )
+    
+full_price = rand(100..450)
+Product.create!(
+    name: "Swordfish",
+    description: "Swordfish is a mild-tasting, white-fleshed fish with a meaty texture. It is sold exclusively in steaks. Its mild taste makes it a particularly good choice for those who are unsure if they like fish",
+    full_price_cents: full_price,
+    discounted_price_cents: (full_price * 0.85),
+    best_before_date: Faker::Date.forward(days: 5),
+    category: "Meat/Fish",
+    amount: rand(1..10),
+    unit: ["100g", "250g", "500g", "750g", "1000g"].sample,
+    supermarket: Supermarket.find_by(name: ["Rewe"])
+    )
+
+
+puts "Finished creating #{Product.count} new Products"
 
 # creating order instances
 Order.create!(
