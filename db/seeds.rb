@@ -290,6 +290,71 @@ Product.create!(
     supermarket: Supermarket.find_by(name: ["Rewe"])
     )
 
+# DAIRY
+full_price = rand(100..450)
+Product.create!(
+    name: "Butter",
+    description: "Butter is a dairy product made from the fat and protein components of churned cream. It is a semi-solid emulsion at room temperature, consisting of approximately 80% butterfat.",
+    full_price_cents: full_price,
+    discounted_price_cents: (full_price * 0.85),
+    best_before_date: Faker::Date.forward(days: 5),
+    category: "Dairy",
+    amount: rand(1..10),
+    unit: ["100g", "250g", "500g", "750g", "1000g"].sample,
+    supermarket: Supermarket.find_by(name: ["Rewe"])
+    )
+
+full_price = rand(100..450)
+Product.create!(
+    name: "Milk",
+    description: "",
+    full_price_cents: full_price,
+    discounted_price_cents: (full_price * 0.85),
+    best_before_date: Faker::Date.forward(days: 5),
+    category: "Dairy",
+    amount: rand(1..10),
+    unit: ["100g", "250g", "500g", "750g", "1000g"].sample,
+    supermarket: Supermarket.find_by(name: ["Rewe"])
+    )
+
+full_price = rand(100..450)
+Product.create!(
+    name: "Cheese",
+    description: "Dairy products or milk products are a type of food produced from or containing the milk of mammals, most commonly cattle, water buffaloes, goats, sheep, and camels.",
+    full_price_cents: full_price,
+    discounted_price_cents: (full_price * 0.85),
+    best_before_date: Faker::Date.forward(days: 5),
+    category: "Dairy",
+    amount: rand(1..10),
+    unit: ["100g", "250g", "500g", "750g", "1000g"].sample,
+    supermarket: Supermarket.find_by(name: ["Rewe"])
+    )
+
+full_price = rand(100..450)
+Product.create!(
+    name: "Yogurt",
+    description: "Yogurt is a fermented milk product that contains the characteristic bacterial cultures Lactobacillus bulgaricus and Streptococcus thermophilus. All yogurt must contain at least 8.25% solids not fat.",
+    full_price_cents: full_price,
+    discounted_price_cents: (full_price * 0.85),
+    best_before_date: Faker::Date.forward(days: 5),
+    category: "Dairy",
+    amount: rand(1..10),
+    unit: ["100g", "250g", "500g", "750g", "1000g"].sample,
+    supermarket: Supermarket.find_by(name: ["Rewe"])
+    )
+
+full_price = rand(100..450)
+Product.create!(
+    name: "Ice Cream",
+    description: "Ice cream is a frozen dairy dessert obtained by freezing the ice cream mix with continuous agitation. It contains milk products, sweetening materials, stabilizers, colors, flavors, and egg products.",
+    full_price_cents: full_price,
+    discounted_price_cents: (full_price * 0.85),
+    best_before_date: Faker::Date.forward(days: 5),
+    category: "Dairy",
+    amount: rand(1..10),
+    unit: ["100g", "250g", "500g", "750g", "1000g"].sample,
+    supermarket: Supermarket.find_by(name: ["Rewe"])
+    )
 
 puts "Finished creating #{Product.count} new Products"
 
