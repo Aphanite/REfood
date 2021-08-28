@@ -57,6 +57,9 @@ input {
   .btn-icon {
     width: 50px !important;
     height: 50px !important;
-    transform: translate(13px, -60px);
+  }
+
+  .fa-search:before {
+  content: "\f002";
   }
 
