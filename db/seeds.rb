@@ -32,45 +32,15 @@ Supermarket.create!(
   address: "Friedrichstraße 100, Berlin"
 )
 Supermarket.create!(
-  name: "Rewe", 
-  address: "Tempelhofer Weg 11, Berlin"
-)
-Supermarket.create!(
-  name: "Rewe", 
-  address: "Friedrichstraße 60, Berlin"
-    )
-Supermarket.create!(
   name: "Alnatura", 
   address: "Schönhauser Allee 108, Berlin"
 )
-Supermarket.create!(
-  name: "Alnatura", 
-  address: "Friedrichstraße 191, Berlin"
-)
-Supermarket.create!(
-  name: "Alnatura", 
-  address: "Giesebrechtstraße 4, Berlin"
-)
+
 Supermarket.create!(
   name: "Aldi Süd",
   address: "Badstraße 4, Berlin"
 )
-Supermarket.create!(
-  name: "Aldi Süd", 
-  address: "Müllerstraße 128, Berlin"
-)
-Supermarket.create!(
-  name: "Aldi Süd", 
-  address: "Schwedter Str. 83, Berlin"
-)
-Supermarket.create!(
-  name: "Lidl", 
-  address: "Leipziger Str. 42, Berlin"
-)
-Supermarket.create!(
-  name: "Lidl", 
-  address: "Knesebeckstraße 47/48, Berlin"
-)
+
 Supermarket.create!(
   name: "Lidl", 
   address: "Heinrich-Heine-Straße 30, Berlin"
@@ -99,6 +69,7 @@ Product.create!(
     )
     
 unit = [250, 500, 750, 1000].sample
+full_price_vegetables = rand(250..450)
 full_price_per_kg = full_price_vegetables
 Product.create!(
     name: "Cucumbers",
@@ -113,7 +84,7 @@ Product.create!(
     )
     
 unit = [250, 500, 750, 1000].sample
-category = category[0]
+full_price_vegetables = rand(250..450)
 full_price_per_kg = full_price_vegetables
 Product.create!(
     name: "Beets",
@@ -128,7 +99,7 @@ Product.create!(
     )
 
 unit = [250, 500, 750, 1000].sample
-category = category[0]
+full_price_vegetables = rand(250..450)
 full_price_per_kg = full_price_vegetables
 Product.create!(
     name: "Peas",
@@ -143,7 +114,7 @@ Product.create!(
     )
 
 unit = [250, 500, 750, 1000].sample
-category = category[0]
+full_price_vegetables = rand(250..450)
 full_price_per_kg = full_price_vegetables
 Product.create!(
     name: "Onions",
@@ -176,6 +147,7 @@ Product.create!(
     )
 
 unit = [250, 500, 750, 1000].sample
+full_price_fruits = rand(300..500)
 full_price_per_kg = full_price_fruits
 Product.create!(
     name: "Grapes",
@@ -190,6 +162,7 @@ Product.create!(
     )
 
 unit = [250, 500, 750, 1000].sample
+full_price_fruits = rand(300..500)
 full_price_per_kg = full_price_fruits
 Product.create!(
     name: "Oranges",
@@ -204,6 +177,7 @@ Product.create!(
     )
 
 unit = [250, 500, 750, 1000].sample
+full_price_fruits = rand(300..500)
 full_price_per_kg = full_price_fruits
 Product.create!(
     name: "Lemons",
@@ -218,6 +192,7 @@ Product.create!(
     )
 
 unit = [250, 500, 750, 1000].sample
+full_price_fruits = rand(300..500)
 full_price_per_kg = full_price_fruits
 Product.create!(
     name: "Raspberries",
@@ -250,6 +225,7 @@ Product.create!(
     )
 
 unit = [250, 500, 750, 1000].sample
+full_price_meat_fish = rand(800..1200)
 full_price_per_kg = full_price_meat_fish
 Product.create!(
     name: "Turkey",
@@ -264,6 +240,7 @@ Product.create!(
     )
 
 unit = [250, 500, 750, 1000].sample
+full_price_meat_fish = rand(800..1200)
 full_price_per_kg = full_price_meat_fish
 Product.create!(
     name: "Beef",
@@ -278,6 +255,7 @@ Product.create!(
     )
 
 unit = [250, 500, 750, 1000].sample
+full_price_meat_fish = rand(800..1200)
 full_price_per_kg = full_price_meat_fish
 Product.create!(
     name: "Salmon",
@@ -292,6 +270,7 @@ Product.create!(
     )
 
 unit = [250, 500, 750, 1000].sample
+full_price_meat_fish = rand(800..1200)
 full_price_per_kg = full_price_meat_fish
 Product.create!(
     name: "Herring",
@@ -306,6 +285,7 @@ Product.create!(
     )
 
 unit = [250, 500, 750, 1000].sample
+full_price_meat_fish = rand(800..1200)
 full_price_per_kg = full_price_meat_fish
 Product.create!(
     name: "Swordfish",
@@ -338,6 +318,7 @@ Product.create!(
     )
 
 unit = [250, 500, 750, 1000].sample
+full_price_dairy = rand(150..300)
 full_price_per_kg = full_price_dairy
 Product.create!(
     name: "Milk",
@@ -352,6 +333,7 @@ Product.create!(
     )
 
 unit = [250, 500, 750, 1000].sample
+full_price_dairy = rand(150..300)
 full_price_per_kg = full_price_dairy
 Product.create!(
     name: "Cheese",
@@ -366,9 +348,10 @@ Product.create!(
     )
 
 unit = [250, 500, 750, 1000].sample
+full_price_dairy = rand(150..300)
 full_price_per_kg = full_price_dairy
 Product.create!(
-    name: "Yogurt",
+    name: "Greek Yogurt",
     description: "Yogurt is a fermented milk product that contains the characteristic bacterial cultures Lactobacillus bulgaricus and Streptococcus thermophilus. All yogurt must contain at least 8.25% solids not fat.",
     full_price_cents: full_price_per_kg * (unit / 1000.0),
     discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
@@ -380,6 +363,7 @@ Product.create!(
     )
 
 unit = [250, 500, 750, 1000].sample
+full_price_dairy = rand(150..300)
 full_price_per_kg = full_price_dairy
 Product.create!(
     name: "Ice Cream",
