@@ -11,7 +11,6 @@ class OrdersController < ApplicationController
   end
 
   def new
-    @product = Product.find(params[:garden_id])
     @order = Order.new
     authorize @order
   end

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :products, only: [:index, :show]
   end
 
-  resources :orders, only: [:index, :show] do
+  resources :orders, only: [:index, :show, :new] do
     resources :payments, only: :new
   end
 
