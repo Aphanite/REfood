@@ -53,34 +53,3 @@
   text-align: center;
 
 }
-
-
-
-
-// Enas styles
-
-.splash-container {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 36px 24px;
-
-  a {
-    text-decoration: none;
-    color: white;
-  }
-}
-
-.splash-logo {
-  text-align: center;
-}
-
-.splash-slogan {
-  text-align: center;
-  margin-top: 30px;
-  p {
-    font-size: 28px;
-    font-weight: bold;
-  }
-}
