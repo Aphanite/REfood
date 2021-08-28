@@ -6,6 +6,7 @@ class PaymentsController < ApplicationController
 
   def stripe_session
     Stripe.api_key = ENV['STRIPE_SECRET_KEY']
+    # order = Order.find(params[:order_id])
     @stripe_session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       line_items: [{
@@ -21,4 +22,10 @@ class PaymentsController < ApplicationController
     )
     return @stripe_session
   end
+
+  # private
+
+  # def payment_params
+  #   params.require(:payment).permit(:order)
+  # end
 end
