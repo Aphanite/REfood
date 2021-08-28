@@ -9,7 +9,7 @@ class SupermarketsController < ApplicationController
     end
 
     # geolocation markers
-     @markers = @supermarkets.geocoded.map do |supermarket|
+     @markers = @supermarkets.map do |supermarket|
       {
         lat: supermarket.latitude,
         lng: supermarket.longitude,
