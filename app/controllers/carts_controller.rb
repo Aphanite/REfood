@@ -1,5 +1,5 @@
 class CartsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:adjust_cart, :show]
+  skip_before_action :authenticate_user!, only: [:adjust_cart, :show, :empty_cart]
 
   def adjust_cart
     init_cart
@@ -18,6 +18,10 @@ class CartsController < ApplicationController
 
   def show
     @cart = session[:cart]
+  end
+
+  def empty_cart
+    session[:cart] = []
   end
 
   private
