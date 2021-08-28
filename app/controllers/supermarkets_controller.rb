@@ -13,6 +13,7 @@ class SupermarketsController < ApplicationController
       {
         lat: supermarket.latitude,
         lng: supermarket.longitude,
+        info_window: { content: render_to_string(partial: "/supermarkets/info_window", locals: { supermarket: supermarket }) }
       }
     end
   end
