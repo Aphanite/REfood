@@ -1,7 +1,7 @@
 
-export const adjustCount = (productId, offset) => {
+export const adjustCount = (productId, supermarketId, offset) => {
   const csrfToken = document.querySelector("[name='csrf-token']").content
-  const data = { productId, offset };
+  const data = { productId, supermarketId, offset };
   console.log(data);
 
   fetch('/json/adjust_cart', {
