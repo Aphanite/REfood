@@ -25,7 +25,14 @@ require("channels")
 // External imports
 import "bootstrap";
 
+
 // Internal imports, e.g:
+import { initMapbox } from '../plugins/init_mapbox';
+
+// document.addEventListener('turbolinks:load', () => {
+ initMapbox();
+// })
+
 // import { initSelect2 } from '../components/init_select2';
 import { renderPage, bindToggleButtons } from '../components/_toggle_display';
 import { bindCounterButton } from '../components/_update_counter';
