@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show, :confirm]
+  skip_before_action :authenticate_user!, only: [:index, :show, :confirm, :new]
   
   def index
     @orders = policy_scope(Order).order(created_at: :desc)
@@ -11,7 +11,6 @@ class OrdersController < ApplicationController
   end
 
   def new
-    @product = Product.find(params[:garden_id])
     @order = Order.new
     authorize @order
   end
