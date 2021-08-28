@@ -17,7 +17,8 @@ export const adjustCount = (productId, offset) => {
     console.log('Success:', data);
     if (true)
     {
-      alert("You need to be logged in to perform this action.")
+      $('#exampleModal').modal()
+      // alert(`${data.product} got added to your cart ${data.amount} times`)
     }
   })
   .catch((error) => {

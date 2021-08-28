@@ -8,10 +8,16 @@
 
       <div data-name="supermarkets">
         <% @supermarkets.each do |supermarket| %>
-          <div class="supermarket-card">
-            <div class="supermarket-card__logo">
-              <%= image_tag "rewe_logo.png"%>
-            </div>
+          <% if supermarket.name == "Rewe" %>
+            <div class="supermarket-card">
+              <div class="supermarket-card__rewe">
+                <%= image_tag "#{supermarket.name.downcase}_logo.png"%>
+          <% else %>
+            <div class="supermarket-card">
+              <div class="supermarket-card__logo">
+                <%= image_tag "#{supermarket.name.downcase}_logo.png"%>
+          <% end %>
+          </div>
             <div class="supermarket-card__info">
               <span class="supermarket-card__info__city"><%= supermarket.name %></span>
               <span class="supermarket-card__info__address"><%= supermarket.address %></span>
@@ -42,8 +48,8 @@
                     </div>
                     <div class="product-card__info__body">
                       <div class="product-card__info__body__prices">
-                        <span class="product-card__info__body__prices__discount"><%= product.discounted_price %></span>
-                        <span class="product-card__info__body__prices__normal"><%= product.full_price %></span>
+                        <span class="product-card__info__body__prices__discount"><%= humanized_money_with_symbol(product.discounted_price) %></span>
+                        <span class="product-card__info__body__prices__normal"><%= humanized_money_with_symbol(product.full_price) %></span>
                       </div>
                       <button class="product-card__info__body__button"><i class="fas fa-shopping-cart" style="color: white;"></i></button>
                     </div>

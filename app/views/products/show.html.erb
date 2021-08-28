@@ -1,9 +1,13 @@
-
-  <% if @product.category == "Fruits" %>
-    <img class="product-image" src="https://source.unsplash.com/featured/?fruit?orientation=squarish">
-  <% else %>
-    <img class="product-image" src="https://source.unsplash.com/featured/?vegetable?orientation=squarish">
+<div class="navbar-top">
+  <%= link_to supermarket_path(@product.supermarket) do %>
+    <i class="fas fa-chevron-left"></i>
   <% end %>
+  <%= link_to cart_path do %>
+    <i class="fas fa-shopping-cart"></i>
+  <% end %>
+</div>
+
+<%= image_tag "#{@product.category.downcase}/#{@product.name.downcase}.jpg", :class => "product-image" %>
 
 <div class="product-content">
   <div class="product-information">
@@ -24,7 +28,10 @@
       </div>
      </div>
 
-    <h2 class="product-unit"><%= @product.unit %></h2>
+    <div class="d-flex justify-content-between">
+      <h2 class="product-unit"><%= @product.unit %></h2>
+      <h2 class="product-unit">Buy before: <%= @product.best_before_date.strftime("%B %e") %></h2>
+    </div>
 
     <div class="product-info pt-2">
       <h2 class="product-text">Description</h2>
@@ -41,6 +48,8 @@
   </div>
   <div class="product-btn product-cart-btn">Add to cart</div>
 </div>
+
+<%= render "shared/modal" %>
 
 <script>
   product_id=<%= @product.id %>
