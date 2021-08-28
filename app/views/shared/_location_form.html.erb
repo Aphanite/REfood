@@ -1,21 +1,15 @@
 <style>body{background: #E6F6E7}</style>
-
 <div class="location-form">
   <div class="logo-left-corner">
     <%= image_tag "refood-logo-no-text.png", :size => "100x100" %>
   </div>
-  <h2>Choose a location to see <br>what's available</h2>
+    <h2>Choose a location to see <br>what's available</h2>
   <div class="form-container">
     <%= form_tag supermarkets_path, method: :get do %>
-      <div class="form-control">
-          <%= text_field_tag :query, params[:query], placeholder: "Search for a city" %>
-            <button name="button" type="submit" class="btn btn-icon"><i class="fas fa-search"></i>
-
-</button>
+    <div class="form-control">
+      <%= text_field_tag :query, params[:query], placeholder: "Search for a city" %>
+    <button name="button" type="submit" class="btn btn-icon"><i class="fas fa-search"></i></button>
     <% end %>
     </div>
   </div>
 </div>
-
-
-
