@@ -25,6 +25,8 @@ gem 'faker'
 gem 'money-rails'
 gem 'stripe'
 
+gem 'pg_search', '~> 2.3.0'
+
 gem 'pundit'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

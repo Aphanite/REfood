@@ -2,7 +2,11 @@ class SupermarketsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @supermarkets = policy_scope(Supermarket).order(name: :desc)
+    if params[:query].present?
+      @supermarkets = policy_scope(Supermarket).search_by_address(params[:query])
+    else
+      @supermarkets = policy_scope(Supermarket).order(name: :desc)
+    end
   end
 
   def show

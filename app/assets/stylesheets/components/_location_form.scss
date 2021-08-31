@@ -1,0 +1,61 @@
+.location-form {
+  display: none;
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  background:#E6F6E7;
+  z-index: 10;
+}
+
+
+.location-form h2 {
+  font-family: Mulish;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 100px;
+}
+
+.logo-left-corner {
+  text-align: right
+}
+
+
+.form-container {
+  position: relative;
+}
+
+
+.form-container .form-control {
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  background-color:white;
+  border: none;
+  border-radius: 33px;
+  margin-top: 100px;
+  width: 60%;
+  margin-left: 80px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+}
+
+input {
+  padding-left: 8px;
+  width: 100%;
+  opacity: 0.7;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  text-align: center;
+  }
+
+  .btn-icon {
+    width: 50px !important;
+    height: 50px !important;
+  }
+
+  .fa-search:before {
+  content: "\f002";
+  }
+
