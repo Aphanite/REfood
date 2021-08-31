@@ -2,7 +2,7 @@ import flatpickr from "flatpickr";
 
 const chooseDate = () => {
   console.log("Init flatpickr");
-  flatpickr("#pickupDate", {
+  flatpickr(".pickupDate", {
     altInput: true,
     altFormat: "F j, Y",
     dateFormat: "Y-m-d",
@@ -13,7 +13,7 @@ const chooseDate = () => {
 
 
 const chooseTime = () => {
-  flatpickr("#pickup-time", {
+  flatpickr(".pickupTime", {
     enableTime: true,
     noCalendar: true,
     dateFormat: "H:i",
@@ -27,6 +27,7 @@ export const addPickUpSlot = () => {
   const pickUpContainer = document.getElementById("pickupContainer");
   if (pickUpContainer) {
     console.log("WE are IN");
+    // document.getElementById('booking_form')
     chooseDate();
     chooseTime();
   }

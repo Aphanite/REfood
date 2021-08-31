@@ -1,70 +1,41 @@
 <!--  <span class="check1"><i class="fa fa-check"></i></span> -->
 <body style="background: #eaf9ec;">
-    <div class="order-container">
-      <div class="order__header" style="font-size: 28px;">Choose your pickup slot</div>
-
+  <div class="order-dates-container">
+    <div class="order__header" style="font-size: 28px; margin-left: 0;">Pickup time</div>
+    <div class="order__dates">
       <% grouped_session = session[:cart].group_by { |p| p["supermarketId"].itself } %>
-      <% grouped_session.each do  |group| %>
-        <%= Supermarket.find(group[0]).name %>
-        <% dates = group[1].map do |item| %>
-          <% Product.find(item["productId"]).best_before_date %>
-        <% end %>
-        <%= dates %>
-        <%= dates.min %>
-      <% end %>
-<!--
-      <form action="/orders" method="POST" id="pickup-container">
-        <div>
-          <label for="pickup-date">Date</label>
-          <input name="pickup-date" id="pickup-date" value="" placeholder="Add pickup date">
-        </div>
-        <div>
-          <label for="pickup-time">Time</label>
-          <input name="pickup-time" id="pickup-time" value="" placeholder="Add pickup time">
-        </div>
-        <div>
-          <button>Go to payment</button>
-        </div> -->
-<!--       </form> -->
-
       <%= simple_form_for :order, url: orders_path, html: { id: :pickupContainer } do |f| %>
-        <%= f.label :pickupDate, "Date" %>
-        <%= f.input :pickupDate, as: :string, required: false, input_html: { id: "pickupDate" } %>
-      <% end %>
-
-       <!-- initialize total price and discount -->
-      <% total_price = 0 %>
-      <% discount = 0 %>
-      <div class="order__content">
-        <% session[:cart].each do |item| %>
-          <% product = Product.find(item["productId"]) %>
-          <!-- increment total price and discount by the amount spent/saved for current product -->
-          <% total_price += product.discounted_price * item["offset"]%>
-          <% discount += (product.full_price - product.discounted_price) * item["offset"]%>
+        <% grouped_session.each do  |group| %>
+          <% supermarket = Supermarket.find(group[0])%>
+          <div class="d-flex">
+            <div class="order-collection-point">
+              <hr>
+              <div class="d-flex">
+                <div class="icon d-flex" style="align-items: center; margin-right: 12px; font-size: 28px;">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="location-info">
+                  <p style="font-weight: bold;"><%= supermarket.name%></p>
+                  <p><%= supermarket.address%></p>
+                </div>
+              </div>
+              <hr>
+            </div>
+          </div>
+          <% dates = group[1].map do |item| %>
+            <% Product.find(item["productId"]).best_before_date %>
+          <% end %>
+          <p>Book a slot</p>
+<!--             <%= dates %>
+          <%= dates.min.class %> -->
+          <%= f.input "", as: :string, required: true, label: false, input_html: { class: "pickupDate", id: "date-#{supermarket.id}",  name: "order[date-#{supermarket.id}]", placeholder: "Date", :data => {:date => dates.min } }%>
+          <%= f.input "", as: :string, required: true, label: false, input_html: { class: "pickupTime", id: "time-#{supermarket.id}", name: "order[time-#{supermarket.id}]", placeholder: "Time" } %>
         <% end %>
-      </div>
-
-      <div class="order__checkout" style="background: #eaf9ec;">
-        <hr style="border: 0.5px solid #000000;">
-        <div class="p-1">
-          <div class="d-flex justify-content-between mt-2">
-            <h5 style="font-weight: bold; font-size: 22px;">Total</h5>
-            <h5 style="font-weight: bold; font-size: 22px;"><%= humanized_money_with_symbol(total_price) %></h5>
-          </div>
-          <div class="d-flex justify-content-between">
-            <h5>You save!</h5>
-            <h5><%= humanized_money_with_symbol(discount) %></h5>
-          </div>
-          <div class="d-flex justify-content-between">
-            <h5 style="color: #079145;">You gain!</h5>
-            <h5 style="color: #079145;">5 points</h5>
-          </div>
-        </div>
         <div class="d-flex justify-content-center">
-  <!--         <button class="btn-gradient">Go to checkout</button> -->
-          <%= link_to "Go to checkout", confirm_path, class: "btn-gradient" %>
+          <%= f.submit "Save and go to payment", class: "btn-gradient" %>
         </div>
-      </div>
+      <% end %>
+    </div>
   </div>
 
 
