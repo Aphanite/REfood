@@ -4,9 +4,9 @@ class SupermarketsController < ApplicationController
   def index
      if params[:query].present?
       @supermarkets = policy_scope(Supermarket).search_by_address(params[:query])
-    else
+     else
       @supermarkets = policy_scope(Supermarket).order(name: :desc)
-    end
+     end
     # geolocation markers
      @markers = @supermarkets.geocoded.map do |supermarket|
       {
@@ -14,7 +14,7 @@ class SupermarketsController < ApplicationController
         lng: supermarket.longitude,
         info_window: { content: render_to_string(partial: "/supermarkets/info_window", locals: { supermarket: supermarket }) }
       }
-    end
+     end
   end
 
   def show
