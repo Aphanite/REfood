@@ -35,8 +35,12 @@ import { initMapbox } from '../plugins/init_mapbox';
 
 // import { initSelect2 } from '../components/init_select2';
 import { renderPage, bindToggleButtons } from '../components/_toggle_display';
+
+import '../components/_location_form';
+
 import { bindCounterButton } from '../components/_update_counter';
 // import { initCart } from '../cart';
+
 
 // initCart();
 
