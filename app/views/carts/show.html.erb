@@ -6,37 +6,41 @@
       <% total_price = 0 %>
       <% discount = 0 %>
       <div class="order__content">
-        <% session[:cart].each do |item| %>
-          <% product = Product.find(item["productId"]) %>
-          <!-- increment total price and discount by the amount spent/saved for current product -->
-          <% total_price += product.discounted_price * item["offset"]%>
-          <% discount += (product.full_price - product.discounted_price) * item["offset"]%>
-          <!-- get details from all items in session cart -->
-          <div class="order__content__item">
-            <%= image_tag "#{product.category.downcase}/#{product.name.downcase}.jpg"%>
-            <div class="order__content__item__info">
-              <div class="order__content__item__info__header">
-                <h2><%= product.name %></h2>
-                <span><%= product.unit %></span>
+        <% grouped_session = session[:cart].group_by { |p| p["supermarketId"].itself } %>
+        <% grouped_session.each do  |group| %>
+          <%= Supermarket.find(group[0]).name %>
+          <% group[1].each do |item| %>
+            <% product = Product.find(item["productId"]) %>
+            <!-- increment total price and discount by the amount spent/saved for current product -->
+            <% total_price += product.discounted_price * item["offset"]%>
+            <% discount += (product.full_price - product.discounted_price) * item["offset"]%>
+            <!-- get details from all items in session cart -->
+            <div class="order__content__item">
+              <%= image_tag "#{product.category.downcase}/#{product.name.downcase}.jpg"%>
+              <div class="order__content__item__info">
+                <div class="order__content__item__info__header">
+                  <h2><%= product.name %></h2>
+                  <span><%= product.unit %></span>
+                </div>
+                  <p>best before <%= product.best_before_date.strftime("%B %e") %></p>
+                  <p style="color: #079145; font-size: 16px; font-weight: normal; margin-top: 8px;"><%= humanized_money_with_symbol(product.discounted_price) %></p>
               </div>
-                <p>best before <%= product.best_before_date.strftime("%B %e") %></p>
-                <p style="color: #079145; font-size: 16px; font-weight: normal; margin-top: 8px;"><%= humanized_money_with_symbol(product.discounted_price) %></p>
+              <!-- counter + amount display -->
+              <div class="d-flex flex-column" style="margin-left:18px;">
+                <div style="text-align: center;">
+                  <button class ="plus-button incrementer" type="button" data-offset="1" style="margin: 0;">
+                    <i id="plus-icon" class="fa fa-plus" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <span id="counter" data-count="1" style="font-size: 14px; margin: 4px 0; text-align: center;"><%= item["offset"] %></span>
+                <div style="text-align: center;">
+                  <button class="minus-button incrementer minus" type="button" data-offset="-1" style="margin-right: 0;">
+                    <i id="minus-icon" class="fa fa-minus" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
             </div>
-            <!-- counter + amount display -->
-            <div class="d-flex flex-column" style="margin-left:18px;">
-              <div style="text-align: center;">
-                <button class ="plus-button incrementer" type="button" data-offset="1" style="margin: 0;">
-                  <i id="plus-icon" class="fa fa-plus" aria-hidden="true"></i>
-                </button>
-              </div>
-              <span id="counter" data-count="1" style="font-size: 14px; margin: 4px 0; text-align: center;"><%= item["offset"] %></span>
-              <div style="text-align: center;">
-                <button class="minus-button incrementer minus" type="button" data-offset="-1" style="margin-right: 0;">
-                  <i id="minus-icon" class="fa fa-minus" aria-hidden="true"></i>
-                </button>
-              </div>
-            </div>
-          </div>
+          <% end %>
         <% end %>
       </div>
     <div class="order__checkout">
