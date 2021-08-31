@@ -7,8 +7,6 @@ class SupermarketsController < ApplicationController
     else
       @supermarkets = policy_scope(Supermarket).order(name: :desc)
     end
-  end
-
     # geolocation markers
      @markers = @supermarkets.geocoded.map do |supermarket|
       {
