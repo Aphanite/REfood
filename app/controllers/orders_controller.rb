@@ -19,15 +19,18 @@ class OrdersController < ApplicationController
     my_params = order_params(supermarkets)
     order = Order.new()
     # assign user
-    current_user ? order.user = current_user : order.user = User.find(1)
+    current_user ? order.user = current_user : order.user = User.find_by(email: "florian@fake.com")
+    # init json
     pickup_dates = {}
     supermarkets.each do |s|
       pickup_dates["#{s}"] = [ my_params["date-#{s}"], my_params["time-#{s}"] ]
     end
     order.pick_up_slots = pickup_dates
     order.save!
+    # make associated ordered items
     make_ordered_items(order)
-    # redirect_to
+
+    redirect_to new_order_payment_path(order)
   end
 
   def confirm
@@ -59,7 +62,7 @@ class OrdersController < ApplicationController
   def make_ordered_items(order)
     session[:cart].each do |item|
       item["offset"].times do
-        OrderedItem.create!(order: order, product: item["productId"])
+        OrderedItem.create!(order: order, product: Product.find(item["productId"]))
       end
     end
   end

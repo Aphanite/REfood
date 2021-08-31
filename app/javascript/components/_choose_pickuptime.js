@@ -1,13 +1,15 @@
 import flatpickr from "flatpickr";
 
-const chooseDate = () => {
-  console.log("Init flatpickr");
-  flatpickr(".pickupDate", {
+const chooseDate = (dateInput) => {
+  console.log('chooseDate', dateInput)
+  const maxDate = dateInput.dataset.maxdate
+
+  flatpickr(dateInput, {
     altInput: true,
     altFormat: "F j, Y",
     dateFormat: "Y-m-d",
     minDate: "today",
-    // maxDate: best_before_date
+    maxDate: maxDate
   })
 };
 
@@ -24,11 +26,20 @@ const chooseTime = () => {
 
 
 export const addPickUpSlot = () => {
+  console.log('addPickUpSlot')
   const pickUpContainer = document.getElementById("pickupContainer");
   if (pickUpContainer) {
-    console.log("WE are IN");
-    // document.getElementById('booking_form')
-    chooseDate();
-    chooseTime();
+    const dateInputs = Array.from(document.getElementsByClassName('pickupDate'));
+    for (const dateInput of dateInputs) {
+      chooseDate(dateInput);
+      chooseTime();
+    }
   }
+
+
+  // const pickUpContainer = document.getElementById("pickupContainer");
+  // if (pickUpContainer) {
+    // console.log("WE are IN");
+    // document.getElementById('booking_form')
+  // }
 }
