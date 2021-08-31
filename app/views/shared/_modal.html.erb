@@ -11,6 +11,7 @@
         <%= @product.name %> was added to your cart.
       </div>
       <div class="modal-footer">
+        <%= link_to "Homepage", supermarkets_path, class: "product-btn-modal" %>
         <%= link_to "View cart", cart_path, class: "product-btn" %>
       </div>
     </div>
