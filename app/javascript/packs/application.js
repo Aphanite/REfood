@@ -32,6 +32,7 @@ import { bindCounterButton } from '../components/_update_counter';
 import { addPickUpSlot } from '../components/_choose_pickuptime';
 import { initMapbox } from '../plugins/init_mapbox';
 import '../components/_location_form';
+import { bindCartButtons } from '../components/_change_count';
 
 // document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -41,5 +42,6 @@ import '../components/_location_form';
   bindCounterButton();
   addPickUpSlot();
   initMapbox();
+  bindCartButtons();
 
 // });

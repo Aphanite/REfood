@@ -1,5 +1,5 @@
 class CartsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:adjust_cart, :show, :empty_cart]
+  skip_before_action :authenticate_user!, only: [:adjust_cart, :show, :empty_cart, :change_cart_count]
 
   def adjust_cart
     init_cart
@@ -22,6 +22,17 @@ class CartsController < ApplicationController
 
   def empty_cart
     session[:cart] = []
+  end
+
+  def change_cart_count
+    product_id = params[:cart]["productId"]
+    cart_item = session[:cart].find do |i|
+      i["productId"] == product_id
+    end
+    cart_item["offset"] = params[:cart]["newCount"]
+    # puts cart_item
+    # puts session[:cart]
+    render json: { success: true, count: cart_item["offset"] }
   end
 
   private
