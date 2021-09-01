@@ -39,6 +39,6 @@ class ApplicationController < ActionController::Base
   end
 
   def is_desktop_path_or_development?
-    request.fullpath == "/desktop" || Rails.env.development
+    request.fullpath == "/desktop" || Rails.env.development?
   end
 end
