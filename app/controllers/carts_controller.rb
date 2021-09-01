@@ -29,9 +29,13 @@ class CartsController < ApplicationController
     cart_item = session[:cart].find do |i|
       i["productId"] == product_id
     end
-    cart_item["offset"] = params[:cart]["newCount"]
-    # puts cart_item
-    # puts session[:cart]
+
+    if params[:cart]["newCount"] == 0
+      session[:cart].delete(cart_item)
+    else
+      cart_item["offset"] = params[:cart]["newCount"]
+    end
+
     render json: { success: true, count: cart_item["offset"] }
   end
 
@@ -47,7 +51,6 @@ class CartsController < ApplicationController
     session[:cart].each do |product|
       # if yes, update count of exisiting product and return true
       if product["productId"] == params[:cart]["productId"]
-        puts "entered if clause"
         product["offset"] += params[:cart]["offset"]
         return true
       end
