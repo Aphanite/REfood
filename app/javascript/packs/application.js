@@ -27,22 +27,11 @@ import "bootstrap";
 
 
 // Internal imports, e.g:
-import { initMapbox } from '../plugins/init_mapbox';
-
-// document.addEventListener('turbolinks:load', () => {
- initMapbox();
-// })
-
-// import { initSelect2 } from '../components/init_select2';
 import { renderPage, bindToggleButtons } from '../components/_toggle_display';
-
-import '../components/_location_form';
-
 import { bindCounterButton } from '../components/_update_counter';
-// import { initCart } from '../cart';
-
-
-// initCart();
+import { addPickUpSlot } from '../components/_choose_pickuptime';
+import { initMapbox } from '../plugins/init_mapbox';
+import '../components/_location_form';
 
 // document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -50,4 +39,7 @@ import { bindCounterButton } from '../components/_update_counter';
   renderPage();
   bindToggleButtons();
   bindCounterButton();
+  addPickUpSlot();
+  initMapbox();
+
 // });
