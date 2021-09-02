@@ -9,7 +9,8 @@ const chooseDate = (dateInput) => {
     altFormat: "F j, Y",
     dateFormat: "Y-m-d",
     minDate: "today",
-    maxDate: maxDate
+    maxDate: maxDate,
+    disableMobile: true
   })
 };
 
@@ -21,6 +22,7 @@ const chooseTime = () => {
     dateFormat: "H:i",
     minTime: "08:00",
     maxTime: "20:00",
+    disableMobile: true
   })
 }
 
