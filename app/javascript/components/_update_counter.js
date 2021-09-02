@@ -29,5 +29,5 @@ const handleButtonClick = (event) => {
 };
 
 const handleAddToCart = () => {
-  adjustCount(window.product_id, counter);
+  adjustCount(window.product_id, window.supermarket_id, counter);
 }

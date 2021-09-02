@@ -1,45 +1,8 @@
 // Specific CSS for your home-page
 
-// body {
-//   background:#E6F6E7;
-// }
-
-.home-container {
-  position: relative;
-  width: 100%;
-}
-
-.logo-container {
-  margin: 0 auto 6rem auto;
-  overflow: hidden;
-  position: relative;
-}
-
-.panel {
-  width: 100%;
-  padding: 6rem 2rem 0 2rem;
-  position: relative;
-  text-align: center;
-  z-index: 2;
-}
-
-
-.panel__main {
-  font-size: 28px;
-  font-family: 'Mulish';
-  font-style: normal;
-  font-weight: bold;
-  line-height: 35px;
-  text-align: center;
-}
-
 .button-homepage {
-  // width: 237px;
-  // height: 56px;
   width: 70%;
   height: 56px;
-  // left: 89px;
-  // top: 792px;
   background: linear-gradient(276.66deg, #079145 44.5%, rgba(102, 198, 75, 0.48) 95.66%);
   border-radius: 33px;
   color: white;
@@ -49,10 +12,7 @@
   margin-top: 90px;
   line-height: 56px;
   text-align: center;
-
 }
-
-
 
 
 // Enas styles
@@ -62,7 +22,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 36px 24px;
+   margin: 36px 24px;
 
   a {
     text-decoration: none;
