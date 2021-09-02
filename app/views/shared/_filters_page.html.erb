@@ -1,5 +1,29 @@
 <div class="filters-top-page hidden">
-  <i class="fas fa-chevron-left"></i>
-  <h1>Filter</h1>
-  <h2>Clear all</h2>
+  <div class="navbar-top-filters">
+    <i class="fas fa-chevron-left"></i>
+    <h1>Filter</h1>
+    <h2>Clear all</h2>
+  </div>
+
+  <div class="filter-categories">
+    <div class="filter-title">
+      Categories
+    </div>
+      <div class="filter-categories-elements">
+        <div>All (<%= @supermarket.products.count %>)</div>
+        <div>Fruits ()</div>
+        <div>Vegetables ()</div>
+        <div>Meat/Fish ()</div>
+        <div>Dairy ()</div>
+      </div>
+  </div>
+
+  <div class="filter-title">
+    Best before date
+  </div>
+
+  <div class="button-homepage buttons">
+    Apply
+  </div>
 </div>
+
