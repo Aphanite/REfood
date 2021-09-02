@@ -15,17 +15,22 @@ class OrdersController < ApplicationController
   end
   
   def create
-    supermarkets = get_supermarkets(get_grouped_session)
-    my_params = order_params(supermarkets)
     order = Order.new()
-    # assign user
+    # assign user (preliminary solution)
     current_user ? order.user = current_user : order.user = User.find_by(email: "florian@fake.com")
-    # init json
+
+    # get supermarkets in cart
+    supermarkets = get_supermarkets(get_grouped_session)
+    # get pickup date and time for each supermarket
+    date_params = order_params(supermarkets)
+
+    # add pickup dates and times to order
     pickup_dates = {}
     supermarkets.each do |s|
-      pickup_dates["#{s}"] = [ my_params["date-#{s}"], my_params["time-#{s}"] ]
+      pickup_dates["#{s}"] = [ date_params["date-#{s}"], date_params["time-#{s}"] ]
     end
     order.pick_up_slots = pickup_dates
+
     order.save!
     # make associated ordered items
     make_ordered_items(order)
@@ -49,6 +54,7 @@ class OrdersController < ApplicationController
 
   end
 
+  # group products in cart by supermarket
   def get_grouped_session
     session[:cart].group_by { |p| p["supermarketId"].itself }
   end
