@@ -9,5 +9,4 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     authorize @product
   end
-
 end

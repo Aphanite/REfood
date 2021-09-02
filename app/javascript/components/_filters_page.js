@@ -6,25 +6,25 @@ filterButton.addEventListener("click", (event) => {
     });
 };
 
-const arrowBackButton = document.querySelector(".fa-chevron-left");
-const oldContent = document.querySelector("inner");
-if (arrowBackButton) {
-arrowBackButton.addEventListener("click", (event) => {
-    document.body.innerHTML = oldContent.innerHTML
-    });
-};
+// const arrowBackButton = document.querySelector(".fa-chevron-left");
+// const oldContent = document.querySelector("inner");
+// if (arrowBackButton) {
+// arrowBackButton.addEventListener("click", (event) => {
+//     document.body.innerHTML = oldContent.innerHTML
+//     });
+// };
 
 
 // TODO: implementing toggle logic on buttons
 
-// const filterEntry = document.querySelectorAll(".filter-entry")
+const filterEntry = document.querySelectorAll(".filter-entry")
 
-// const toggleActiveClass = (event) => {
-//   event.currentTarget.classList.toggle("active")
-// };
+const toggleActiveClass = (event) => {
+  event.currentTarget.classList.toggle("active")
+};
 
-// const toggleActiveOnClick = (item) => {
-//     item.addEventListener("click", toggleActiveClass);
-// };
+const toggleActiveOnClick = (item) => {
+  item.addEventListener("click", toggleActiveClass);
+};
 
-// filterEntry.forEach(toggleActiveOnClick);
+filterEntry.forEach(toggleActiveOnClick);
