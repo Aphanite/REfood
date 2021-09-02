@@ -379,38 +379,36 @@ Product.create!(
 
 puts "Finished creating #{Product.count} new Products"
 
-# creating order instances
-Order.create!(
-  user: User.find_by(name: "Florian"),
-  date: Faker::Date.backward(days: 5)
-)
+# # creating order instances
+# Order.create!(
+#   user: User.find_by(name: "Florian"),
+# )
 
-Order.create!(
-  user: User.find_by(name: "Florian"),
-  date: Faker::Date.backward(days: 4)
-)
+# Order.create!(
+#   user: User.find_by(name: "Florian"),
+# )
 
-puts "Finished creating #{Order.count} new orders"
+# puts "Finished creating #{Order.count} new orders"
 
-# creating ordered_items instances
-OrderedItem.create!(
-  order: Order.last,
-  product: Product.last
-)
+# # creating ordered_items instances
+# OrderedItem.create!(
+#   order: Order.last,
+#   product: Product.last
+# )
 
-OrderedItem.create!(
-  order: Order.last,
-  product: Product.last
-)
+# OrderedItem.create!(
+#   order: Order.last,
+#   product: Product.last
+# )
 
-OrderedItem.create!(
-  order: Order.last,
-  product: Product.last
-)
+# OrderedItem.create!(
+#   order: Order.last,
+#   product: Product.last
+# )
 
-OrderedItem.create!(
-  order: Order.last,
-  product: Product.last
-)
+# OrderedItem.create!(
+#   order: Order.last,
+#   product: Product.last
+# )
 
-puts "Finished creating #{OrderedItem.count} new ordered items"
+# puts "Finished creating #{OrderedItem.count} new ordered items"
