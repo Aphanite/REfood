@@ -31,9 +31,15 @@ class OrdersController < ApplicationController
     end
     order.pick_up_slots = pickup_dates
 
+    prices = get_price_and_discount
+
+    order.total_price = prices[:total_price]
+
     order.save!
     # make associated ordered items
     make_ordered_items(order)
+
+    raise
 
     redirect_to new_order_payment_path(order)
   end
@@ -73,4 +79,15 @@ class OrdersController < ApplicationController
     end
   end
 
+  def get_price_and_discount
+    total_price = 0
+    discount = 0
+    session[:cart].each do |item|
+      product = Product.find(item["productId"])
+      total_price += product.discounted_price * item["offset"]
+      discount += (product.full_price - product.discounted_price) * item["offset"]
+    end
+
+    return {total_price: total_price, discount: discount}
+  end
 end
