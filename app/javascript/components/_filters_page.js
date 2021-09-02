@@ -6,7 +6,7 @@ filterButton.addEventListener("click", (event) => {
     });
 };
 
-// const arrowBackButton = document.querySelector(".fa-chevron-left");
+// const arrowBackButton = document.querySelector(".fa-solid");
 // const oldContent = document.querySelector("inner");
 // if (arrowBackButton) {
 // arrowBackButton.addEventListener("click", (event) => {

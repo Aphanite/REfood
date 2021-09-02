@@ -3,8 +3,7 @@
 }
 
 .navbar-top-filters {
-  z-index: 1000;
-  top: 0;
+  margin: 0 auto;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -47,4 +46,8 @@
 
 .filter-entry.active {
   color: #1EDD88;
+}
+
+.fa-solid {
+  font-size: 24px;
 }
