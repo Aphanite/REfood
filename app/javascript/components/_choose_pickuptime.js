@@ -10,7 +10,17 @@ const chooseDate = (dateInput) => {
     dateFormat: "Y-m-d",
     minDate: "today",
     maxDate: maxDate,
-    disableMobile: true
+    disableMobile: true,
+    disable: [
+        function(date) {
+            // return true to disable
+            return (date.getDay() === 0);
+
+        }
+    ],
+    locale: {
+        "firstDayOfWeek": 1 // start week on Monday
+    }
   })
 };
 
