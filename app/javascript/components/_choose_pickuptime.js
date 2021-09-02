@@ -37,11 +37,4 @@ export const addPickUpSlot = () => {
       chooseTime();
     }
   }
-
-
-  // const pickUpContainer = document.getElementById("pickupContainer");
-  // if (pickUpContainer) {
-    // console.log("WE are IN");
-    // document.getElementById('booking_form')
-  // }
 }
