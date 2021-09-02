@@ -1,19 +1,30 @@
 const filterButton = document.getElementById("filter-button");
-const content = document.querySelector(".filters-top-page");
+const newContent = document.querySelector(".filters-top-page");
 if (filterButton) {
 filterButton.addEventListener("click", (event) => {
-    document.body.innerHTML = content.innerHTML
+    document.body.innerHTML = newContent.innerHTML
     });
-}
+};
 
-const filterEntry = document.querySelectorAll(".filter-entry")
+const arrowBackButton = document.querySelector(".fa-chevron-left");
+const oldContent = document.getElementById("inner");
+if (arrowBackButton) {
+arrowBackButton.addEventListener("click", (event) => {
+    document.body.innerHTML = oldContent.innerHTML
+    });
+};
 
-const toggleActiveClass = (event) => {
-  event.currentTarget.classList.toggle("active")
-}
 
-const toggleActiveOnClick = (item) => {
-    item.addEventListener("click", toggleActiveClass);
-}
+// TODO: implementing toggle logic on buttons
 
-filterEntry.forEach(toggleActiveOnClick);
+// const filterEntry = document.querySelectorAll(".filter-entry")
+
+// const toggleActiveClass = (event) => {
+//   event.currentTarget.classList.toggle("active")
+// };
+
+// const toggleActiveOnClick = (item) => {
+//     item.addEventListener("click", toggleActiveClass);
+// };
+
+// filterEntry.forEach(toggleActiveOnClick);
