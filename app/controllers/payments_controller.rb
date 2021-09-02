@@ -12,7 +12,7 @@ class PaymentsController < ApplicationController
       line_items: [{
         name: "Product",
         description: "Payment",
-        amount: 1000,
+        amount: @order.total_price_cents,
         currency: 'eur',
         quantity: 1,
       }],
