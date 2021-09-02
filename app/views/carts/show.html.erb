@@ -15,7 +15,7 @@
             <% total_price += product.discounted_price * item["offset"]%>
             <% discount += (product.full_price - product.discounted_price) * item["offset"]%>
             <!-- get details from all items in session cart -->
-            <div class="order__content__item">
+            <div class="order__content__item" data-productid=<%= product.id %>>
               <%= image_tag "#{product.category.downcase}/#{product.name.downcase}.jpg"%>
               <div class="order__content__item__info">
                 <div class="order__content__item__info__header">

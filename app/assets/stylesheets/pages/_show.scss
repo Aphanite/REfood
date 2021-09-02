@@ -71,6 +71,13 @@
   text-decoration: none;
 }
 
+.product-btn-modal:hover {
+  color: #464646;
+  border-color: #464646;
+  text-decoration: none;
+
+}
+
 .product-text {
   font-size: 16px;
   font-weight: bold;
@@ -95,19 +102,19 @@
   margin-right: 8px;
   border: none;
   border-radius: 50%;
-  background-color: #E5F4E9;
+  background-color: #c3e5cc;
 }
 
 .plus-button {
   margin-left: 8px;
   border: none;
   border-radius: 50%;
-  background-color: #7DD070;
+  background-color: #079145;
 }
 
 #minus-icon {
-  background-color: #E5F4E9;
-  color: #7DD070;
+  background-color: #c3e5cc;
+  color: #079145;
 }
 
 #plus-icon {
