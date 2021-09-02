@@ -12,7 +12,10 @@ const buildMap = (mapElement) => {
 const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
     const popup = new mapboxgl.Popup().setHTML(marker.info_window.content);
-    new mapboxgl.Marker()
+    element = document.createElement('div');
+    element.className = 'map-logo'
+    element.style.backgroundImage = `url(‘${marker.supermarket.name}.png’)`;
+    new mapboxgl.Marker(element)
       .setLngLat([ marker.lng, marker.lat ])
       .setPopup(popup)
       .addTo(map);
