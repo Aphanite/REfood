@@ -7,7 +7,7 @@ filterButton.addEventListener("click", (event) => {
 };
 
 const arrowBackButton = document.querySelector(".fa-chevron-left");
-const oldContent = document.getElementById("inner");
+const oldContent = document.querySelector("inner");
 if (arrowBackButton) {
 arrowBackButton.addEventListener("click", (event) => {
     document.body.innerHTML = oldContent.innerHTML
