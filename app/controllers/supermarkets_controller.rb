@@ -18,13 +18,24 @@ class SupermarketsController < ApplicationController
   end
 
   def show
+    @category_list = [
+      { slug: "all", text: "All" },
+      { slug: "fruits", text: "Fruit" },
+      { slug: "vegetables", text: "Vegetables" },
+      { slug: "meat-fish", text: "Meat/Fish" },
+      { slug: "dairy", text: "Dairy" }
+    ]
+
     @supermarket = Supermarket.find(params[:id])
     @products = @supermarket.products
-    @category = "all"
-    if params[:query].present?
-      @products = @products.where(category: params[:query])
-      @category = params[:query]
+
+
+    @category = params.fetch("category", "all")
+
+    unless @category == 'all'
+      @products = @products.where(category: @category)
     end
+
     authorize @supermarket
   end
 end

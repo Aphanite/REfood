@@ -8,5 +8,13 @@
     color: #A9A8AB;
     font-size: 14px;
     font-weight: 400;
+
+    a {
+     color: #A9A8AB;
+    }
+
+    a.active {
+      color: #3DD26D;
+    }
   }
 }

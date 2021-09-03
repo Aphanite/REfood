@@ -3,11 +3,21 @@
     <%= render 'shared/supermarket_info'%>
 
     <div class="category-filter">
-      <span style="padding-left: 8px; color:#3DD26D;"><a href="/supermarkets/<%= @supermarket.id %>" data-category="all">All</a></span>
-      <span><a href="/supermarkets/<%= @supermarket.id %>?query=fruits" data-category="fruit">Fruit</a></span>
-      <span><a href="/supermarkets/<%= @supermarket.id %>?query=vegetables" data-category="vegetables">Vegetables</a></span>
-      <span><a href="/supermarkets/<%= @supermarket.id %>?query=meat-fish" data-category="meat-fish">Meat/Fish</a></span>
-      <span><a href="/supermarkets/<%= @supermarket.id %>?query=dairy" data-category="dairy">Dairy</a></span>
+      <% @category_list.each do |cat| %>
+        <span class="<% if cat[:slug] == @category %>active<% end %>">
+          <a href="/supermarkets/<%= @supermarket.id %>?category=<%= cat[:slug] %>">
+            <%= cat[:text] %>
+          </a>
+        </span>
+      <% end %>
+
+      <!-- <span style="padding-left: 8px; color:#3DD26D;">
+        <a href="/supermarkets/<%= @supermarket.id %>">All</a>
+      </span>
+      <span><a href="/supermarkets/<%= @supermarket.id %>?category=fruits">Fruit</a></span>
+      <span><a href="/supermarkets/<%= @supermarket.id %>?category=vegetables">Vegetables</a></span>
+      <span><a href="/supermarkets/<%= @supermarket.id %>?category=meat-fish">Meat/Fish</a></span>
+      <span><a href="/supermarkets/<%= @supermarket.id %>?category=dairy">Dairy</a></span> -->
     </div>
 
     <div id="content-container">
