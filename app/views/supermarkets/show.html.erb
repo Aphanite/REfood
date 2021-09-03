@@ -3,11 +3,11 @@
     <%= render 'shared/supermarket_info'%>
 
     <div class="category-filter">
-      <span style="padding-left: 8px; color:#3DD26D;">All</span>
-      <span>Fruit</span>
-      <span>Vegetable</span>
-      <span>Meat/Fish</span>
-      <span>Dairy</span>
+      <span style="padding-left: 8px; color:#3DD26D;"><a href="/supermarkets/<%= @supermarket.id %>" data-category="all">All</a></span>
+      <span><a href="/supermarkets/<%= @supermarket.id %>?query=fruits" data-category="fruit">Fruit</a></span>
+      <span><a href="/supermarkets/<%= @supermarket.id %>?query=vegetables" data-category="vegetables">Vegetables</a></span>
+      <span><a href="/supermarkets/<%= @supermarket.id %>?query=meat-fish" data-category="meat-fish">Meat/Fish</a></span>
+      <span><a href="/supermarkets/<%= @supermarket.id %>?query=dairy" data-category="dairy">Dairy</a></span>
     </div>
 
     <div id="content-container">
@@ -17,10 +17,10 @@
 
             <div class="supermarket-product-cards">
 
-              <% @supermarket.products.each do |product| %>
+              <% @products.each do |product| %>
                 <div class="product-card">
                   <div class="product-card__image">
-                    <% category = product.category.downcase %>
+                    <% category = product.category %>
                     <% name = product.name.downcase %>
                     <%= image_tag "#{category}/#{name}.jpg"%>
 
@@ -43,7 +43,7 @@
                 </div>
               <% end %>
             </div>
-            <span class="supermarket-product-title">Most popular</span>
+            <span class="supermarket-product-title">Most popular today</span>
             <div class="supermarket-product-cards">
 
               <% @supermarket.products.reverse.each do |product| %>
