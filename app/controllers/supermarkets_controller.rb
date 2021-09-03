@@ -19,6 +19,10 @@ class SupermarketsController < ApplicationController
 
   def show
     @supermarket = Supermarket.find(params[:id])
+    @products = @supermarket.products
+    if params[:query].present?
+      @products = @products.where(category: params[:query])
+    end
     authorize @supermarket
   end
 end
