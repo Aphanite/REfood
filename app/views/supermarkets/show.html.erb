@@ -4,8 +4,8 @@
 
     <div class="category-filter">
       <% @category_list.each do |cat| %>
-        <span class="<% if cat[:slug] == @category %>active<% end %>">
-          <a href="/supermarkets/<%= @supermarket.id %>?category=<%= cat[:slug] %>">
+        <span>
+          <a href="/supermarkets/<%= @supermarket.id %>?category=<%= cat[:slug] %>" class="<% if cat[:slug] == @category %>active<% end %>">
             <%= cat[:text] %>
           </a>
         </span>
