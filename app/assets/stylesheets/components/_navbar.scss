@@ -49,6 +49,8 @@
 
 .cart-count {
   position: absolute;
+  bottom: 8px;
+  left: 14px;
   z-index: 1000;
   width: 30px;
   height: 30px;
@@ -60,14 +62,4 @@
   color: white;
   font-family: "Mulish";
   font-size: 16px;
-}
-
-.cart-count.bottom {
-  bottom: 8px;
-  left: 14px;
-}
-
-.cart-count.top {
-  bottom: 8px;
-  left: 14px;
 }

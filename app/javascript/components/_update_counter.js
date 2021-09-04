@@ -26,6 +26,10 @@ export const bindCounterButton = () => {
   const cartButton = document.getElementsByClassName("product-cart-btn")[0];
   cartButton.addEventListener('click', () => {
     adjustCount(window.product_id, window.supermarket_id, counter);
+
+    const cartIcon = document.querySelector(".cart-count");
+    const itemCount = Number.parseInt(cartIcon.innerText, 10) + counter;
+    cartIcon.innerText = itemCount;
   });
 };
 

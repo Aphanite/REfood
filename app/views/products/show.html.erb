@@ -6,7 +6,7 @@
     <%= link_to cart_path do %>
       <i class="fas fa-shopping-cart" style="position: relative;">
         <% if @cart_count && @cart_count != 0 %>
-          <div class="cart-count top"><%= @cart_count %></div>
+          <div class="cart-count"><%= @cart_count %></div>
         <% end %>
       </i>
     <% end %>
