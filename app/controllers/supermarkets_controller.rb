@@ -32,8 +32,21 @@ class SupermarketsController < ApplicationController
 
     @category = params.fetch("category", "all")
 
-    unless @category == 'all'
+    # unless @category == 'all'
+    #   @products = @products.where(category: @category)
+    # end
+
+    if @category == 'all'
+      el = @category_list.find {|i| i[:slug] == "all"}
+      el[:text] = "All (#{@products.count})"
+    else
       @products = @products.where(category: @category)
+      el = @category_list.find {|i| i[:slug] == @category}
+      if @category == "meat-fish"
+        el[:text] = "Meat/Fish (#{@products.count})"
+      else
+        el[:text] = "#{@category.capitalize} (#{@products.count})"
+      end
     end
 
     authorize @supermarket
