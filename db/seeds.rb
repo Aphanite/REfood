@@ -525,6 +525,83 @@ Product.create!(
     supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
     )
 
+# NEW DAIRY PRODUCTS
+
+unit = [250, 500, 750, 1000].sample
+full_price_dairy = rand(150..300)
+full_price_per_kg = full_price_dairy
+Product.create!(
+    name: "Ice Cream",
+    description: "Ice cream is a frozen dairy dessert obtained by freezing the ice cream mix with continuous agitation. It contains milk products, sweetening materials, stabilizers, colors, flavors, and egg products.",
+    full_price_cents: full_price_per_kg * (unit / 1000.0),
+    discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
+    best_before_date: Faker::Date.forward(days: 5),
+    category: category,
+    amount: rand(1..10),
+    unit: "#{unit}g",
+    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
+    )
+
+unit = [250, 500, 750, 1000].sample
+full_price_dairy = rand(150..300)
+full_price_per_kg = full_price_dairy
+Product.create!(
+    name: "Ice Cream",
+    description: "Ice cream is a frozen dairy dessert obtained by freezing the ice cream mix with continuous agitation. It contains milk products, sweetening materials, stabilizers, colors, flavors, and egg products.",
+    full_price_cents: full_price_per_kg * (unit / 1000.0),
+    discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
+    best_before_date: Faker::Date.forward(days: 5),
+    category: category,
+    amount: rand(1..10),
+    unit: "#{unit}g",
+    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
+    )
+
+unit = [250, 500, 750, 1000].sample
+full_price_dairy = rand(150..300)
+full_price_per_kg = full_price_dairy
+Product.create!(
+    name: "Ice Cream",
+    description: "Ice cream is a frozen dairy dessert obtained by freezing the ice cream mix with continuous agitation. It contains milk products, sweetening materials, stabilizers, colors, flavors, and egg products.",
+    full_price_cents: full_price_per_kg * (unit / 1000.0),
+    discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
+    best_before_date: Faker::Date.forward(days: 5),
+    category: category,
+    amount: rand(1..10),
+    unit: "#{unit}g",
+    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
+    )
+
+unit = [250, 500, 750, 1000].sample
+full_price_dairy = rand(150..300)
+full_price_per_kg = full_price_dairy
+Product.create!(
+    name: "Ice Cream",
+    description: "Ice cream is a frozen dairy dessert obtained by freezing the ice cream mix with continuous agitation. It contains milk products, sweetening materials, stabilizers, colors, flavors, and egg products.",
+    full_price_cents: full_price_per_kg * (unit / 1000.0),
+    discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
+    best_before_date: Faker::Date.forward(days: 5),
+    category: category,
+    amount: rand(1..10),
+    unit: "#{unit}g",
+    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
+    )
+
+unit = [250, 500, 750, 1000].sample
+full_price_dairy = rand(150..300)
+full_price_per_kg = full_price_dairy
+Product.create!(
+    name: "Ice Cream",
+    description: "Ice cream is a frozen dairy dessert obtained by freezing the ice cream mix with continuous agitation. It contains milk products, sweetening materials, stabilizers, colors, flavors, and egg products.",
+    full_price_cents: full_price_per_kg * (unit / 1000.0),
+    discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
+    best_before_date: Faker::Date.forward(days: 5),
+    category: category,
+    amount: rand(1..10),
+    unit: "#{unit}g",
+    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
+    )
+
 puts "Finished creating #{Product.count} new Products"
 
 # # creating order instances
