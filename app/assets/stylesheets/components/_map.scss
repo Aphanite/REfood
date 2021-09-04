@@ -1,8 +1,10 @@
-.mapboxgl-marker {
-  border-radius: 50%;
-  cursor: pointer;
+.mapboxgl-popup-content {
+  text-align: center;
 }
 
 
 
-
+.mapboxgl-canvas {
+  width: 450px !important;
+  height: 450px !important;
+}

@@ -11,17 +11,8 @@ const buildMap = (mapElement) => {
 
 const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
-    const popup = new mapboxgl.Popup().setHTML(marker.info_window);
-    const element = document.createElement('div');
-     element.className = 'marker';
-     element.style.backgroundImage = `url('${marker.image_url}')`;
-     element.style.backgroundSize = '100% 100%';
-     element.style.backgroundPosition = 'center center';
-     element.style.backgroundRepeat = 'no-repeat';
-     element.style.width = '30px';
-     element.style.height = '30px';
-
-    new mapboxgl.Marker(element)
+    const popup = new mapboxgl.Popup().setHTML(marker.info_window.content);
+    new mapboxgl.Marker()
       .setLngLat([ marker.lng, marker.lat ])
       .setPopup(popup)
       .addTo(map);
@@ -46,5 +37,4 @@ const initMapbox = () => {
 };
 
 export { initMapbox };
-
 
