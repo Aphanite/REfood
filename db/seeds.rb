@@ -58,7 +58,7 @@ full_price_vegetables = rand(250..450)
 full_price_per_kg = full_price_vegetables
 Product.create!(
     name: "Tomatoes",
-    description: "Tomatoes are the Germans' favorite vegetable. From a botanical point of view, they belong to the berries. As a nightshade plant, they are a warmth-loving plant. Although tomatoes come in many shapes, the round ones are the most common in the world. Mainly from Spain, Italy, France, the Netherlands and Morocco. Fruity, piquant and spicy. Particularly suitable for salads.",
+    description: "Tomatoes are the major dietary source of the antioxidant lycopene, which has been linked to many health benefits, including reduced risk of heart disease and cancer. They are also a great source of vitamin C, potassium, folate, and vitamin K.",
     full_price_cents: full_price_per_kg * unit / 1000.0,
     discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
     best_before_date: Faker::Date.forward(days: 5),
@@ -73,7 +73,7 @@ full_price_vegetables = rand(250..450)
 full_price_per_kg = full_price_vegetables
 Product.create!(
     name: "Cucumbers",
-    description: "Cucumbers belong to the cucurbit family. Originally coming from the tropics, they have high temperature requirements and are almost exclusively planted in greenhouses. The fruits are about 30-40 cm long, slender and tapered at the ends. The skin is usually smooth and dark in color. Mainly grown in Greece, Spain, the Netherlands, Belgium and Germany.",
+    description: "Cucumbers are good sources of phytonutrients (plant chemicals that have protective or disease preventive properties) such flavonoids, lignans and triterpenes, which have antioxidant, anti-inflammatory and anti-cancer benefits.",
     full_price_cents: full_price_per_kg * (unit / 1000.0),
     discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
     best_before_date: Faker::Date.forward(days: 5),
@@ -88,7 +88,7 @@ full_price_vegetables = rand(250..450)
 full_price_per_kg = full_price_vegetables
 Product.create!(
     name: "Beets",
-    description: "Beets, or beetroots, are jewel-toned root vegetables. The leaves and roots of beets are packed with nutrition, including antioxidants that fight cell damage and reduce the risk of heart disease. They’re one of the few vegetables that contain betalains, a powerful antioxidant that gives beets their vibrant color.",
+    description: "Packed with essential nutrients, beetroots are a great source of fiber, folate (vitamin B9), manganese, potassium, iron, and vitamin C. Beetroots and beetroot juice have been associated with numerous health benefits, including improved blood flow, lower blood pressure, and increased exercise performance.",
     full_price_cents: full_price_per_kg * (unit / 1000.0),
     discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
     best_before_date: Faker::Date.forward(days: 5),
@@ -103,7 +103,7 @@ full_price_vegetables = rand(250..450)
 full_price_per_kg = full_price_vegetables
 Product.create!(
     name: "Peas",
-    description: "Green peas, or garden peas, are the small, spherical seeds that come from pods produced by the Pisum sativum plant.",
+    description: "The high concentration of vitamins, minerals, antioxidants, and phytonutrients in peas provides important health benefits that range from keeping your eyes healthy to protecting you against certain cancers.",
     full_price_cents: full_price_per_kg * (unit / 1000.0),
     discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
     best_before_date: Faker::Date.forward(days: 5),
@@ -118,7 +118,7 @@ full_price_vegetables = rand(250..450)
 full_price_per_kg = full_price_vegetables
 Product.create!(
     name: "Onions",
-    description: "Onions have a light, golden-brown shell that surrounds a white or red, juicy flesh. Mainly grown in Spain, furthermore Chile and Egypt. Mild and slightly sweet. Onions can be used raw or cooked. Suitable for salads, soups, omelets.",
+    description: "More than just a tasty culinary plant, the onion contains natural sugar, vitamins A, B6, C and E, minerals such as sodium, potassium, iron and dietary fibre. In addition, onions are a good source of folic acid.",
     full_price_cents: full_price_per_kg * (unit / 1000.0),
     discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
     best_before_date: Faker::Date.forward(days: 5),
@@ -128,7 +128,7 @@ Product.create!(
     supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura"].sample)
     )
 
-# NEW VEGETABLE SEED PRODUCT
+# NEW VEGETABLES SEED PRODUCT
 unit = [250, 500, 750, 1000].sample
 full_price_vegetables = rand(250..450)
 full_price_per_kg = full_price_vegetables
@@ -149,7 +149,7 @@ full_price_vegetables = rand(250..450)
 full_price_per_kg = full_price_vegetables
 Product.create!(
     name: "Lettuce",
-    description: "Lettuce, Lactuca sativa, is a leafy herbaceous annual or biennial plant in the family Asteraceae grown for its leaves which are used as a salad green. The lettuce plant can vary greatly in size, shape and leaf type.",
+    description: "Lettuce is an excellent source vitamin A (21% DV) of vitamin K (97% DV) with high content of provitamin A compound, beta-carotene, in darker green lettuces, such as Romaine.",
     discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
     best_before_date: Faker::Date.forward(days: 5),
     category: category,
@@ -163,7 +163,7 @@ full_price_vegetables = rand(250..450)
 full_price_per_kg = full_price_vegetables
 Product.create!(
     name: "Artichokes",
-    description: "artichoke, (Cynara cardunculus, variety scolymus), also called globe artichoke or French artichoke, large thistlelike perennial plant of the aster family (Asteraceae) grown for its edible flower buds.",
+    description: "Artichoke is rich in potassium and iron salts. In the artichoke there are also some sugars allowed to diabetics, such as mannite and inulin and other minerals such as copper, zinc, sodium, phosphorus and manganese.",
     discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
     best_before_date: Faker::Date.forward(days: 5),
     category: category,
@@ -177,7 +177,7 @@ full_price_vegetables = rand(250..450)
 full_price_per_kg = full_price_vegetables
 Product.create!(
     name: "Parsley",
-    description: "Parsley is a hardy, biennial that is grown and treated like an annual. It is the most widely grown herb for both garnish and flavoring.",
+    description: "That same cup of parsley packs an estimated 80 mg of vitamin C (known for helping to boost immunity) along with vitamins A (which promotes healthy vision and development) and K (regarded for its bone-forming, anticancer properties).",
     discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
     best_before_date: Faker::Date.forward(days: 5),
     category: category,
@@ -238,7 +238,7 @@ full_price_fruits = rand(300..500)
 full_price_per_kg = full_price_fruits
 Product.create!(
     name: "Oranges",
-    description: "Oranges are by far the most popular type of citrus. Mainly grown in Spain, Morocco, Turkey, USA, South Africa, South America and Greece. Very juicy, aromatic, tender and sweet. Mainly consumed raw and pure as well as for fruit salads, desserts, cake toppings or jams.",
+    description: "Oranges are a good source of several vitamins and minerals, especially vitamin C, thiamine, folate, and potassium. Vitamin C. Oranges are an excellent source of vitamin C. One large orange provides over 100% of the RDI",
     full_price_cents: full_price_per_kg * (unit / 1000.0),
     discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
     best_before_date: Faker::Date.forward(days: 5),
@@ -278,7 +278,7 @@ Product.create!(
     supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura"].sample)
     )
 
-# NEW FRUIT PRODUCT SEED
+# NEW FRUITS PRODUCT SEED
 unit = [250, 500, 750, 1000].sample
 full_price_fruits = rand(300..500)
 full_price_per_kg = full_price_fruits
