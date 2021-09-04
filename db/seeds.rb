@@ -51,7 +51,7 @@ puts ""
 
 # creating Products instances
 # VEGETABLES
-category = ["Vegetables", "Fruits", "Meat-Fish", "Dairy"]
+category = ["vegetables", "fruits", "meat-fish", "dairy"]
 category = category[0]
 unit = [250, 500, 750, 1000].sample
 full_price_vegetables = rand(250..450)
@@ -205,7 +205,7 @@ Product.create!(
     )
 
 # FRUITS
-category = ["Vegetables", "Fruits", "Meat-Fish", "Dairy"]
+category = ["vegetables", "fruits", "meat-fish", "dairy"]
 category = category[1]
 unit = [250, 500, 750, 1000].sample
 full_price_fruits = rand(300..500)
@@ -359,7 +359,7 @@ Product.create!(
     )
 
 # MEAT / FISH
-category = ["Vegetables", "Fruits", "Meat-Fish", "Dairy"]
+category = ["vegetables", "fruits", "meat-fish", "dairy"]
 category = category[2]
 unit = [250, 500, 750, 1000].sample
 full_price_meat_fish = rand(800..1200)
@@ -452,7 +452,7 @@ Product.create!(
     )
 
 # DAIRY
-category = ["Vegetables", "Fruits", "Meat-Fish", "Dairy"]
+category = ["vegetables", "fruits", "meat-fish", "dairy"]
 category = category[3]
 unit = [250, 500, 750, 1000].sample
 full_price_dairy = rand(150..300)
@@ -534,7 +534,7 @@ unit = [250, 500, 750, 1000].sample
 full_price_dairy = rand(150..300)
 full_price_per_kg = full_price_dairy
 Product.create!(
-    name: "Parmesan Cheese",
+    name: "Parmesan",
     description: "Parmesan cheese has a hard, gritty texture and is fruity and nutty in taste, and it is mostly consumed grated over pastas or used in soups and risottos although it can also be eaten on its own as a snack",
     full_price_cents: full_price_per_kg * (unit / 1000.0),
     discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
