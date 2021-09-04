@@ -1,7 +1,23 @@
 .summary {
   text-align: center;
+  font-size: 32px;
+  font-weight: bold;
 }
 
 .payment-buttons {
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.order-recap {
+  background-color: white;
+  width: 250px;
+  margin: 0 auto;
+  margin-top: 24px;
+  padding: 8px;
+  text-align: center;
+  border-radius: 16px;
+  box-shadow: 4px 4px lightgrey;
 }
