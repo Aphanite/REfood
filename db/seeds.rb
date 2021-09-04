@@ -51,7 +51,7 @@ puts ""
 
 # creating Products instances
 # VEGETABLES
-category = ["Vegetables", "Fruits", "Meat/Fish", "Dairy"]
+category = ["vegetables", "fruits", "meat-fish", "dairy"]
 category = category[0]
 unit = [250, 500, 750, 1000].sample
 full_price_vegetables = rand(250..450)
@@ -159,7 +159,7 @@ Product.create!(
     )
 
 # FRUITS
-category = ["Vegetables", "Fruits", "Meat/Fish", "Dairy"]
+category = ["vegetables", "fruits", "meat-fish", "dairy"]
 category = category[1]
 unit = [250, 500, 750, 1000].sample
 full_price_fruits = rand(300..500)
@@ -237,7 +237,7 @@ Product.create!(
     )
 
 # MEAT / FISH
-category = ["Vegetables", "Fruits", "Meat/Fish", "Dairy"]
+category = ["vegetables", "fruits", "meat-fish", "dairy"]
 category = category[2]
 unit = [250, 500, 750, 1000].sample
 full_price_meat_fish = rand(800..1200)
@@ -330,7 +330,7 @@ Product.create!(
     )
 
 # DAIRY
-category = ["Vegetables", "Fruits", "Meat/Fish", "Dairy"]
+category = ["vegetables", "fruits", "meat-fish", "dairy"]
 category = category[3]
 unit = [250, 500, 750, 1000].sample
 full_price_dairy = rand(150..300)
