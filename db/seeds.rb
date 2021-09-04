@@ -278,6 +278,82 @@ Product.create!(
     supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
     )
 
+# NEW FRUIT PRODUCT SEED
+unit = [250, 500, 750, 1000].sample
+full_price_fruits = rand(300..500)
+full_price_per_kg = full_price_fruits
+Product.create!(
+    name: "Bananas",
+    description: "Mainly grown in Ecuador, Panama, Costa Rica, Colombia and Dominican Republic. Meaty, aromatic and, depending on the degree of ripeness, from slightly sour to very sweet.",
+    full_price_cents: full_price_per_kg * (unit / 1000.0),
+    discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
+    best_before_date: Faker::Date.forward(days: 5),
+    category: category,
+    amount: rand(1..10),
+    unit: "#{unit}g",
+    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
+    )
+
+unit = [250, 500, 750, 1000].sample
+full_price_fruits = rand(300..500)
+full_price_per_kg = full_price_fruits
+Product.create!(
+    name: "Grapes",
+    description: "Wine grapes are the varieties of grapevine grown for making wine. Table grapes are varieties grown for fresh consumption that are as low in seeds as possible and with large berries. Grown worldwide, mainly Italy, Greece, South Africa, Spain and France (Germany produces almost exclusively wine grapes). Juicy, depending on the variety, sweet, sour or with a nutmeg aroma.",
+    full_price_cents: full_price_per_kg * (unit / 1000.0),
+    discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
+    best_before_date: Faker::Date.forward(days: 5),
+    category: category,
+    amount: rand(1..10),
+    unit: "#{unit}g",
+    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
+    )
+
+unit = [250, 500, 750, 1000].sample
+full_price_fruits = rand(300..500)
+full_price_per_kg = full_price_fruits
+Product.create!(
+    name: "Oranges",
+    description: "Oranges are by far the most popular type of citrus. Mainly grown in Spain, Morocco, Turkey, USA, South Africa, South America and Greece. Very juicy, aromatic, tender and sweet. Mainly consumed raw and pure as well as for fruit salads, desserts, cake toppings or jams.",
+    full_price_cents: full_price_per_kg * (unit / 1000.0),
+    discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
+    best_before_date: Faker::Date.forward(days: 5),
+    category: category,
+    amount: rand(1..10),
+    unit: "#{unit}g",
+    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
+    )
+
+unit = [250, 500, 750, 1000].sample
+full_price_fruits = rand(300..500)
+full_price_per_kg = full_price_fruits
+Product.create!(
+    name: "Lemons",
+    description: "Lemon trees produce fruit all year round, so the lemons are available all year round. Mainly grown in Spain, Argentina, Italy and Turkey. Very sour. The pulp and juice are used, for example, for salad dressings, creams, baked goods and soft drinks. Halve the lemons and squeeze the two halves.",
+    full_price_cents: full_price_per_kg * (unit / 1000.0),
+    discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
+    best_before_date: Faker::Date.forward(days: 5),
+    category: category,
+    amount: rand(1..10),
+    unit: "#{unit}g",
+    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
+    )
+
+unit = [250, 500, 750, 1000].sample
+full_price_fruits = rand(300..500)
+full_price_per_kg = full_price_fruits
+Product.create!(
+    name: "Raspberries",
+    description: "A small, deep colored berries which have a tender texture, a sweet delicate taste and a pleasant aroma. Raspberries are eaten raw, or used in cakes and jams.",
+    full_price_cents: full_price_per_kg * (unit / 1000.0),
+    discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
+    best_before_date: Faker::Date.forward(days: 5),
+    category: category,
+    amount: rand(1..10),
+    unit: "#{unit}g",
+    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
+    )
+
 # MEAT / FISH
 category = ["Vegetables", "Fruits", "Meat/Fish", "Dairy"]
 category = category[2]
