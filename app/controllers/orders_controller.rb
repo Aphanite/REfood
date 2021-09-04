@@ -35,12 +35,11 @@ class OrdersController < ApplicationController
 
     order.total_price = prices[:total_price]
 
+    order.points = (order.total_price.to_i * 2).floor
+
     order.save!
     # make associated ordered items
     make_ordered_items(order)
-
-    raise
-
     redirect_to new_order_payment_path(order)
   end
 
