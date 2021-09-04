@@ -39,8 +39,6 @@ class OrdersController < ApplicationController
     # make associated ordered items
     make_ordered_items(order)
 
-    raise
-
     redirect_to new_order_payment_path(order)
   end
 
