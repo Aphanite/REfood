@@ -24,7 +24,9 @@ export const bindCounterButton = () => {
   }
 
   const cartButton = document.getElementsByClassName("product-cart-btn")[0];
-  cartButton.addEventListener('click', handleAddToCart(counter));
+  cartButton.addEventListener('click', () => {
+    adjustCount(window.product_id, window.supermarket_id, counter);
+  });
 };
 
 // const handleButtonClick = (event) => {
@@ -38,6 +40,6 @@ export const bindCounterButton = () => {
 //   counterEl.innerText = counter;
 // };
 
-const handleAddToCart = (counter) => {
-  adjustCount(window.product_id, window.supermarket_id, counter);
-}
+// const handleAddToCart = (counter) => {
+//   adjustCount(window.product_id, window.supermarket_id, counter);
+// }
