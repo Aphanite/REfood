@@ -17,9 +17,9 @@ User.destroy_all
 end
 
 User.create!(
-  name: "Florian", 
-  email: "florian@fake.com", 
-  password: "florian@fake.com", 
+  name: "Ena", 
+  email: "ena@fake.com", 
+  password: "ena@fake.com", 
   points: rand(1..100)
 )
 
