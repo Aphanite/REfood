@@ -1,6 +1,12 @@
 <div class="navbar">
   <i class="fas fa-search" style="color:#3DD26D"></i>
 
-  <a href="/cart"><i class="fas fa-shopping-cart"></i></a>
+  <a href="/cart">
+    <i class="fas fa-shopping-cart" style="position: relative;">
+      <% if @cart_count && @cart_count != 0 %>
+        <div class="cart-count bottom"><%= @cart_count %></div>
+      <% end %>
+    </i>
+  </a>
   <i class="fas fa-ellipsis-h"></i>
 </div>

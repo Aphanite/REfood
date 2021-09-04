@@ -7,7 +7,9 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-    authorize @product
+    if session[:cart]
+      @cart_count = session[:cart].count
+    end
   end
 
 end

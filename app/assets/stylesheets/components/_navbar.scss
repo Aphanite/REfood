@@ -16,7 +16,7 @@
 }
 
 .navbar-top {
-  z-index: 1000;
+  z-index: 100;
   position: fixed;
   top: 0;
   width: 100%;
@@ -39,10 +39,35 @@
   display: flex;
   justify-content: space-between;
   padding: 0 12px;
-  font-size: 22px;
+  font-size: 24px;
   margin-bottom: 12px;
 
   a {
     color: #565656;
   }
+}
+
+.cart-count {
+  position: absolute;
+  z-index: 1000;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+
+  border-radius: 50%;
+  background-color: #FF7F00;
+  color: white;
+  font-family: "Mulish";
+  font-size: 16px;
+}
+
+.cart-count.bottom {
+  bottom: 8px;
+  left: 14px;
+}
+
+.cart-count.top {
+  bottom: 8px;
+  left: 14px;
 }
