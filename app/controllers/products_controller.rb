@@ -8,7 +8,10 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     if session[:cart]
-      @cart_count = session[:cart].count
+      @cart_count = 0
+      session[:cart].each do |el|
+        @cart_count += el["offset"]
+      end
     end
   end
 
