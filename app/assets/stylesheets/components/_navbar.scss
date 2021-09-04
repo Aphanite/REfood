@@ -29,3 +29,16 @@
 .fa-chevron-left {
   font-size: 24px;
 }
+
+.navbar-show {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 12px;
+  font-size: 22px;
+  margin-bottom: 12px;
+
+  a {
+    color: #565656;
+  }
+}

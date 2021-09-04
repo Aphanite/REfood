@@ -1,5 +1,10 @@
-<div id="inner">
+<div id="inner" style="margin-top: 20px;">
   <div class="index-container">
+    <div class="navbar-show">
+      <%= link_to supermarkets_path do %>
+        <i class="fas fa-chevron-left"></i>
+      <% end %>
+    </div>
     <%= render 'shared/supermarket_info'%>
 
     <div class="category-filter">
