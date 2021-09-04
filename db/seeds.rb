@@ -51,7 +51,7 @@ puts ""
 
 # creating Products instances
 # VEGETABLES
-category = ["vegetables", "fruits", "meat-fish", "dairy"]
+category = ["Vegetables", "Fruits", "Meat/Fish", "Dairy"]
 category = category[0]
 unit = [250, 500, 750, 1000].sample
 full_price_vegetables = rand(250..450)
@@ -158,8 +158,50 @@ Product.create!(
     supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
     )
 
+unit = [250, 500, 750, 1000].sample
+full_price_vegetables = rand(250..450)
+full_price_per_kg = full_price_vegetables
+Product.create!(
+    name: "Artichokes",
+    description: "artichoke, (Cynara cardunculus, variety scolymus), also called globe artichoke or French artichoke, large thistlelike perennial plant of the aster family (Asteraceae) grown for its edible flower buds."
+    discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
+    best_before_date: Faker::Date.forward(days: 5),
+    category: category,
+    amount: rand(1..10),
+    unit: "#{unit}g",
+    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
+    )
+
+unit = [250, 500, 750, 1000].sample
+full_price_vegetables = rand(250..450)
+full_price_per_kg = full_price_vegetables
+Product.create!(
+    name: "Parsley",
+    description: "Parsley is a hardy, biennial that is grown and treated like an annual. It is the most widely grown herb for both garnish and flavoring."
+    discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
+    best_before_date: Faker::Date.forward(days: 5),
+    category: category,
+    amount: rand(1..10),
+    unit: "#{unit}g",
+    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
+    )
+
+unit = [250, 500, 750, 1000].sample
+full_price_vegetables = rand(250..450)
+full_price_per_kg = full_price_vegetables
+Product.create!(
+    name: "Cauliflower",
+    description: "Cauliflowers are annual plants that reach about 0.5 metre (1.5 feet) tall and bear large rounded leaves that resemble collards (Brassica oleracea, variety acephala)"
+    discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
+    best_before_date: Faker::Date.forward(days: 5),
+    category: category,
+    amount: rand(1..10),
+    unit: "#{unit}g",
+    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
+    )
+
 # FRUITS
-category = ["vegetables", "fruits", "meat-fish", "dairy"]
+category = ["Vegetables", "Fruits", "Meat/Fish", "Dairy"]
 category = category[1]
 unit = [250, 500, 750, 1000].sample
 full_price_fruits = rand(300..500)
@@ -237,7 +279,7 @@ Product.create!(
     )
 
 # MEAT / FISH
-category = ["vegetables", "fruits", "meat-fish", "dairy"]
+category = ["Vegetables", "Fruits", "Meat/Fish", "Dairy"]
 category = category[2]
 unit = [250, 500, 750, 1000].sample
 full_price_meat_fish = rand(800..1200)
@@ -330,7 +372,7 @@ Product.create!(
     )
 
 # DAIRY
-category = ["vegetables", "fruits", "meat-fish", "dairy"]
+category = ["Vegetables", "Fruits", "Meat/Fish", "Dairy"]
 category = category[3]
 unit = [250, 500, 750, 1000].sample
 full_price_dairy = rand(150..300)
