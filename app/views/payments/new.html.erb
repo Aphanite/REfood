@@ -5,10 +5,30 @@
       <div class="order-recap">
         <p class="product-recap"> Customer: <%= @order.user.name %></p>
         <p class="product-recap"> Order number: <%= @order.id %></p>
-        <p class="product-recap"> Supermarket: </p>
+        <p class="product-recap"> Supermarket: <% %></p>
         <p class="product-recap"> Pick up Time: </p>
       </div>
 
+      <% @order.ordered_items.each do |item| %>
+        <div class="order__content">
+              <% product = Product.find_by(id: item.product_id) %>
+              <div class="order__content__item">
+                <%= image_tag "#{product.category.downcase}/#{product.name.downcase}.jpg"%>
+                <div class="order__content__item__info">
+                  <div class="order__content__item__info__header">
+                    <h2><%= product.name %></h2>
+                    <span><%= product.unit %></span>
+                  </div>
+                    <p>best before <%= product.best_before_date.strftime("%B %e")%></p>
+                  <div class="order__content__item__info__header">
+                    <p style="color: #079145; font-size: 16px; font-weight: normal; margin-top: 8px;">Amount: <%= product.amount %></p>
+                    <p style="color: #079145; font-size: 16px; font-weight: normal; margin-top: 8px;"><%= humanized_money_with_symbol(product.discounted_price) %></p>
+                  </div>
+                </div>
+              </div>
+        </div>
+      <% end %>
+      
       <div class="payment-buttons">
         <button id="pay" class="button-homepage">Pay <%= humanized_money_with_symbol(@order.total_price) %></button>
       </div>
