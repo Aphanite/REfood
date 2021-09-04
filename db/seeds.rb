@@ -149,7 +149,7 @@ full_price_vegetables = rand(250..450)
 full_price_per_kg = full_price_vegetables
 Product.create!(
     name: "Lettuce",
-    description: "Lettuce, Lactuca sativa, is a leafy herbaceous annual or biennial plant in the family Asteraceae grown for its leaves which are used as a salad green. The lettuce plant can vary greatly in size, shape and leaf type."
+    description: "Lettuce, Lactuca sativa, is a leafy herbaceous annual or biennial plant in the family Asteraceae grown for its leaves which are used as a salad green. The lettuce plant can vary greatly in size, shape and leaf type.",
     discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
     best_before_date: Faker::Date.forward(days: 5),
     category: category,
@@ -163,7 +163,7 @@ full_price_vegetables = rand(250..450)
 full_price_per_kg = full_price_vegetables
 Product.create!(
     name: "Artichokes",
-    description: "artichoke, (Cynara cardunculus, variety scolymus), also called globe artichoke or French artichoke, large thistlelike perennial plant of the aster family (Asteraceae) grown for its edible flower buds."
+    description: "artichoke, (Cynara cardunculus, variety scolymus), also called globe artichoke or French artichoke, large thistlelike perennial plant of the aster family (Asteraceae) grown for its edible flower buds.",
     discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
     best_before_date: Faker::Date.forward(days: 5),
     category: category,
@@ -177,7 +177,7 @@ full_price_vegetables = rand(250..450)
 full_price_per_kg = full_price_vegetables
 Product.create!(
     name: "Parsley",
-    description: "Parsley is a hardy, biennial that is grown and treated like an annual. It is the most widely grown herb for both garnish and flavoring."
+    description: "Parsley is a hardy, biennial that is grown and treated like an annual. It is the most widely grown herb for both garnish and flavoring.",
     discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
     best_before_date: Faker::Date.forward(days: 5),
     category: category,
@@ -191,7 +191,7 @@ full_price_vegetables = rand(250..450)
 full_price_per_kg = full_price_vegetables
 Product.create!(
     name: "Cauliflower",
-    description: "Cauliflowers are annual plants that reach about 0.5 metre (1.5 feet) tall and bear large rounded leaves that resemble collards (Brassica oleracea, variety acephala)"
+    description: "Cauliflowers are annual plants that reach about 0.5 metre (1.5 feet) tall and bear large rounded leaves that resemble collards (Brassica oleracea, variety acephala)",
     discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
     best_before_date: Faker::Date.forward(days: 5),
     category: category,
