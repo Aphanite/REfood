@@ -526,13 +526,12 @@ Product.create!(
     )
 
 # NEW DAIRY PRODUCTS
-
 unit = [250, 500, 750, 1000].sample
 full_price_dairy = rand(150..300)
 full_price_per_kg = full_price_dairy
 Product.create!(
-    name: "Ice Cream",
-    description: "Ice cream is a frozen dairy dessert obtained by freezing the ice cream mix with continuous agitation. It contains milk products, sweetening materials, stabilizers, colors, flavors, and egg products.",
+    name: "Parmesan Cheese",
+    description: "Parmesan cheese has a hard, gritty texture and is fruity and nutty in taste, and it is mostly consumed grated over pastas or used in soups and risottos although it can also be eaten on its own as a snack",
     full_price_cents: full_price_per_kg * (unit / 1000.0),
     discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
     best_before_date: Faker::Date.forward(days: 5),
@@ -546,8 +545,8 @@ unit = [250, 500, 750, 1000].sample
 full_price_dairy = rand(150..300)
 full_price_per_kg = full_price_dairy
 Product.create!(
-    name: "Ice Cream",
-    description: "Ice cream is a frozen dairy dessert obtained by freezing the ice cream mix with continuous agitation. It contains milk products, sweetening materials, stabilizers, colors, flavors, and egg products.",
+    name: "Eggs",
+    description: "An oval or rounded body surrounded by a shell or membrane by which some animals (as birds, fish, insects, and reptiles) reproduce and from which the young hatches out",
     full_price_cents: full_price_per_kg * (unit / 1000.0),
     discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
     best_before_date: Faker::Date.forward(days: 5),
@@ -561,8 +560,8 @@ unit = [250, 500, 750, 1000].sample
 full_price_dairy = rand(150..300)
 full_price_per_kg = full_price_dairy
 Product.create!(
-    name: "Ice Cream",
-    description: "Ice cream is a frozen dairy dessert obtained by freezing the ice cream mix with continuous agitation. It contains milk products, sweetening materials, stabilizers, colors, flavors, and egg products.",
+    name: "Sour Cream",
+    description: "Sour cream (in North American English, Australian English and New Zealand English) or soured cream (British English) is a dairy product obtained by fermenting regular cream with certain kinds of lactic acid bacteria",
     full_price_cents: full_price_per_kg * (unit / 1000.0),
     discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
     best_before_date: Faker::Date.forward(days: 5),
@@ -576,23 +575,8 @@ unit = [250, 500, 750, 1000].sample
 full_price_dairy = rand(150..300)
 full_price_per_kg = full_price_dairy
 Product.create!(
-    name: "Ice Cream",
-    description: "Ice cream is a frozen dairy dessert obtained by freezing the ice cream mix with continuous agitation. It contains milk products, sweetening materials, stabilizers, colors, flavors, and egg products.",
-    full_price_cents: full_price_per_kg * (unit / 1000.0),
-    discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
-    best_before_date: Faker::Date.forward(days: 5),
-    category: category,
-    amount: rand(1..10),
-    unit: "#{unit}g",
-    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
-    )
-
-unit = [250, 500, 750, 1000].sample
-full_price_dairy = rand(150..300)
-full_price_per_kg = full_price_dairy
-Product.create!(
-    name: "Ice Cream",
-    description: "Ice cream is a frozen dairy dessert obtained by freezing the ice cream mix with continuous agitation. It contains milk products, sweetening materials, stabilizers, colors, flavors, and egg products.",
+    name: "Kefir",
+    description: "Kefir is a fermented milk drink similar to a thin yogurt or ayran that is made from kefir grains, a specific type of mesophilic symbiotic culture.",
     full_price_cents: full_price_per_kg * (unit / 1000.0),
     discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
     best_before_date: Faker::Date.forward(days: 5),
