@@ -128,6 +128,36 @@ Product.create!(
     supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
     )
 
+# NEW VEGETABLE SEED PRODUCT
+unit = [250, 500, 750, 1000].sample
+full_price_vegetables = rand(250..450)
+full_price_per_kg = full_price_vegetables
+Product.create!(
+    name: "Eggplant",
+    description: "Eggplant, a warm-season vegetable belongs to the nightshade family. It forms a many branched plant with leaves and stems that have star-shaped (stellate) hair and stems. Its flowers are purple and the fruits are generally purple too.",
+    full_price_cents: full_price_per_kg * (unit / 1000.0),
+    discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
+    best_before_date: Faker::Date.forward(days: 5),
+    category: category,
+    amount: rand(1..10),
+    unit: "#{unit}g",
+    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
+    )
+
+unit = [250, 500, 750, 1000].sample
+full_price_vegetables = rand(250..450)
+full_price_per_kg = full_price_vegetables
+Product.create!(
+    name: "Lettuce",
+    description: "Lettuce, Lactuca sativa, is a leafy herbaceous annual or biennial plant in the family Asteraceae grown for its leaves which are used as a salad green. The lettuce plant can vary greatly in size, shape and leaf type."
+    discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
+    best_before_date: Faker::Date.forward(days: 5),
+    category: category,
+    amount: rand(1..10),
+    unit: "#{unit}g",
+    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
+    )
+
 # FRUITS
 category = ["Vegetables", "Fruits", "Meat/Fish", "Dairy"]
 category = category[1]
