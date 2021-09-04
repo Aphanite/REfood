@@ -30,7 +30,7 @@
           <%= f.input "", as: :string, required: true, label: false, input_html: { class: "pickupTime", id: "time-#{supermarket.id}", name: "order[time-#{supermarket.id}]", placeholder: "Time" } %>
         <% end %>
         <div class="d-flex justify-content-center">
-          <%= f.submit "Save and go to payment", class: "btn-gradient" %>
+          <%= f.submit "Go to payment", class: "btn-gradient" %>
         </div>
       <% end %>
     </div>
