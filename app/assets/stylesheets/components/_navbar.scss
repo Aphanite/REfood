@@ -6,9 +6,13 @@
   background-color: white;
   padding: 16px 38px;
 
-  font-size: 18px;
+  font-size: 20px;
   color: #646366;
   z-index: 1000;
+
+  a {
+    color: #565656;
+  }
 }
 
 .navbar-top {
