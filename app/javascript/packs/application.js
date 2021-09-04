@@ -28,6 +28,10 @@ import "bootstrap";
 
 // Internal imports, e.g:
 import { renderPage, bindToggleButtons } from '../components/_toggle_display';
+
+import '../components/_location_form';
+import '../components/_filters_page';
+
 import { bindCounterButton } from '../components/_update_counter';
 import { addPickUpSlot } from '../components/_choose_pickuptime';
 import { initMapbox } from '../plugins/init_mapbox';

@@ -1,13 +1,11 @@
+<%= render 'shared/filters_page'%>
 <div id="inner">
   <div class="index-container">
     <%= render 'shared/supermarket_info'%>
 
     <div class="category-filter">
-      <span style="padding-left: 8px; color:#3DD26D;">All</span>
-      <span>Fruit</span>
-      <span>Vegetable</span>
-      <span>Meat/Fish</span>
-      <span>Dairy</span>
+      <span> <%= @supermarket.products.count %> results for <%= @supermarket.name %></span>
+      <span id="filter-button"><%= link_to "Filters", remote: true %></span>
     </div>
 
     <div id="content-container">

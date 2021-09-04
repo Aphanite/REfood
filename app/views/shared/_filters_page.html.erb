@@ -1,0 +1,38 @@
+<div class="filters-top-page hidden">
+  <div class="navbar-top-filters">
+    <i class="fa-solid fa-xmark"></i>
+    <h1>Filter</h1>
+    <h2>Clear all</h2>
+  </div>
+
+ <% category_count = [] %>  
+  <% @supermarket.products.each do |item| %>
+    <p><% category = Product.find_by(id: item.id).category %></p>
+    <% category_count << category %>
+  <% end %>
+  
+  <div class="filter-categories">
+    <div class="filter-title">
+      Categories
+    </div>
+      <div class="filter-categories-elements">
+        <div class="filter-entry">All (<%= @supermarket.products.count %>)</div>
+        <div class="filter-entry">Fruits (<%= category_count.count("Fruits") %>) </div>
+        <div class="filter-entry">Vegetables (<%= category_count.count("Vegetables") %>)</div>
+        <div class="filter-entry">Meat/Fish (<%= category_count.count("Meat/Fish") %>)</div>
+        <div class="filter-entry">Dairy (<%= category_count.count("Dairy") %>)</div>
+      </div>
+  </div>
+
+  <div class="filter-title">
+    Best before date
+    <% @supermarket.products.each do |item| %>
+      <p><%= Product.find_by(id: item.id).best_before_date %></p>
+    <% end %>
+  </div>
+
+  <div class="button-homepage buttons">
+    Apply
+  </div>
+</div>
+
