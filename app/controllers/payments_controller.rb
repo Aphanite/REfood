@@ -9,7 +9,7 @@ class PaymentsController < ApplicationController
     @stripe_session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       line_items: [{
-        name: "Product",
+        name: "Total Amount",
         description: "Payment",
         amount: @order.total_price_cents,
         currency: 'eur',
