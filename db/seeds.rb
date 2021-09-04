@@ -51,7 +51,7 @@ puts ""
 
 # creating Products instances
 # VEGETABLES
-category = ["Vegetables", "Fruits", "Meat/Fish", "Dairy"]
+category = ["Vegetables", "Fruits", "Meat-Fish", "Dairy"]
 category = category[0]
 unit = [250, 500, 750, 1000].sample
 full_price_vegetables = rand(250..450)
@@ -150,6 +150,7 @@ full_price_per_kg = full_price_vegetables
 Product.create!(
     name: "Lettuce",
     description: "Lettuce is an excellent source vitamin A (21% DV) of vitamin K (97% DV) with high content of provitamin A compound, beta-carotene, in darker green lettuces, such as Romaine.",
+    full_price_cents: full_price_per_kg * (unit / 1000.0),
     discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
     best_before_date: Faker::Date.forward(days: 5),
     category: category,
@@ -164,6 +165,7 @@ full_price_per_kg = full_price_vegetables
 Product.create!(
     name: "Artichokes",
     description: "Artichoke is rich in potassium and iron salts. In the artichoke there are also some sugars allowed to diabetics, such as mannite and inulin and other minerals such as copper, zinc, sodium, phosphorus and manganese.",
+    full_price_cents: full_price_per_kg * (unit / 1000.0),
     discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
     best_before_date: Faker::Date.forward(days: 5),
     category: category,
@@ -178,6 +180,7 @@ full_price_per_kg = full_price_vegetables
 Product.create!(
     name: "Parsley",
     description: "That same cup of parsley packs an estimated 80 mg of vitamin C (known for helping to boost immunity) along with vitamins A (which promotes healthy vision and development) and K (regarded for its bone-forming, anticancer properties).",
+    full_price_cents: full_price_per_kg * (unit / 1000.0),
     discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
     best_before_date: Faker::Date.forward(days: 5),
     category: category,
@@ -192,6 +195,7 @@ full_price_per_kg = full_price_vegetables
 Product.create!(
     name: "Cauliflower",
     description: "Cauliflowers are annual plants that reach about 0.5 metre (1.5 feet) tall and bear large rounded leaves that resemble collards (Brassica oleracea, variety acephala)",
+    full_price_cents: full_price_per_kg * (unit / 1000.0),
     discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
     best_before_date: Faker::Date.forward(days: 5),
     category: category,
@@ -201,7 +205,7 @@ Product.create!(
     )
 
 # FRUITS
-category = ["Vegetables", "Fruits", "Meat/Fish", "Dairy"]
+category = ["Vegetables", "Fruits", "Meat-Fish", "Dairy"]
 category = category[1]
 unit = [250, 500, 750, 1000].sample
 full_price_fruits = rand(300..500)
@@ -355,7 +359,7 @@ Product.create!(
     )
 
 # MEAT / FISH
-category = ["Vegetables", "Fruits", "Meat/Fish", "Dairy"]
+category = ["Vegetables", "Fruits", "Meat-Fish", "Dairy"]
 category = category[2]
 unit = [250, 500, 750, 1000].sample
 full_price_meat_fish = rand(800..1200)
@@ -448,7 +452,7 @@ Product.create!(
     )
 
 # DAIRY
-category = ["Vegetables", "Fruits", "Meat/Fish", "Dairy"]
+category = ["Vegetables", "Fruits", "Meat-Fish", "Dairy"]
 category = category[3]
 unit = [250, 500, 750, 1000].sample
 full_price_dairy = rand(150..300)
