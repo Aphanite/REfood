@@ -13,7 +13,7 @@
   <div class="product-content">
     <div class="product-information">
       <h1 class="product-name"><%= @product.name %></h1>
-        <div class="d-flex flex-row">
+        <div class="d-flex flex-row" id="product-counter">
           <div>
             <button class="minus-button incrementer minus" type="button" data-offset="-1">
               <i id="minus-icon" class="fa fa-minus" aria-hidden="true"></i>
@@ -42,7 +42,7 @@
       </div>
   </div>
 
-  <div class="bottom-page p-4">
+  <div class="bottom-page">
     <div class="prices d-flex">
       <div class="discounted-price"><%= humanized_money_with_symbol(@product.discounted_price) %></div>
       <div class="full-price" style="text-decoration:line-through"><%= humanized_money_with_symbol(@product.full_price) %></div>

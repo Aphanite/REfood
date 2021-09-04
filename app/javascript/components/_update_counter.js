@@ -1,33 +1,45 @@
 import { adjustCount } from '../cart'
 
-var counter = 1;
-var counterEl;
-
 export const bindCounterButton = () => {
-  if (!window.product_id) return
-
+  const productPage = document.getElementById("product-counter");
+  if (!productPage) return
+  // if (!window.product_id) return
+  console.log("inside");
   const buttons = document.getElementsByClassName('incrementer');
+  let counter = 1;
+  let counterEl;
 
   counterEl = document.getElementById("counter");
   for (const button of buttons) {
-    button.addEventListener('click', handleButtonClick);
+    button.addEventListener('click', (event) => {
+      const offset = Number.parseInt(event.currentTarget.dataset.offset, 10);
+      counter += offset;
+
+      if (counter < 1) {
+        counter = 1
+      }
+
+      counterEl.innerText = counter;
+    });
   }
 
   const cartButton = document.getElementsByClassName("product-cart-btn")[0];
-  cartButton.addEventListener('click', handleAddToCart);
+  cartButton.addEventListener('click', () => {
+    adjustCount(window.product_id, window.supermarket_id, counter);
+  });
 };
 
-const handleButtonClick = (event) => {
-  const offset = Number.parseInt(event.currentTarget.dataset.offset, 10);
-  counter += offset;
+// const handleButtonClick = (event) => {
+//   const offset = Number.parseInt(event.currentTarget.dataset.offset, 10);
+//   counter += offset;
 
-  if (counter < 1) {
-    counter = 1
-  }
+//   if (counter < 1) {
+//     counter = 1
+//   }
 
-  counterEl.innerText = counter;
-};
+//   counterEl.innerText = counter;
+// };
 
-const handleAddToCart = () => {
-  adjustCount(window.product_id, window.supermarket_id, counter);
-}
+// const handleAddToCart = (counter) => {
+//   adjustCount(window.product_id, window.supermarket_id, counter);
+// }
