@@ -2,9 +2,16 @@
   text-align: center;
 }
 
-
-
 .mapboxgl-canvas {
   width: 450px !important;
   height: 450px !important;
+}
+
+.mapboxgl-popup-content {
+  border-radius: 10px;
+}
+
+.mapboxgl-popup-content img {
+  height: 50px;
+  width: 75px;
 }
