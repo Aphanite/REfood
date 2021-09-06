@@ -35,7 +35,7 @@
                   <p>best by <%= product.first.best_before_date.strftime("%B %e")%></p>
                 </div>
               </div>
-               <p style="color: #079145; font-size: 16px; font-weight: normal; margin-top: 8px; padding-right: 8px"><%= humanized_money_with_symbol(product.first.discounted_price) %></p>
+               <p style="color: #079145; font-size: 16px; font-weight: normal; margin-top: 8px; padding-right: 8px"><%= humanized_money_with_symbol(product.first.discounted_price*product.last) %></p>
             </div>
           <% end %>
         </div>

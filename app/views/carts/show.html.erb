@@ -28,7 +28,11 @@
                   <span><%= product.unit %></span>
                 </div>
                   <p>best by <%= product.best_before_date.strftime("%B %e")%></p>
-                  <p style="color: #079145; font-size: 16px; font-weight: normal; margin-top: 8px;"><%= humanized_money_with_symbol(product.discounted_price) %></p>
+                  <div class="d-flex">
+                    <p style="color: #079145; font-size: 16px; font-weight: normal; margin-top: 0; height: 42px; line-height: 42px;"><%= humanized_money_with_symbol(product.discounted_price*item["offset"])%></p>
+                    <p style="margin-top: 0; text-decoration:line-through; height: 42px; line-height: 42px; margin-left: 12px;"><%= humanized_money_with_symbol(product.full_price*item["offset"])%></p>
+                  </div>
+
               </div>
               <!-- counter + amount display -->
               <div class="order__content__item__counter">
