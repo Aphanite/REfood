@@ -27,7 +27,7 @@
                   <h2><%= product.name %></h2>
                   <span><%= product.unit %></span>
                 </div>
-                  <p>before <%= product.best_before_date.strftime("%B %e")%></p>
+                  <p>best by <%= product.best_before_date.strftime("%B %e")%></p>
                   <p style="color: #079145; font-size: 16px; font-weight: normal; margin-top: 8px;"><%= humanized_money_with_symbol(product.discounted_price) %></p>
               </div>
               <!-- counter + amount display -->
