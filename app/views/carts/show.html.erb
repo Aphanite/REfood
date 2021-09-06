@@ -13,7 +13,7 @@
       <div class="order__content">
         <% grouped_session = session[:cart].group_by { |p| p["supermarketId"].itself } %>
         <% grouped_session.each do  |group| %>
-          <%= Supermarket.find(group[0]).name %>
+          <p style="font-size: 17px;"> You rescue from <%= Supermarket.find(group[0]).name %>...</p>
           <% group[1].each do |item| %>
             <% product = Product.find(item["productId"]) %>
             <!-- increment total price and discount by the amount spent/saved for current product -->
@@ -31,7 +31,7 @@
                   <p style="color: #079145; font-size: 16px; font-weight: normal; margin-top: 8px;"><%= humanized_money_with_symbol(product.discounted_price) %></p>
               </div>
               <!-- counter + amount display -->
-              <div class="d-flex flex-column" style="margin-left:18px;">
+              <div class="order__content__item__counter">
                 <div style="text-align: center;">
                   <button class ="plus-button incrementer" type="button" data-offset="1" style="margin: 0;">
                     <i id="plus-icon" class="fa fa-plus" aria-hidden="true"></i>
