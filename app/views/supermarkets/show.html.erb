@@ -35,7 +35,7 @@
               <% @products.each do |product| %>
                 <div class="product-card">
                   <div class="product-card__image">
-                    <% category = product.category %>
+                    <% category = product.category.downcase %>
                     <% name = product.name.downcase %>
                     <%= image_tag "#{category}/#{name}.jpg"%>
 
