@@ -10,7 +10,7 @@
       <!-- initialize total price and discount -->
       <% total_price = 0 %>
       <% discount = 0 %>
-      <div class="order__content">
+      <div class="order__content cart__content">
         <% grouped_session = session[:cart].group_by { |p| p["supermarketId"].itself } %>
         <% grouped_session.each do  |group| %>
           <p style="font-size: 17px;"> You rescue from <%= Supermarket.find(group[0]).name %>...</p>
@@ -20,7 +20,7 @@
             <% total_price += product.discounted_price * item["offset"]%>
             <% discount += (product.full_price - product.discounted_price) * item["offset"]%>
             <!-- get details from all items in session cart -->
-            <div class="order__content__item" data-productid=<%= product.id %>>
+            <div class="order__content__item cart__content__item" data-productid=<%= product.id %>>
               <%= image_tag "#{product.category.downcase}/#{product.name.downcase}.jpg"%>
               <div class="order__content__item__info">
                 <div class="order__content__item__info__header">
