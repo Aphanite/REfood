@@ -366,7 +366,7 @@ full_price_meat_fish = rand(800..1200)
 full_price_per_kg = full_price_meat_fish
 Product.create!(
     name: "Chicken",
-    description: "Chicken is the most common type of poultry in the world.Owing to the relative ease and low cost of raising chickens—in comparison to mammals such as cattle or hogs—chicken meat and chicken eggs have become prevalent in numerous cuisines.",
+    description: "Chicken is the most common type of poultry in the world. Owing to the relative ease and low cost of raising chickens—in comparison to mammals such as cattle or hogs—chicken meat and chicken eggs have become prevalent in numerous cuisines.",
     full_price_cents: full_price_per_kg * (unit / 1000.0),
     discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
     best_before_date: Faker::Date.forward(days: 5),
@@ -551,12 +551,12 @@ full_price_per_kg = full_price_dairy
 Product.create!(
     name: "Eggs",
     description: "An oval or rounded body surrounded by a shell or membrane by which some animals (as birds, fish, insects, and reptiles) reproduce and from which the young hatches out",
-    full_price_cents: full_price_per_kg * (unit / 1000.0),
-    discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
+    full_price_cents: 299,
+    discounted_price_cents: 159,
     best_before_date: Faker::Date.forward(days: 5),
     category: category,
     amount: rand(1..10),
-    unit: "#{unit}g",
+    unit: "10 pack",
     supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
     )
 
