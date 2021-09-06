@@ -1,42 +1,51 @@
  <div id="inner">
   <div class="order-container">
-     <div class="order__header">Order summary</div>
-     <p><%= @order.ordered_items.count %> items</p>
-     <div class="order__content">
-
-
+    <div class="order__header">Order summary</div>
+    <p><%= @order.ordered_items.count %> items</p>
+    <div class="order__content" style="padding-bottom: 0;">
       <% @sorted_products.each do |group| %>
         <div class="supermarket-order-container">
-          <div class="">
-            <%= group[0].name %>
-            <% pick_up_slots = @order.pick_up_slots["#{group[0].id}"] %>
-            <div class="pickup-time">
-              <%= image_tag "time.png" %>
-              <p> Pick up your order on <%= Date.parse(pick_up_slots[0]).strftime("%B %e") %> at <%= pick_up_slots[1] %></p>
+          <div class="supermarket-order-info">
+            <div class="d-flex" style="align-items: center;">
+              <p class="supermarket-order-info__name"><%= group[0].name %></p>
+              <p style="font-weight: lighter; font-style: italic; padding-left: 12px;">Supermarket</p>
             </div>
-
+            <div class="pickup">
+              <%= image_tag "location.png" %>
+              <p><%= group[0].address %></p>
+            </div>
+            <% pick_up_slots = @order.pick_up_slots["#{group[0].id}"] %>
+          <!--   <hr style="margin: 12px 0;"> -->
+            <div class="pickup">
+              <%= image_tag "time.png" %>
+              <p> Pick up on <strong><%= Date.parse(pick_up_slots[0]).strftime("%B %e") %></strong> at <strong><%= pick_up_slots[1] %></strong> </p>
+            </div>
           </div>
+
           <% group[1].each do |product| %>
+            <hr style="background-color: rgba(7, 145, 69, .3)">
             <div class="item__info">
-              <p style="font-size: 18px;"><%= product.last %> x</p>
+              <p style="font-size: 18px; padding-left: 8px"><%= product.last %> x</p>
               <div class="item__info__main">
                 <div style="margin: 0 24px;">
                   <div class="order__content__item__info__header">
-                    <h2><%= product.first.name %></h2>
+                    <h2 style="margin: 0;"><%= product.first.name %></h2>
+                    <span><%= product.first.unit %> </span>
                   </div>
-                  <p> <%= product.first.unit %>  | best by <%= product.first.best_before_date.strftime("%B %e")%></p>
+                  <p>best by <%= product.first.best_before_date.strftime("%B %e")%></p>
                 </div>
               </div>
-               <p style="color: #079145; font-size: 16px; font-weight: normal; margin-top: 8px;"><%= humanized_money_with_symbol(product.first.discounted_price) %></p>
+               <p style="color: #079145; font-size: 16px; font-weight: normal; margin-top: 8px; padding-right: 8px"><%= humanized_money_with_symbol(product.first.discounted_price) %></p>
             </div>
           <% end %>
         </div>
-
       <% end %>
-     </div>
-     <div class="payment-buttons">
-       <button id="pay" class="button-homepage">Pay <%= humanized_money_with_symbol(@order.total_price) %></button>
-     </div>
+
+
+    </div>
+    <div class="payment-buttons">
+      <button id="pay" class="btn-gradient">Pay <%= humanized_money_with_symbol(@order.total_price) %></button>
+    </div>
   </div>
 </div>
 
