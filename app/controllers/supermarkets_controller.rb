@@ -15,6 +15,13 @@ class SupermarketsController < ApplicationController
         info_window: { content: render_to_string(partial: "/supermarkets/info_window", locals: { supermarket: supermarket }) }
       }
      end
+
+    if session[:cart]
+      @cart_count = 0
+      session[:cart].each do |el|
+        @cart_count += el["offset"]
+      end
+    end
   end
 
   def show
@@ -49,6 +56,8 @@ class SupermarketsController < ApplicationController
       end
     end
 
-    authorize @supermarket
+    if session[:cart]
+     @cart_count = session[:cart].count
+    end
   end
 end

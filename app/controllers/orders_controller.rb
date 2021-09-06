@@ -17,7 +17,7 @@ class OrdersController < ApplicationController
   def create
     order = Order.new()
     # assign user (preliminary solution)
-    current_user ? order.user = current_user : order.user = User.find_by(email: "florian@fake.com")
+    current_user ? order.user = current_user : order.user = User.find_by(email: "ena@fake.com")
 
     # get supermarkets in cart
     supermarkets = get_supermarkets(get_grouped_session)
