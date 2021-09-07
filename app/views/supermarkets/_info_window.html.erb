@@ -1,2 +1,3 @@
-<h4><%= supermarket.name %></h4>
+<%= image_tag "#{supermarket.name.downcase}_logo.png"%>
 <p><%= supermarket.address %></p>
+<%= link_to "", supermarket_path(supermarket), class: "stretched-link" %>
