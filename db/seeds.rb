@@ -46,6 +46,31 @@ Supermarket.create!(
   address: "Heinrich-Heine-Straße 30, Berlin"
 )
 
+alnatura = Supermarket.create!(
+  name: "Alnatura", 
+  address: "Friedrichstraße 191, Berlin"
+)
+
+rewe = Supermarket.create!(
+  name: "Rewe", 
+  address: "Friedrichstraße 60, Berlin"
+)
+
+Supermarket.create!(
+  name: "Aldi Süd", 
+  address: "Leipziger Platz 12, Berlin"
+)
+
+Supermarket.create!(
+  name: "Lidl", 
+  address: "Leipziger Straße 42, Berlin"
+)
+
+Supermarket.create!(
+  name: "Rewe", 
+  address: "Alte Potsdamer Straße 7, Berlin"
+)
+
 puts "Finished creating #{Supermarket.count} new Supermarkets"
 puts ""
 
@@ -65,7 +90,7 @@ Product.create!(
     category: category,
     amount: rand(1..10),
     unit: "#{unit}g",
-    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura"].sample)
+    supermarket: alnatura
     )
     
 unit = [250, 500, 750, 1000].sample
@@ -80,7 +105,7 @@ Product.create!(
     category: category,
     amount: rand(1..10),
     unit: "#{unit}g",
-    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura"].sample)
+    supermarket: alnatura
     )
     
 unit = [250, 500, 750, 1000].sample
@@ -95,7 +120,7 @@ Product.create!(
     category: category,
     amount: rand(1..10),
     unit: "#{unit}g",
-    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura"].sample)
+    supermarket: rewe
     )
 
 unit = [250, 500, 750, 1000].sample
@@ -110,7 +135,7 @@ Product.create!(
     category: category,
     amount: rand(1..10),
     unit: "#{unit}g",
-    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura"].sample)
+    supermarket: rewe
     )
 
 unit = [250, 500, 750, 1000].sample
@@ -125,7 +150,7 @@ Product.create!(
     category: category,
     amount: rand(1..10),
     unit: "#{unit}g",
-    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura"].sample)
+    supermarket: alnatura
     )
 
 # NEW VEGETABLES SEED PRODUCT
@@ -141,7 +166,7 @@ Product.create!(
     category: category,
     amount: rand(1..10),
     unit: "#{unit}g",
-    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura"].sample)
+    supermarket: alnatura
     )
 
 unit = [250, 500, 750, 1000].sample
@@ -156,7 +181,7 @@ Product.create!(
     category: category,
     amount: rand(1..10),
     unit: "#{unit}g",
-    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura"].sample)
+    supermarket: rewe
     )
 
 unit = [250, 500, 750, 1000].sample
@@ -171,7 +196,7 @@ Product.create!(
     category: category,
     amount: rand(1..10),
     unit: "#{unit}g",
-    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura"].sample)
+    supermarket: rewe
     )
 
 unit = [250, 500, 750, 1000].sample
@@ -186,7 +211,7 @@ Product.create!(
     category: category,
     amount: rand(1..10),
     unit: "#{unit}g",
-    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura"].sample)
+    supermarket: alnatura
     )
 
 unit = [250, 500, 750, 1000].sample
@@ -201,7 +226,7 @@ Product.create!(
     category: category,
     amount: rand(1..10),
     unit: "#{unit}g",
-    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura"].sample)
+    supermarket: rewe
     )
 
 # FRUITS
@@ -219,7 +244,7 @@ Product.create!(
     category: category,
     amount: rand(1..10),
     unit: "#{unit}g",
-    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura"].sample)
+    supermarket: alnatura
     )
 
 unit = [250, 500, 750, 1000].sample
@@ -234,7 +259,7 @@ Product.create!(
     category: category,
     amount: rand(1..10),
     unit: "#{unit}g",
-    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura"].sample)
+    supermarket: rewe
     )
 
 unit = [250, 500, 750, 1000].sample
@@ -249,7 +274,7 @@ Product.create!(
     category: category,
     amount: rand(1..10),
     unit: "#{unit}g",
-    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura"].sample)
+    supermarket: rewe
     )
 
 unit = [250, 500, 750, 1000].sample
@@ -264,7 +289,7 @@ Product.create!(
     category: category,
     amount: rand(1..10),
     unit: "#{unit}g",
-    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura"].sample)
+    supermarket: rewe
     )
 
 unit = [250, 500, 750, 1000].sample
@@ -279,7 +304,7 @@ Product.create!(
     category: category,
     amount: rand(1..10),
     unit: "#{unit}g",
-    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura"].sample)
+    supermarket: alnatura
     )
 
 # NEW FRUITS PRODUCT SEED
@@ -295,7 +320,7 @@ Product.create!(
     category: category,
     amount: rand(1..10),
     unit: "#{unit}g",
-    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura"].sample)
+    supermarket: rewe
     )
 
 unit = [250, 500, 750, 1000].sample
@@ -310,7 +335,7 @@ Product.create!(
     category: category,
     amount: rand(1..10),
     unit: "#{unit}g",
-    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura"].sample)
+    supermarket: rewe
     )
 
 unit = [250, 500, 750, 1000].sample
@@ -325,7 +350,7 @@ Product.create!(
     category: category,
     amount: rand(1..10),
     unit: "#{unit}g",
-    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura"].sample)
+    supermarket: alnatura
     )
 
 unit = [250, 500, 750, 1000].sample
@@ -340,7 +365,7 @@ Product.create!(
     category: category,
     amount: rand(1..10),
     unit: "#{unit}g",
-    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura"].sample)
+    supermarket: rewe
     )
 
 unit = [250, 500, 750, 1000].sample
@@ -355,7 +380,7 @@ Product.create!(
     category: category,
     amount: rand(1..10),
     unit: "#{unit}g",
-    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura"].sample)
+    supermarket: rewe
     )
 
 # MEAT / FISH
@@ -373,7 +398,7 @@ Product.create!(
     category: category,
     amount: rand(1..10),
     unit: "#{unit}g",
-    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
+    supermarket: Supermarket.find_by(name: ["Aldi Süd", "Lidl"].sample)
     )
 
 unit = [250, 500, 750, 1000].sample
@@ -388,7 +413,7 @@ Product.create!(
     category: category,
     amount: rand(1..10),
     unit: "#{unit}g",
-    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
+    supermarket: Supermarket.find_by(name: ["Aldi Süd", "Lidl"].sample)
     )
 
 unit = [250, 500, 750, 1000].sample
@@ -403,7 +428,7 @@ Product.create!(
     category: category,
     amount: rand(1..10),
     unit: "#{unit}g",
-    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
+    supermarket: rewe
     )
 
 unit = [250, 500, 750, 1000].sample
@@ -418,7 +443,7 @@ Product.create!(
     category: category,
     amount: rand(1..10),
     unit: "#{unit}g",
-    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
+    supermarket: alnatura
     )
 
 unit = [250, 500, 750, 1000].sample
@@ -433,7 +458,7 @@ Product.create!(
     category: category,
     amount: rand(1..10),
     unit: "#{unit}g",
-    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
+    supermarket: rewe
     )
 
 unit = [250, 500, 750, 1000].sample
@@ -448,7 +473,7 @@ Product.create!(
     category: category,
     amount: rand(1..10),
     unit: "#{unit}g",
-    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
+    supermarket: alnatura
     )
 
 # DAIRY
@@ -466,7 +491,7 @@ Product.create!(
     category: category,
     amount: rand(1..10),
     unit: "#{unit}g",
-    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
+    supermarket: rewe
     )
 
 unit = [250, 500, 750, 1000].sample
@@ -481,7 +506,7 @@ Product.create!(
     category: category,
     amount: rand(1..10),
     unit: "#{unit}ml",
-    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
+    supermarket: rewe
     )
 
 unit = [250, 500, 750, 1000].sample
@@ -496,7 +521,7 @@ Product.create!(
     category: category,
     amount: rand(1..10),
     unit: "#{unit}g",
-    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
+    supermarket: Supermarket.find_by(name: ["Aldi Süd", "Lidl"].sample)
     )
 
 unit = [250, 500, 750, 1000].sample
@@ -511,7 +536,7 @@ Product.create!(
     category: category,
     amount: rand(1..10),
     unit: "#{unit}g",
-    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
+    supermarket: rewe
     )
 
 unit = [250, 500, 750, 1000].sample
@@ -526,7 +551,7 @@ Product.create!(
     category: category,
     amount: rand(1..10),
     unit: "#{unit}g",
-    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
+    supermarket: Supermarket.find_by(name: ["Aldi Süd", "Lidl"].sample)
     )
 
 # NEW DAIRY PRODUCTS
@@ -542,7 +567,7 @@ Product.create!(
     category: category,
     amount: rand(1..10),
     unit: "#{unit}g",
-    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
+    supermarket: alnatura
     )
 
 unit = [250, 500, 750, 1000].sample
@@ -557,7 +582,7 @@ Product.create!(
     category: category,
     amount: rand(1..10),
     unit: "10 pack",
-    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
+    supermarket: alnatura
     )
 
 unit = [250, 500, 750, 1000].sample
@@ -572,7 +597,7 @@ Product.create!(
     category: category,
     amount: rand(1..10),
     unit: "#{unit}g",
-    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
+    supermarket: rewe
     )
 
 unit = [250, 500, 750, 1000].sample
@@ -587,7 +612,7 @@ Product.create!(
     category: category,
     amount: rand(1..10),
     unit: "#{unit}g",
-    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
+    supermarket: alnatura
     )
 
 puts "Finished creating #{Product.count} new Products"
