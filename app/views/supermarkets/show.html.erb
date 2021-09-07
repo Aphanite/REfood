@@ -1,13 +1,28 @@
-<div id="inner">
+<div id="inner" style="margin-top: 20px;">
   <div class="index-container">
+    <div class="navbar-show">
+      <%= link_to supermarkets_path do %>
+        <i class="fas fa-chevron-left"></i>
+      <% end %>
+    </div>
     <%= render 'shared/supermarket_info'%>
 
     <div class="category-filter">
-      <span style="padding-left: 8px; color:#3DD26D;">All</span>
-      <span>Fruit</span>
-      <span>Vegetable</span>
-      <span>Meat/Fish</span>
-      <span>Dairy</span>
+      <% @category_list.each do |cat| %>
+        <span>
+          <a href="/supermarkets/<%= @supermarket.id %>?category=<%= cat[:slug] %>" class="<% if cat[:slug] == @category %>active<% end %>">
+            <%= cat[:text] %>
+          </a>
+        </span>
+      <% end %>
+
+      <!-- <span style="padding-left: 8px; color:#3DD26D;">
+        <a href="/supermarkets/<%= @supermarket.id %>">All</a>
+      </span>
+      <span><a href="/supermarkets/<%= @supermarket.id %>?category=fruits">Fruit</a></span>
+      <span><a href="/supermarkets/<%= @supermarket.id %>?category=vegetables">Vegetables</a></span>
+      <span><a href="/supermarkets/<%= @supermarket.id %>?category=meat-fish">Meat/Fish</a></span>
+      <span><a href="/supermarkets/<%= @supermarket.id %>?category=dairy">Dairy</a></span> -->
     </div>
 
     <div id="content-container">
@@ -17,7 +32,7 @@
 
             <div class="supermarket-product-cards">
 
-              <% @supermarket.products.each do |product| %>
+              <% @products.each do |product| %>
                 <div class="product-card">
                   <div class="product-card__image">
                     <% category = product.category.downcase %>
@@ -43,7 +58,7 @@
                 </div>
               <% end %>
             </div>
-            <span class="supermarket-product-title">Most popular</span>
+            <span class="supermarket-product-title">Most popular today</span>
             <div class="supermarket-product-cards">
 
               <% @supermarket.products.reverse.each do |product| %>

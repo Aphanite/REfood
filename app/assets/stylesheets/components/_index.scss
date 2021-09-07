@@ -11,6 +11,7 @@
 @import "card";
 @import "location_form";
 @import "order";
+@import "map";
 
 html {
   height: 100%;
@@ -18,7 +19,8 @@ html {
 
 body {
   font-family: 'Mulish', sans-serif;
-  background-color: #FBFDFF;
+  background-color: #f7fff8;
+  // #FBFDFF
   min-height: 100%;
 }
 

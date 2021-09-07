@@ -15,20 +15,36 @@ class OrdersController < ApplicationController
   end
   
   def create
-    supermarkets = get_supermarkets(get_grouped_session)
-    my_params = order_params(supermarkets)
     order = Order.new()
-    # assign user
-    current_user ? order.user = current_user : order.user = User.find_by(email: "florian@fake.com")
-    # init json
+    # assign user (preliminary solution)
+    current_user ? order.user = current_user : order.user = User.find_by(email: "ena@fake.com")
+
+    # get supermarkets in cart
+    supermarkets = get_supermarkets(get_grouped_session)
+    # get pickup date and time for each supermarket
+    date_params = order_params(supermarkets)
+
+    # add pickup dates and times to order
     pickup_dates = {}
     supermarkets.each do |s|
-      pickup_dates["#{s}"] = [ my_params["date-#{s}"], my_params["time-#{s}"] ]
+      pickup_dates["#{s}"] = [ date_params["date-#{s}"], date_params["time-#{s}"] ]
     end
     order.pick_up_slots = pickup_dates
+
+    prices = get_price_and_discount
+
+    order.total_price = prices[:total_price]
+    order.discount = prices[:discount]
+
+    order.points = (order.total_price.to_i * 2).floor
+
     order.save!
+
     # make associated ordered items
     make_ordered_items(order)
+
+    # empty cart in session
+    session[:cart] = []
 
     redirect_to new_order_payment_path(order)
   end
@@ -49,6 +65,7 @@ class OrdersController < ApplicationController
 
   end
 
+  # group products in cart by supermarket
   def get_grouped_session
     session[:cart].group_by { |p| p["supermarketId"].itself }
   end
@@ -67,4 +84,15 @@ class OrdersController < ApplicationController
     end
   end
 
+  def get_price_and_discount
+    total_price = 0
+    discount = 0
+    session[:cart].each do |item|
+      product = Product.find(item["productId"])
+      total_price += product.discounted_price * item["offset"]
+      discount += (product.full_price - product.discounted_price) * item["offset"]
+    end
+
+    return {total_price: total_price, discount: discount}
+  end
 end

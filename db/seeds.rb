@@ -17,9 +17,9 @@ User.destroy_all
 end
 
 User.create!(
-  name: "Florian", 
-  email: "florian@fake.com", 
-  password: "florian@fake.com", 
+  name: "Ena", 
+  email: "ena@fake.com", 
+  password: "ena@fake.com", 
   points: rand(1..100)
 )
 
@@ -51,21 +51,21 @@ puts ""
 
 # creating Products instances
 # VEGETABLES
-category = ["Vegetables", "Fruits", "Meat/Fish", "Dairy"]
+category = ["vegetables", "fruits", "meat-fish", "dairy"]
 category = category[0]
 unit = [250, 500, 750, 1000].sample
 full_price_vegetables = rand(250..450)
 full_price_per_kg = full_price_vegetables
 Product.create!(
     name: "Tomatoes",
-    description: "Tomatoes are the Germans' favorite vegetable. From a botanical point of view, they belong to the berries. As a nightshade plant, they are a warmth-loving plant. Although tomatoes come in many shapes, the round ones are the most common in the world. Mainly from Spain, Italy, France, the Netherlands and Morocco. Fruity, piquant and spicy. Particularly suitable for salads.",
+    description: "Tomatoes are the major dietary source of the antioxidant lycopene, which has been linked to many health benefits, including reduced risk of heart disease and cancer. They are also a great source of vitamin C, potassium, folate, and vitamin K.",
     full_price_cents: full_price_per_kg * unit / 1000.0,
     discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
     best_before_date: Faker::Date.forward(days: 5),
     category: category,
     amount: rand(1..10),
     unit: "#{unit}g",
-    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
+    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura"].sample)
     )
     
 unit = [250, 500, 750, 1000].sample
@@ -73,14 +73,14 @@ full_price_vegetables = rand(250..450)
 full_price_per_kg = full_price_vegetables
 Product.create!(
     name: "Cucumbers",
-    description: "Cucumbers belong to the cucurbit family. Originally coming from the tropics, they have high temperature requirements and are almost exclusively planted in greenhouses. The fruits are about 30-40 cm long, slender and tapered at the ends. The skin is usually smooth and dark in color. Mainly grown in Greece, Spain, the Netherlands, Belgium and Germany.",
+    description: "Cucumbers are good sources of phytonutrients (plant chemicals that have protective or disease preventive properties) such flavonoids, lignans and triterpenes, which have antioxidant, anti-inflammatory and anti-cancer benefits.",
     full_price_cents: full_price_per_kg * (unit / 1000.0),
     discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
     best_before_date: Faker::Date.forward(days: 5),
     category: category,
     amount: rand(1..10),
     unit: "#{unit}g",
-    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
+    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura"].sample)
     )
     
 unit = [250, 500, 750, 1000].sample
@@ -88,14 +88,14 @@ full_price_vegetables = rand(250..450)
 full_price_per_kg = full_price_vegetables
 Product.create!(
     name: "Beets",
-    description: "Beets, or beetroots, are jewel-toned root vegetables. The leaves and roots of beets are packed with nutrition, including antioxidants that fight cell damage and reduce the risk of heart disease. They’re one of the few vegetables that contain betalains, a powerful antioxidant that gives beets their vibrant color.",
+    description: "Packed with essential nutrients, beetroots are a great source of fiber, folate (vitamin B9), manganese, potassium, iron, and vitamin C. Beetroots and beetroot juice have been associated with numerous health benefits, including improved blood flow, lower blood pressure, and increased exercise performance.",
     full_price_cents: full_price_per_kg * (unit / 1000.0),
     discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
     best_before_date: Faker::Date.forward(days: 5),
     category: category,
     amount: rand(1..10),
     unit: "#{unit}g",
-    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
+    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura"].sample)
     )
 
 unit = [250, 500, 750, 1000].sample
@@ -103,14 +103,14 @@ full_price_vegetables = rand(250..450)
 full_price_per_kg = full_price_vegetables
 Product.create!(
     name: "Peas",
-    description: "Green peas, or garden peas, are the small, spherical seeds that come from pods produced by the Pisum sativum plant.",
+    description: "The high concentration of vitamins, minerals, antioxidants, and phytonutrients in peas provides important health benefits that range from keeping your eyes healthy to protecting you against certain cancers.",
     full_price_cents: full_price_per_kg * (unit / 1000.0),
     discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
     best_before_date: Faker::Date.forward(days: 5),
     category: category,
     amount: rand(1..10),
     unit: "#{unit}g",
-    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
+    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura"].sample)
     )
 
 unit = [250, 500, 750, 1000].sample
@@ -118,18 +118,94 @@ full_price_vegetables = rand(250..450)
 full_price_per_kg = full_price_vegetables
 Product.create!(
     name: "Onions",
-    description: "Onions have a light, golden-brown shell that surrounds a white or red, juicy flesh. Mainly grown in Spain, furthermore Chile and Egypt. Mild and slightly sweet. Onions can be used raw or cooked. Suitable for salads, soups, omelets.",
+    description: "More than just a tasty culinary plant, the onion contains natural sugar, vitamins A, B6, C and E, minerals such as sodium, potassium, iron and dietary fibre. In addition, onions are a good source of folic acid.",
     full_price_cents: full_price_per_kg * (unit / 1000.0),
     discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
     best_before_date: Faker::Date.forward(days: 5),
     category: category,
     amount: rand(1..10),
     unit: "#{unit}g",
-    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
+    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura"].sample)
+    )
+
+# NEW VEGETABLES SEED PRODUCT
+unit = [250, 500, 750, 1000].sample
+full_price_vegetables = rand(250..450)
+full_price_per_kg = full_price_vegetables
+Product.create!(
+    name: "Eggplant",
+    description: "Eggplant, a warm-season vegetable belongs to the nightshade family. It forms a many branched plant with leaves and stems that have star-shaped (stellate) hair and stems. Its flowers are purple and the fruits are generally purple too.",
+    full_price_cents: full_price_per_kg * (unit / 1000.0),
+    discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
+    best_before_date: Faker::Date.forward(days: 5),
+    category: category,
+    amount: rand(1..10),
+    unit: "#{unit}g",
+    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura"].sample)
+    )
+
+unit = [250, 500, 750, 1000].sample
+full_price_vegetables = rand(250..450)
+full_price_per_kg = full_price_vegetables
+Product.create!(
+    name: "Lettuce",
+    description: "Lettuce is an excellent source vitamin A (21% DV) of vitamin K (97% DV) with high content of provitamin A compound, beta-carotene, in darker green lettuces, such as Romaine.",
+    full_price_cents: full_price_per_kg * (unit / 1000.0),
+    discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
+    best_before_date: Faker::Date.forward(days: 5),
+    category: category,
+    amount: rand(1..10),
+    unit: "#{unit}g",
+    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura"].sample)
+    )
+
+unit = [250, 500, 750, 1000].sample
+full_price_vegetables = rand(250..450)
+full_price_per_kg = full_price_vegetables
+Product.create!(
+    name: "Artichokes",
+    description: "Artichoke is rich in potassium and iron salts. In the artichoke there are also some sugars allowed to diabetics, such as mannite and inulin and other minerals such as copper, zinc, sodium, phosphorus and manganese.",
+    full_price_cents: full_price_per_kg * (unit / 1000.0),
+    discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
+    best_before_date: Faker::Date.forward(days: 5),
+    category: category,
+    amount: rand(1..10),
+    unit: "#{unit}g",
+    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura"].sample)
+    )
+
+unit = [250, 500, 750, 1000].sample
+full_price_vegetables = rand(250..450)
+full_price_per_kg = full_price_vegetables
+Product.create!(
+    name: "Parsley",
+    description: "That same cup of parsley packs an estimated 80 mg of vitamin C (known for helping to boost immunity) along with vitamins A (which promotes healthy vision and development) and K (regarded for its bone-forming, anticancer properties).",
+    full_price_cents: full_price_per_kg * (unit / 1000.0),
+    discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
+    best_before_date: Faker::Date.forward(days: 5),
+    category: category,
+    amount: rand(1..10),
+    unit: "#{unit}g",
+    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura"].sample)
+    )
+
+unit = [250, 500, 750, 1000].sample
+full_price_vegetables = rand(250..450)
+full_price_per_kg = full_price_vegetables
+Product.create!(
+    name: "Cauliflower",
+    description: "Cauliflowers are annual plants that reach about 0.5 metre (1.5 feet) tall and bear large rounded leaves that resemble collards (Brassica oleracea, variety acephala)",
+    full_price_cents: full_price_per_kg * (unit / 1000.0),
+    discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
+    best_before_date: Faker::Date.forward(days: 5),
+    category: category,
+    amount: rand(1..10),
+    unit: "#{unit}g",
+    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura"].sample)
     )
 
 # FRUITS
-category = ["Vegetables", "Fruits", "Meat/Fish", "Dairy"]
+category = ["vegetables", "fruits", "meat-fish", "dairy"]
 category = category[1]
 unit = [250, 500, 750, 1000].sample
 full_price_fruits = rand(300..500)
@@ -143,7 +219,7 @@ Product.create!(
     category: category,
     amount: rand(1..10),
     unit: "#{unit}g",
-    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
+    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura"].sample)
     )
 
 unit = [250, 500, 750, 1000].sample
@@ -158,7 +234,7 @@ Product.create!(
     category: category,
     amount: rand(1..10),
     unit: "#{unit}g",
-    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
+    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura"].sample)
     )
 
 unit = [250, 500, 750, 1000].sample
@@ -166,14 +242,14 @@ full_price_fruits = rand(300..500)
 full_price_per_kg = full_price_fruits
 Product.create!(
     name: "Oranges",
-    description: "Oranges are by far the most popular type of citrus. Mainly grown in Spain, Morocco, Turkey, USA, South Africa, South America and Greece. Very juicy, aromatic, tender and sweet. Mainly consumed raw and pure as well as for fruit salads, desserts, cake toppings or jams.",
+    description: "Oranges are a good source of several vitamins and minerals, especially vitamin C, thiamine, folate, and potassium. Vitamin C. Oranges are an excellent source of vitamin C. One large orange provides over 100% of the RDI",
     full_price_cents: full_price_per_kg * (unit / 1000.0),
     discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
     best_before_date: Faker::Date.forward(days: 5),
     category: category,
     amount: rand(1..10),
     unit: "#{unit}g",
-    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
+    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura"].sample)
     )
 
 unit = [250, 500, 750, 1000].sample
@@ -188,7 +264,7 @@ Product.create!(
     category: category,
     amount: rand(1..10),
     unit: "#{unit}g",
-    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
+    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura"].sample)
     )
 
 unit = [250, 500, 750, 1000].sample
@@ -203,18 +279,94 @@ Product.create!(
     category: category,
     amount: rand(1..10),
     unit: "#{unit}g",
-    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
+    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura"].sample)
+    )
+
+# NEW FRUITS PRODUCT SEED
+unit = [250, 500, 750, 1000].sample
+full_price_fruits = rand(300..500)
+full_price_per_kg = full_price_fruits
+Product.create!(
+    name: "Pears",
+    description: "Pears are fruits produced and consumed around the world, growing on a tree and harvested in the Northern Hemisphere in late summer into October.",
+    full_price_cents: full_price_per_kg * (unit / 1000.0),
+    discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
+    best_before_date: Faker::Date.forward(days: 5),
+    category: category,
+    amount: rand(1..10),
+    unit: "#{unit}g",
+    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura"].sample)
+    )
+
+unit = [250, 500, 750, 1000].sample
+full_price_fruits = rand(300..500)
+full_price_per_kg = full_price_fruits
+Product.create!(
+    name: "Strawberry",
+    description: "The garden strawberry (or simply strawberry; Fragaria × ananassa) is a widely grown hybrid species of the genus Fragaria, collectively known as the strawberries, which are cultivated worldwide for their fruit",
+    full_price_cents: full_price_per_kg * (unit / 1000.0),
+    discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
+    best_before_date: Faker::Date.forward(days: 5),
+    category: category,
+    amount: rand(1..10),
+    unit: "#{unit}g",
+    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura"].sample)
+    )
+
+unit = [250, 500, 750, 1000].sample
+full_price_fruits = rand(300..500)
+full_price_per_kg = full_price_fruits
+Product.create!(
+    name: "Apricots",
+    description: "Apricots (Prunus armeniaca) are stone fruits also known as Armenian plums. Round and yellow, they look like a smaller version of a peach but share the tartness of purple plums.",
+    full_price_cents: full_price_per_kg * (unit / 1000.0),
+    discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
+    best_before_date: Faker::Date.forward(days: 5),
+    category: category,
+    amount: rand(1..10),
+    unit: "#{unit}g",
+    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura"].sample)
+    )
+
+unit = [250, 500, 750, 1000].sample
+full_price_fruits = rand(300..500)
+full_price_per_kg = full_price_fruits
+Product.create!(
+    name: "Watermelons",
+    description: "Watermelon (Citrullus lanatus) is a flowering plant species of the Cucurbitaceae family and the name of its edible fruit. A scrambling and trailing vine-like plant, it was originally domesticated in Africa",
+    full_price_cents: full_price_per_kg * (unit / 1000.0),
+    discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
+    best_before_date: Faker::Date.forward(days: 5),
+    category: category,
+    amount: rand(1..10),
+    unit: "#{unit}g",
+    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura"].sample)
+    )
+
+unit = [250, 500, 750, 1000].sample
+full_price_fruits = rand(300..500)
+full_price_per_kg = full_price_fruits
+Product.create!(
+    name: "Kiwi",
+    description: "The ellipsoidal kiwi fruit is a true berry and has furry brownish green skin. The firm translucent green flesh has numerous edible purple-black seeds embedded around a white centre.",
+    full_price_cents: full_price_per_kg * (unit / 1000.0),
+    discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
+    best_before_date: Faker::Date.forward(days: 5),
+    category: category,
+    amount: rand(1..10),
+    unit: "#{unit}g",
+    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura"].sample)
     )
 
 # MEAT / FISH
-category = ["Vegetables", "Fruits", "Meat/Fish", "Dairy"]
+category = ["vegetables", "fruits", "meat-fish", "dairy"]
 category = category[2]
 unit = [250, 500, 750, 1000].sample
 full_price_meat_fish = rand(800..1200)
 full_price_per_kg = full_price_meat_fish
 Product.create!(
     name: "Chicken",
-    description: "Chicken is the most common type of poultry in the world.Owing to the relative ease and low cost of raising chickens—in comparison to mammals such as cattle or hogs—chicken meat and chicken eggs have become prevalent in numerous cuisines.",
+    description: "Chicken is the most common type of poultry in the world. Owing to the relative ease and low cost of raising chickens—in comparison to mammals such as cattle or hogs—chicken meat and chicken eggs have become prevalent in numerous cuisines.",
     full_price_cents: full_price_per_kg * (unit / 1000.0),
     discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
     best_before_date: Faker::Date.forward(days: 5),
@@ -300,7 +452,7 @@ Product.create!(
     )
 
 # DAIRY
-category = ["Vegetables", "Fruits", "Meat/Fish", "Dairy"]
+category = ["vegetables", "fruits", "meat-fish", "dairy"]
 category = category[3]
 unit = [250, 500, 750, 1000].sample
 full_price_dairy = rand(150..300)
@@ -377,40 +529,99 @@ Product.create!(
     supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
     )
 
+# NEW DAIRY PRODUCTS
+unit = [250, 500, 750, 1000].sample
+full_price_dairy = rand(150..300)
+full_price_per_kg = full_price_dairy
+Product.create!(
+    name: "Parmesan",
+    description: "Parmesan cheese has a hard, gritty texture and is fruity and nutty in taste, and it is mostly consumed grated over pastas or used in soups and risottos although it can also be eaten on its own as a snack",
+    full_price_cents: full_price_per_kg * (unit / 1000.0),
+    discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
+    best_before_date: Faker::Date.forward(days: 5),
+    category: category,
+    amount: rand(1..10),
+    unit: "#{unit}g",
+    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
+    )
+
+unit = [250, 500, 750, 1000].sample
+full_price_dairy = rand(150..300)
+full_price_per_kg = full_price_dairy
+Product.create!(
+    name: "Eggs",
+    description: "An oval or rounded body surrounded by a shell or membrane by which some animals (as birds, fish, insects, and reptiles) reproduce and from which the young hatches out",
+    full_price_cents: 299,
+    discounted_price_cents: 159,
+    best_before_date: Faker::Date.forward(days: 5),
+    category: category,
+    amount: rand(1..10),
+    unit: "10 pack",
+    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
+    )
+
+unit = [250, 500, 750, 1000].sample
+full_price_dairy = rand(150..300)
+full_price_per_kg = full_price_dairy
+Product.create!(
+    name: "Sour Cream",
+    description: "Sour cream (in North American English, Australian English and New Zealand English) or soured cream (British English) is a dairy product obtained by fermenting regular cream with certain kinds of lactic acid bacteria",
+    full_price_cents: full_price_per_kg * (unit / 1000.0),
+    discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
+    best_before_date: Faker::Date.forward(days: 5),
+    category: category,
+    amount: rand(1..10),
+    unit: "#{unit}g",
+    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
+    )
+
+unit = [250, 500, 750, 1000].sample
+full_price_dairy = rand(150..300)
+full_price_per_kg = full_price_dairy
+Product.create!(
+    name: "Kefir",
+    description: "Kefir is a fermented milk drink similar to a thin yogurt or ayran that is made from kefir grains, a specific type of mesophilic symbiotic culture.",
+    full_price_cents: full_price_per_kg * (unit / 1000.0),
+    discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
+    best_before_date: Faker::Date.forward(days: 5),
+    category: category,
+    amount: rand(1..10),
+    unit: "#{unit}g",
+    supermarket: Supermarket.find_by(name: ["Rewe", "Alnatura", "Aldi Süd", "Lidl"].sample)
+    )
+
 puts "Finished creating #{Product.count} new Products"
 
-# creating order instances
-Order.create!(
-  user: User.find_by(name: "Florian"),
-  date: Faker::Date.backward(days: 5)
-)
+# # creating order instances
+# Order.create!(
+#   user: User.find_by(name: "Florian"),
+# )
 
-Order.create!(
-  user: User.find_by(name: "Florian"),
-  date: Faker::Date.backward(days: 4)
-)
+# Order.create!(
+#   user: User.find_by(name: "Florian"),
+# )
 
-puts "Finished creating #{Order.count} new orders"
+# puts "Finished creating #{Order.count} new orders"
 
-# creating ordered_items instances
-OrderedItem.create!(
-  order: Order.last,
-  product: Product.last
-)
+# # creating ordered_items instances
+# OrderedItem.create!(
+#   order: Order.last,
+#   product: Product.last
+# )
 
-OrderedItem.create!(
-  order: Order.last,
-  product: Product.last
-)
+# OrderedItem.create!(
+#   order: Order.last,
+#   product: Product.last
+# )
 
-OrderedItem.create!(
-  order: Order.last,
-  product: Product.last
-)
+# OrderedItem.create!(
+#   order: Order.last,
+#   product: Product.last
+# )
 
-OrderedItem.create!(
-  order: Order.last,
-  product: Product.last
-)
+# OrderedItem.create!(
+#   order: Order.last,
+#   product: Product.last
+# )
 
-puts "Finished creating #{OrderedItem.count} new ordered items"
+# puts "Finished creating #{OrderedItem.count} new ordered items"

@@ -9,7 +9,18 @@ const chooseDate = (dateInput) => {
     altFormat: "F j, Y",
     dateFormat: "Y-m-d",
     minDate: "today",
-    maxDate: maxDate
+    maxDate: maxDate,
+    disableMobile: true,
+    disable: [
+        function(date) {
+            // return true to disable
+            return (date.getDay() === 0);
+
+        }
+    ],
+    locale: {
+        "firstDayOfWeek": 1 // start week on Monday
+    }
   })
 };
 
@@ -21,6 +32,7 @@ const chooseTime = () => {
     dateFormat: "H:i",
     minTime: "08:00",
     maxTime: "20:00",
+    disableMobile: true
   })
 }
 
@@ -35,11 +47,4 @@ export const addPickUpSlot = () => {
       chooseTime();
     }
   }
-
-
-  // const pickUpContainer = document.getElementById("pickupContainer");
-  // if (pickUpContainer) {
-    // console.log("WE are IN");
-    // document.getElementById('booking_form')
-  // }
 }

@@ -4,7 +4,7 @@
 // that code so it'll be compiled.
 
 require("@rails/ujs").start()
-// require("turbolinks").start()
+require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
@@ -27,19 +27,22 @@ import "bootstrap";
 
 
 // Internal imports, e.g:
-import { renderPage, bindToggleButtons } from '../components/_toggle_display';
+// import { renderPage, bindToggleButtons } from '../components/_toggle_display';
+import { initToggleDisplay } from '../components/_second_toggle';
 import { bindCounterButton } from '../components/_update_counter';
 import { addPickUpSlot } from '../components/_choose_pickuptime';
 import { initMapbox } from '../plugins/init_mapbox';
 import '../components/_location_form';
+import { bindCartButtons } from '../components/_change_count';
 
-// document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  // initSelect2();
-  renderPage();
-  bindToggleButtons();
+document.addEventListener('turbolinks:load', () => {
+ // Call your functions here, e.g:
+ // initSelect2();
+  // renderPage();
+  // bindToggleButtons();
+  initToggleDisplay();
   bindCounterButton();
   addPickUpSlot();
   initMapbox();
-
-// });
+  bindCartButtons();
+ });
