@@ -8,14 +8,14 @@
       <span class="divider"></span>
       <%= image_tag "money_lightgrey.png" %>
     </div>
-    <div class="order__header" style="font-size: 28px; margin-left: 0;">Pick-up</div>
+    <div class="order__header" style="font-size: 28px; margin: 16px 0;">Pick-up</div>
     <!-- <div>When do you want to pick up your order?</div> -->
-    <div class="order__dates">
+   <!--  <div class="order__dates"> -->
       <% grouped_session = session[:cart].group_by { |p| p["supermarketId"].itself } %>
       <%= simple_form_for :order, url: orders_path, html: { id: :pickupContainer } do |f| %>
         <% grouped_session.each do  |group| %>
           <% supermarket = Supermarket.find(group[0])%>
-          <div class="supermarket-order-container">
+          <div class="supermarket-order-container" style="margin: 16px 0;">
             <div class="d-flex">
               <div class="order-collection-point">
                 <div>
@@ -49,10 +49,15 @@
             </div>
           </div>
         <% end %>
-        <div class="d-flex justify-content-center">
-          <%= f.submit "Go to payment", class: "btn-gradient" %>
+        <div class="order__checkout">
+          <div class="d-flex justify-content-center" style="margin-bottom: 20px;">
+            <%= f.submit "Go to payment", class: "btn-gradient" %>
+          </div>
         </div>
       <% end %>
+<!--     </div> -->
+
+
     </div>
   </div>
 
