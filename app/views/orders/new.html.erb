@@ -40,10 +40,13 @@
             <% dates = group[1].map do |item| %>
               <% Product.find(item["productId"]).best_before_date %>
             <% end %>
-            <p>Select a date</p>‚
-            <%= f.input "", as: :string, required: true, label: false, input_html: { class: "pickupDate", id: "date-#{supermarket.id}",  name: "order[date-#{supermarket.id}]", placeholder: "Date", :data => {:maxdate => dates.min } }%>
-            <p>Select time</p>
-            <%= f.input "", as: :string, required: true, label: false, input_html: { class: "pickupTime", id: "time-#{supermarket.id}", name: "order[time-#{supermarket.id}]", placeholder: "Time" } %>
+
+            <div class="date-selection">
+              <%= f.input "", as: :string, required: true, label: false, input_html: { class: "pickupDate", id: "date-#{supermarket.id}",  name: "order[date-#{supermarket.id}]", placeholder: "Select date", :data => {:maxdate => dates.min } }%>
+            </div>
+            <div class="date-selection">
+            <%= f.input "", as: :string, required: true, label: false, input_html: { class: "pickupTime", id: "time-#{supermarket.id}", name: "order[time-#{supermarket.id}]", placeholder: "Select time" } %>
+            </div>
           </div>
         <% end %>
         <div class="d-flex justify-content-center">
