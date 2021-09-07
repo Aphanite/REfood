@@ -32,6 +32,7 @@ gem 'dotenv-rails', groups: [:development, :test]
 
 gem 'pg_search', '~> 2.3.0'
 
+gem "browser"
 
 gem 'pundit'
 # Use Active Storage variant
