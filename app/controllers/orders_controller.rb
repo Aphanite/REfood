@@ -34,12 +34,18 @@ class OrdersController < ApplicationController
     prices = get_price_and_discount
 
     order.total_price = prices[:total_price]
+    order.discount = prices[:discount]
 
     order.points = (order.total_price.to_i * 2).floor
 
     order.save!
+
     # make associated ordered items
     make_ordered_items(order)
+
+    # empty cart in session
+    session[:cart] = []
+
     redirect_to new_order_payment_path(order)
   end
 

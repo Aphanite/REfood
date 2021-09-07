@@ -1,27 +1,91 @@
-<div class="container">
-  <div class="row py-4">
-    <div class="col">
-      <h1 class="summary">Your Order</h1>
-      <div class="order-recap">
-        <p class="product-recap"> Customer: <%= @order.user.name %></p>
-        <p class="product-recap"> Order number: <%= @order.id %></p>
-        <p class="product-recap"> Supermarket: </p>
-        <p class="product-recap"> Pick up Time: </p>
-      </div>
+ <div id="inner" style="margin: 32px 30px 0 30px;">
+  <div class="order-container">
+    <div class="order-progress-bar d-flex justify-content-center">
+      <%= image_tag "clock_green.png"%>
+      <span class="divider" style="border-bottom: 1px solid #079145"></span>
+      <%= image_tag "summary_green.png", style: "height: 35px;"%>
+      <span class="divider"></span>
+      <%= image_tag "money_lightgrey.png" %>
+    </div>
+    <div class="order__header" style="margin-left: 0;">Order summary</div>
+    <p style="margin-left: 4px;"><%= @order.ordered_items.count %> items</p>
+    <div class="order__content" style="padding-bottom: 0; margin-left: 0;">
+      <% @sorted_products.each do |group| %>
+        <div class="supermarket-order-container">
+          <div class="supermarket-order-info">
+            <div class="d-flex" style="align-items: center;">
+              <p class="supermarket-order-info__name"><%= group[0].name %></p>
+              <p style="font-weight: lighter; font-style: italic; padding-left: 12px;">Supermarket</p>
+            </div>
+            <div class="pickup">
+              <%= image_tag "marker-icon.png" %>
+              <p><%= group[0].address %></p>
+            </div>
+            <% pick_up_slots = @order.pick_up_slots["#{group[0].id}"] %>
+          <!--   <hr style="margin: 12px 0;"> -->
+            <div class="pickup">
+              <%= image_tag "clock.png" %>
+              <p> Pick up on <strong><%= Date.parse(pick_up_slots[0]).strftime("%B %e") %></strong> at <strong><%= pick_up_slots[1] %></strong> </p>
+            </div>
+          </div>
 
-      <div class="payment-buttons">
-        <button id="pay" class="button-homepage">Pay <%= humanized_money_with_symbol(@order.total_price) %></button>
+          <% group[1].each do |product| %>
+            <hr style="background-color: rgba(7, 145, 69, .3)">
+            <div class="item__info">
+              <p style="font-size: 18px; padding-left: 8px"><%= product.last %> x</p>
+              <div class="item__info__main">
+                <div style="margin: 0 24px;">
+                  <div class="order__content__item__info__header">
+                    <h2 style="margin: 0;"><%= product.first.name %></h2>
+                    <span><%= product.first.unit %> </span>
+                  </div>
+                  <p>best by <%= product.first.best_before_date.strftime("%B %e")%></p>
+                </div>
+              </div>
+               <p style="color: #079145; font-size: 16px; font-weight: normal; margin-top: 8px; padding-right: 8px"><%= humanized_money_with_symbol(product.first.discounted_price*product.last) %></p>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+
+
+    </div>
+
+      <div class="order__checkout">
+      <hr>
+      <div class="p-1">
+        <div class="d-flex justify-content-between mt-2" style="align-items: center;">
+          <h5 style="font-weight: bold; font-size: 22px;">Total</h5>
+          <h5 style="font-weight: bold; font-size: 28px;"><%= humanized_money_with_symbol(@order.total_price) %></h5>
+        </div>
+        <div class="d-flex justify-content-between">
+          <h5>You save!</h5>
+          <h5><%= humanized_money_with_symbol(@order.discount) %></h5>
+        </div>
+        <div class="d-flex justify-content-between">
+          <h5 style="color: #079145;">You gain!</h5>
+          <h5 style="color: #079145;"> <%= @order.points %> points</h5>
+        </div>
       </div>
-      
-    <script src="https://js.stripe.com/v3/"></script>
-    <script>
-      const paymentButton = document.getElementById('pay');
-      paymentButton.addEventListener('click', () => {
-        const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
-          stripe.redirectToCheckout({
-            sessionId: '<%= @checkout_session_id  %>'
-          });
-      });
-    </script>
+<!--       <div class=""> -->
+<!--         <button class="btn-gradient">Go to checkout</button> -->
+        <div class="payment-buttons d-flex justify-content-center">
+          <button id="pay" class="btn-gradient">Pay <%= humanized_money_with_symbol(@order.total_price) %></button>
+        </div>
+     <!--  </div> -->
+    </div>
+
   </div>
 </div>
+
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+const paymentButton = document.getElementById('pay');
+paymentButton.addEventListener('click', () => {
+  const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+    stripe.redirectToCheckout({
+      sessionId: '<%= @checkout_session_id  %>'
+    });
+});
+</script>
+
