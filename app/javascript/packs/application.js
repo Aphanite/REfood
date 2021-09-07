@@ -34,6 +34,7 @@ import { addPickUpSlot } from '../components/_choose_pickuptime';
 import { initMapbox } from '../plugins/init_mapbox';
 import '../components/_location_form';
 import { bindCartButtons } from '../components/_change_count';
+import { makeConfetti } from '../components/_confetti_order';
 
 document.addEventListener('turbolinks:load', () => {
  // Call your functions here, e.g:
@@ -45,4 +46,5 @@ document.addEventListener('turbolinks:load', () => {
   addPickUpSlot();
   initMapbox();
   bindCartButtons();
+  makeConfetti();
  });
