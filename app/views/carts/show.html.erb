@@ -55,9 +55,9 @@
     <div class="order__checkout">
       <hr>
       <div class="p-1">
-        <div class="d-flex justify-content-between mt-2">
+        <div class="d-flex justify-content-between mt-2" style="align-items: center;">
           <h5 style="font-weight: bold; font-size: 22px;">Total</h5>
-          <h5 style="font-weight: bold; font-size: 22px;"><%= humanized_money_with_symbol(total_price) %></h5>
+          <h5 style="font-weight: bold; font-size: 28px;"><%= humanized_money_with_symbol(total_price) %></h5>
         </div>
         <div class="d-flex justify-content-between">
           <h5>You save!</h5>
@@ -65,7 +65,7 @@
         </div>
         <div class="d-flex justify-content-between">
           <h5 style="color: #079145;">You gain!</h5>
-          <h5 style="color: #079145;"><%= (total_price.to_i * 2).floor %> Points</h5>
+          <h5 style="color: #079145;"><%= (total_price.to_i * 2).floor %> points</h5>
         </div>
       </div>
       <div class="d-flex justify-content-center">

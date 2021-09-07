@@ -1,7 +1,7 @@
  <div id="inner">
   <div class="order-container">
     <div class="order__header">Order summary</div>
-    <p><%= @order.ordered_items.count %> items</p>
+    <p style="margin-left: 17px;"><%= @order.ordered_items.count %> items</p>
     <div class="order__content" style="padding-bottom: 0;">
       <% @sorted_products.each do |group| %>
         <div class="supermarket-order-container">
@@ -11,13 +11,13 @@
               <p style="font-weight: lighter; font-style: italic; padding-left: 12px;">Supermarket</p>
             </div>
             <div class="pickup">
-              <%= image_tag "location.png" %>
+              <%= image_tag "marker-icon.png" %>
               <p><%= group[0].address %></p>
             </div>
             <% pick_up_slots = @order.pick_up_slots["#{group[0].id}"] %>
           <!--   <hr style="margin: 12px 0;"> -->
             <div class="pickup">
-              <%= image_tag "time.png" %>
+              <%= image_tag "clock.png" %>
               <p> Pick up on <strong><%= Date.parse(pick_up_slots[0]).strftime("%B %e") %></strong> at <strong><%= pick_up_slots[1] %></strong> </p>
             </div>
           </div>
@@ -43,9 +43,31 @@
 
 
     </div>
-    <div class="payment-buttons">
-      <button id="pay" class="btn-gradient">Pay <%= humanized_money_with_symbol(@order.total_price) %></button>
+
+      <div class="order__checkout">
+      <hr>
+      <div class="p-1">
+        <div class="d-flex justify-content-between mt-2" style="align-items: center;">
+          <h5 style="font-weight: bold; font-size: 22px;">Total</h5>
+          <h5 style="font-weight: bold; font-size: 28px;"><%= humanized_money_with_symbol(@order.total_price) %></h5>
+        </div>
+        <div class="d-flex justify-content-between">
+          <h5>You save!</h5>
+          <h5> FILL IN </h5>
+        </div>
+        <div class="d-flex justify-content-between">
+          <h5 style="color: #079145;">You gain!</h5>
+          <h5 style="color: #079145;"> <%= @order.points %> points</h5>
+        </div>
+      </div>
+<!--       <div class=""> -->
+<!--         <button class="btn-gradient">Go to checkout</button> -->
+        <div class="payment-buttons d-flex justify-content-center">
+          <button id="pay" class="btn-gradient">Pay <%= humanized_money_with_symbol(@order.total_price) %></button>
+        </div>
+     <!--  </div> -->
     </div>
+
   </div>
 </div>
 
