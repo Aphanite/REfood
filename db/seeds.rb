@@ -27,48 +27,44 @@ puts "Finished creating #{User.count} new Users"
 puts ""
 
 # creating Supermarkets instances
-Supermarket.create!(
-  name: "Rewe", 
-  address: "Friedrichstraße 100, Berlin"
+alnatura = Supermarket.create!(
+  name: "Alnatura",
+  address: "Friedrichstraße 191, 10117 Berlin"
 )
+
+rewe = Supermarket.create!(
+  name: "Rewe",
+  address: "Friedrichstraße 60, 10117 Berlin"
+)
+
 Supermarket.create!(
   name: "Alnatura", 
-  address: "Schönhauser Allee 108, Berlin"
+  address: "Schönhauser Allee 108, 10439 Berlin"
 )
 
 Supermarket.create!(
   name: "Aldi Süd",
-  address: "Badstraße 4, Berlin"
+  address: "Heinrich-Heine-Platz 8, 10179 Berlin"
 )
 
 Supermarket.create!(
   name: "Lidl", 
-  address: "Heinrich-Heine-Straße 30, Berlin"
-)
-
-alnatura = Supermarket.create!(
-  name: "Alnatura", 
-  address: "Friedrichstraße 191, Berlin"
-)
-
-rewe = Supermarket.create!(
-  name: "Rewe", 
-  address: "Friedrichstraße 60, Berlin"
+  address: "Heinrich-Heine-Straße 30, 10179 Berlin"
 )
 
 Supermarket.create!(
   name: "Aldi Süd", 
-  address: "Leipziger Platz 12, Berlin"
+  address: "Leipziger Platz 12, 10117 Berlin"
 )
 
 Supermarket.create!(
   name: "Lidl", 
-  address: "Leipziger Straße 42, Berlin"
+  address: "Leipziger Straße 42, 10117 Berlin"
 )
 
 Supermarket.create!(
-  name: "Rewe", 
-  address: "Alte Potsdamer Straße 7, Berlin"
+  name: "Rewe",
+  address: "Litfaß-Platz 4, 10178 Berlin"
 )
 
 puts "Finished creating #{Supermarket.count} new Supermarkets"
@@ -83,14 +79,14 @@ full_price_vegetables = rand(250..450)
 full_price_per_kg = full_price_vegetables
 Product.create!(
     name: "Tomatoes",
-    description: "Tomatoes are the major dietary source of the antioxidant lycopene, which has been linked to many health benefits, including reduced risk of heart disease and cancer. They are also a great source of vitamin C, potassium, folate, and vitamin K.",
+    description: "Organic quality\nfrom sun-ripened Italian tomatoes, freshly harvested\nperfect base for salads, pizza, mediterranean stews or bruschetta",
     full_price_cents: full_price_per_kg * unit / 1000.0,
     discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
     best_before_date: Faker::Date.forward(days: 5),
     category: category,
     amount: rand(1..10),
     unit: "#{unit}g",
-    supermarket: alnatura
+    supermarket: rewe
     )
     
 unit = [250, 500, 750, 1000].sample
@@ -252,7 +248,7 @@ full_price_fruits = rand(300..500)
 full_price_per_kg = full_price_fruits
 Product.create!(
     name: "Grapes",
-    description: "Wine grapes are the varieties of grapevine grown for making wine. Table grapes are varieties grown for fresh consumption that are as low in seeds as possible and with large berries. Grown worldwide, mainly Italy, Greece, South Africa, Spain and France (Germany produces almost exclusively wine grapes). Juicy, depending on the variety, sweet, sour or with a nutmeg aroma.",
+    description: "Green seedless grapes.\nHand picked carefully, grown in vineyards in Greece for a juicy burst of refreshing sweetness.\nHint of nutmeg aroma.",
     full_price_cents: full_price_per_kg * (unit / 1000.0),
     discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
     best_before_date: Faker::Date.forward(days: 5),
@@ -327,21 +323,6 @@ unit = [250, 500, 750, 1000].sample
 full_price_fruits = rand(300..500)
 full_price_per_kg = full_price_fruits
 Product.create!(
-    name: "Strawberry",
-    description: "The garden strawberry (or simply strawberry; Fragaria × ananassa) is a widely grown hybrid species of the genus Fragaria, collectively known as the strawberries, which are cultivated worldwide for their fruit",
-    full_price_cents: full_price_per_kg * (unit / 1000.0),
-    discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
-    best_before_date: Faker::Date.forward(days: 5),
-    category: category,
-    amount: rand(1..10),
-    unit: "#{unit}g",
-    supermarket: rewe
-    )
-
-unit = [250, 500, 750, 1000].sample
-full_price_fruits = rand(300..500)
-full_price_per_kg = full_price_fruits
-Product.create!(
     name: "Apricots",
     description: "Apricots (Prunus armeniaca) are stone fruits also known as Armenian plums. Round and yellow, they look like a smaller version of a peach but share the tartness of purple plums.",
     full_price_cents: full_price_per_kg * (unit / 1000.0),
@@ -374,6 +355,21 @@ full_price_per_kg = full_price_fruits
 Product.create!(
     name: "Kiwi",
     description: "The ellipsoidal kiwi fruit is a true berry and has furry brownish green skin. The firm translucent green flesh has numerous edible purple-black seeds embedded around a white centre.",
+    full_price_cents: full_price_per_kg * (unit / 1000.0),
+    discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
+    best_before_date: Faker::Date.forward(days: 5),
+    category: category,
+    amount: rand(1..10),
+    unit: "#{unit}g",
+    supermarket: rewe
+    )
+
+unit = [250, 500, 750, 1000].sample
+full_price_fruits = rand(300..500)
+full_price_per_kg = full_price_fruits
+Product.create!(
+    name: "Strawberry",
+    description: "The garden strawberry (or simply strawberry; Fragaria × ananassa) is a widely grown hybrid species of the genus Fragaria, collectively known as the strawberries, which are cultivated worldwide for their fruit",
     full_price_cents: full_price_per_kg * (unit / 1000.0),
     discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
     best_before_date: Faker::Date.forward(days: 5),
@@ -420,23 +416,8 @@ unit = [250, 500, 750, 1000].sample
 full_price_meat_fish = rand(800..1200)
 full_price_per_kg = full_price_meat_fish
 Product.create!(
-    name: "Beef",
-    description: "Beef can be prepared in various ways; cuts are often used for steak, which can be cooked to varying degrees of doneness, while trimmings are often ground or minced, as found in most hamburgers. Beef contains protein, iron, and vitamin B12",
-    full_price_cents: full_price_per_kg * (unit / 1000.0),
-    discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
-    best_before_date: Faker::Date.forward(days: 5),
-    category: category,
-    amount: rand(1..10),
-    unit: "#{unit}g",
-    supermarket: rewe
-    )
-
-unit = [250, 500, 750, 1000].sample
-full_price_meat_fish = rand(800..1200)
-full_price_per_kg = full_price_meat_fish
-Product.create!(
-    name: "Salmon",
-    description: "Salmon is a common food fish classified as an oily fish with a rich content of protein and omega-3 fatty acids.",
+    name: "Herring",
+    description: "These oily fish also have a long history as an important food fish, and are often salted, smoked, or pickled.",
     full_price_cents: full_price_per_kg * (unit / 1000.0),
     discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
     best_before_date: Faker::Date.forward(days: 5),
@@ -450,15 +431,30 @@ unit = [250, 500, 750, 1000].sample
 full_price_meat_fish = rand(800..1200)
 full_price_per_kg = full_price_meat_fish
 Product.create!(
-    name: "Herring",
-    description: "These oily fish also have a long history as an important food fish, and are often salted, smoked, or pickled.",
+    name: "Salmon",
+    description: "Certified organic quality, produced in organic aquaculture.\nFrom the Irish Atlantic coast.\nParticularly firm meat  due to the intensive movement of the salmon in the sea as well as low stocking density of no more than 10 kg of salmon per cubic meter of water.\n2 fillets per package",
+    full_price_cents: full_price_per_kg * (unit / 1000.0),
+    discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
+    best_before_date: Faker::Date.forward(days: 7),
+    category: category,
+    amount: rand(1..10),
+    unit: "250g",
+    supermarket: alnatura
+    )
+
+unit = [250, 500, 750, 1000].sample
+full_price_meat_fish = rand(800..1200)
+full_price_per_kg = full_price_meat_fish
+Product.create!(
+    name: "Beef",
+    description: "Beef can be prepared in various ways; cuts are often used for steak, which can be cooked to varying degrees of doneness, while trimmings are often ground or minced, as found in most hamburgers. Beef contains protein, iron, and vitamin B12",
     full_price_cents: full_price_per_kg * (unit / 1000.0),
     discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
     best_before_date: Faker::Date.forward(days: 5),
     category: category,
     amount: rand(1..10),
     unit: "#{unit}g",
-    supermarket: rewe
+    supermarket: alnatura
     )
 
 unit = [250, 500, 750, 1000].sample
@@ -473,7 +469,7 @@ Product.create!(
     category: category,
     amount: rand(1..10),
     unit: "#{unit}g",
-    supermarket: alnatura
+    supermarket: rewe
     )
 
 # DAIRY
