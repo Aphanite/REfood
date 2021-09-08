@@ -30,7 +30,7 @@
                   <h2><%= product.name %></h2>
                   <span><%= product.unit %></span>
                 </div>
-                  <p>best by <%= product.best_before_date.strftime("%B %e")%></p>
+                  <p>best by <%= product.best_before_date.strftime("%b %e")%></p>
                   <div class="d-flex">
                     <p style="color: #079145; font-size: 16px; font-weight: normal; margin-top: 0; height: 42px; line-height: 42px;"><%= humanized_money_with_symbol(product.discounted_price*item["offset"])%></p>
                     <p style="margin-top: 0; text-decoration:line-through; height: 42px; line-height: 42px; margin-left: 12px;"><%= humanized_money_with_symbol(product.full_price*item["offset"])%></p>
