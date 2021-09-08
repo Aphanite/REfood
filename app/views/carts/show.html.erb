@@ -16,7 +16,7 @@
       <div class="order__content cart__content">
         <% grouped_session = session[:cart].group_by { |p| p["supermarketId"].itself } %>
         <% grouped_session.each do  |group| %>
-          <p style="font-size: 17px;"> You rescue from <%= Supermarket.find(group[0]).name %>...</p>
+          <p style="font-size: 17px;"> You rescue from <strong style="font-weight: bold;"><%= Supermarket.find(group[0]).name %></strong> ...</p>
           <% group[1].each do |item| %>
             <% product = Product.find(item["productId"]) %>
             <!-- increment total price and discount by the amount spent/saved for current product -->
@@ -28,11 +28,11 @@
               <div class="order__content__item__info">
                 <div class="order__content__item__info__header">
                   <h2><%= product.name %></h2>
-                  <span><%= product.unit %></span>
                 </div>
-                  <p>best by <%= product.best_before_date.strftime("%b %e")%></p>
+                  <p><%= product.unit %></p>
+                  <p>best by <strong style="font-weight: bold;"><%= product.best_before_date.strftime("%b %e")%></strong></p>
                   <div class="d-flex">
-                    <p style="color: #079145; font-size: 16px; font-weight: normal; margin-top: 0; height: 42px; line-height: 42px;"><%= humanized_money_with_symbol(product.discounted_price*item["offset"])%></p>
+                    <p style="color: #079145; font-size: 18px; font-weight: bold; margin-top: 0; height: 42px; line-height: 42px;"><%= humanized_money_with_symbol(product.discounted_price*item["offset"])%></p>
                     <p style="margin-top: 0; text-decoration:line-through; height: 42px; line-height: 42px; margin-left: 12px;"><%= humanized_money_with_symbol(product.full_price*item["offset"])%></p>
                   </div>
 
@@ -44,7 +44,7 @@
                     <i id="plus-icon" class="fa fa-plus" aria-hidden="true"></i>
                   </button>
                 </div>
-                <span id="counter" data-count="1" style="font-size: 14px; margin: 4px 0; text-align: center;"><%= item["offset"] %></span>
+                <span id="counter" data-count="1" style="font-size: 16px; margin: 4px 0; text-align: center; font-weight: bold;"><%= item["offset"] %></span>
                 <div style="text-align: center;">
                   <button class="minus-button incrementer minus" type="button" data-offset="-1" style="margin-right: 0;">
                     <i id="minus-icon" class="fa fa-minus" aria-hidden="true"></i>
