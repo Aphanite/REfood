@@ -1,10 +1,10 @@
 <body style="background: #eaf9ec;">
   <div class="navbar-top">
     <%= link_to supermarket_path(@product.supermarket) do %>
-      <i class="fas fa-chevron-left"></i>
+      <i class="ti ti-chevron-left" style="font-size: 32px;"></i>
     <% end %>
     <%= link_to cart_path do %>
-      <i class="fas fa-shopping-cart" style="position: relative;">
+      <i class="ti ti-shopping-cart" style="position: relative;">
         <% if @cart_count && @cart_count != 0 %>
           <div class="cart-count"><%= @cart_count %></div>
         <% end %>
@@ -12,7 +12,7 @@
     <% end %>
   </div>
 
-  <%= image_tag "#{@product.category.downcase}/#{@product.name.downcase}.jpg", :class => "product-image" %>
+  <%= image_tag "#{@product.category.downcase}/#{@product.name.downcase}.jpg", :class => "product-image"%>
 
   <div class="product-content">
     <div class="product-information">
@@ -51,7 +51,7 @@
       <div class="discounted-price"><%= humanized_money_with_symbol(@product.discounted_price) %></div>
       <div class="full-price" style="text-decoration:line-through"><%= humanized_money_with_symbol(@product.full_price) %></div>
     </div>
-    <div class="product-btn product-cart-btn">Add to cart</div>
+    <div class="product-btn product-cart-btn" style="box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1), 0px 4px 6px rgba(0, 0, 0, 0.05);">Add to cart</div>
   </div>
 
   <%= render "shared/modal" %>
