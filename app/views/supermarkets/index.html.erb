@@ -20,7 +20,7 @@
           </div>
             <div class="supermarket-card__info">
               <span class="supermarket-card__info__city"><%= supermarket.name %></span>
-              <span class="supermarket-card__info__address"><%= supermarket.address %></span>
+              <span class="supermarket-card__info__address"><%= supermarket.address[0..-15] %></span>
             </div>
             <%= link_to "", supermarket_path(supermarket), class: "stretched-link" %>
           </div>
