@@ -30,7 +30,7 @@
        <div data-name="items">
         <% @supermarkets.each do |supermarket| %>
           <% unless supermarket.products.empty? %>
-            <p style="margin-left: 12px; font-size: 20px; margin-bottom: 0;"> Today in <%= supermarket.name %></p>
+            <p style="margin-left: 12px; font-size: 20px; margin-bottom: 0; font-weight: bold;"> Today in <%= supermarket.name %></p>
             <div class="supermarket-product-cards">
 
               <% supermarket.products.each do |product| %>
