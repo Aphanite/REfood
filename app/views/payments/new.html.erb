@@ -9,7 +9,7 @@
     </div>
     <div class="order__header" style="margin-left: 0;">Order summary</div>
     <p style="margin-left: 4px;"><%= @order.ordered_items.count %> items</p>
-    <div class="order__content" style="padding-bottom: 0; margin-left: 0;">
+    <div class="order__content" style="padding-bottom: 0; margin-left: 0; margin-top: 16px;">
       <% @sorted_products.each do |group| %>
         <div class="supermarket-order-container">
           <div class="supermarket-order-info">

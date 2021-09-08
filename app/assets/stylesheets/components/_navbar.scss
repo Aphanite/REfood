@@ -37,13 +37,18 @@
 .navbar-show {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  // justify-content: space-between;
   padding: 0 12px;
-  font-size: 24px;
-  margin-bottom: 12px;
+  font-size: 32px;
+  // margin-bottom: 12px;
 
   a {
+    // justify-self: start;
     color: #565656;
+  }
+  div {
+    // justify-self: center;
+    margin: 0 auto;
   }
 }
 
