@@ -45,14 +45,17 @@ class SupermarketsController < ApplicationController
 
     if @category == 'all'
       el = @category_list.find {|i| i[:slug] == "all"}
-      el[:text] = "All (#{@products.count})"
+      # el[:text] = "All (#{@products.count})"
+      el[:text] = "All"
     else
       @products = @products.where(category: @category)
       el = @category_list.find {|i| i[:slug] == @category}
       if @category == "meat-fish"
-        el[:text] = "Meat/Fish (#{@products.count})"
+        # el[:text] = "Meat/Fish (#{@products.count})"
+        el[:text] = "Meat/Fish"
       else
-        el[:text] = "#{@category.capitalize} (#{@products.count})"
+        # el[:text] = "#{@category.capitalize} (#{@products.count})"
+        el[:text] = "#{@category.capitalize}"
       end
     end
 
