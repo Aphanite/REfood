@@ -1,6 +1,7 @@
 .product-content {
   // background-color: #F0FDF4;
-  padding: 24px;
+  padding: 24px 24px 88px 24px;
+  overflow-y: scroll;
 }
 
 .product-image {
@@ -35,9 +36,9 @@
   width: 100%;
   bottom: 0;
   justify-content: space-between;
-  // background-color: white;
-  padding: 38px;
   // border-top: 2px solid #e4efe5;
+  padding: 20px 38px;
+  background-color: #F0FDF4;
 
 }
 
