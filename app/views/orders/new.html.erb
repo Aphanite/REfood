@@ -9,6 +9,7 @@
       <%= image_tag "money_lightgrey.png" %>
     </div>
     <div class="order__header" style="margin: 16px 0;">Pickup time</div>
+    <div style="line-height: 1.6;">Your selected products will be ready for you in the supermarket. You can collect them <strong>until the earliest best by date</strong>.</div>
     <!-- <div>When do you want to pick up your order?</div> -->
    <!--  <div class="order__dates"> -->
       <% grouped_session = session[:cart].group_by { |p| p["supermarketId"].itself } %>

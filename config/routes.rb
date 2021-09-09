@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   end
 
   resources :orders, only: [:index, :show, :new, :create] do
+    collection do
+      get :missing_pickup
+    end
+
     resources :payments, only: :new
   end
 

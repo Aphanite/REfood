@@ -1,10 +1,10 @@
-<body style="background: #eaf9ec;">
+<body style="background: #F0FDF4;">
   <div class="navbar-top">
     <%= link_to supermarket_path(@product.supermarket) do %>
-      <i class="fas fa-chevron-left"></i>
+      <i class="ti ti-chevron-left" style="font-size: 32px;"></i>
     <% end %>
     <%= link_to cart_path do %>
-      <i class="fas fa-shopping-cart" style="position: relative;">
+      <i class="ti ti-shopping-cart" style="position: relative;">
         <% if @cart_count && @cart_count != 0 %>
           <div class="cart-count"><%= @cart_count %></div>
         <% end %>
@@ -12,11 +12,16 @@
     <% end %>
   </div>
 
-  <%= image_tag "#{@product.category.downcase}/#{@product.name.downcase}.jpg", :class => "product-image" %>
+  <%= image_tag "#{@product.category.downcase}/#{@product.name.downcase}.jpg", :class => "product-image"%>
 
   <div class="product-content">
     <div class="product-information">
-      <h1 class="product-name"><%= @product.name %></h1>
+      <div>
+        <h1 class="product-name"><%= @product.name %></h1>
+        <h2 class="product-unit"><%= @product.unit %></h2>
+        <h2 class="product-unit" style="color: #999;">Best by <%= @product.best_before_date.strftime("%B %e") %></h2>
+      </div>
+      <div>
         <div class="d-flex flex-row" id="product-counter">
           <div>
             <button class="minus-button incrementer minus" type="button" data-offset="-1">
@@ -24,26 +29,19 @@
             </button>
           </div>
         <!-- <input class="input-group-field" type="number" name="quantity" value="1"> -->
-          <span id="counter" data-count="1">1</span>
+          <span id="counter" data-count="1" style="font-size: 20px;">1</span>
           <div>
             <button class ="plus-button incrementer" type="button" data-offset="1">
               <i id="plus-icon" class="fa fa-plus" aria-hidden="true"></i>
             </button>
           </div>
         </div>
-       </div>
-
-      <div class="d-flex justify-content-between">
-        <h2 class="product-unit"><%= @product.unit %></h2>
-        <h2 class="product-unit">Best by <%= @product.best_before_date.strftime("%B %e") %></h2>
       </div>
+    </div>
 
-      <div class="product-info pt-2">
-        <h2 class="product-text">Description</h2>
-          <p class="product-description">
-            <%= simple_format(@product.description) %>
-          </p>
-      </div>
+    <p class="product-description">
+      <%= simple_format(@product.description) %>
+    </p>
   </div>
 
   <div class="bottom-page">
@@ -51,7 +49,7 @@
       <div class="discounted-price"><%= humanized_money_with_symbol(@product.discounted_price) %></div>
       <div class="full-price" style="text-decoration:line-through"><%= humanized_money_with_symbol(@product.full_price) %></div>
     </div>
-    <div class="product-btn product-cart-btn">Add to cart</div>
+    <div class="product-btn product-cart-btn" style="box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1), 0px 4px 6px rgba(0, 0, 0, 0.05);">Add to cart</div>
   </div>
 
   <%= render "shared/modal" %>

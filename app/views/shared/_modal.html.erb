@@ -12,7 +12,7 @@
       </div>
       <div class="modal-footer">
         <%= link_to "View cart", cart_path, class: "product-btn-modal" %>
-        <%= link_to "Continue shopping", supermarkets_path, class: "product-btn" %>
+        <%= link_to "Continue shopping", supermarket_path(@product.supermarket), class: "product-btn" %>
       </div>
     </div>
   </div>

@@ -30,7 +30,7 @@
        <div data-name="items">
         <% @supermarkets.each do |supermarket| %>
           <% unless supermarket.products.empty? %>
-            <%= supermarket.name %>
+            <p style="margin-left: 12px; font-size: 20px; margin-bottom: 0; font-weight: bold;"> Today in <%= supermarket.name %></p>
             <div class="supermarket-product-cards">
 
               <% supermarket.products.each do |product| %>
@@ -51,7 +51,7 @@
                         <span class="product-card__info__body__prices__discount"><%= humanized_money_with_symbol(product.discounted_price) %></span>
                         <span class="product-card__info__body__prices__normal"><%= humanized_money_with_symbol(product.full_price) %></span>
                       </div>
-                      <button class="product-card__info__body__button"><i class="fas fa-shopping-cart" style="color: white;"></i></button>
+                      <button class="product-card__info__body__button"><i class="ti ti-shopping-cart" style="color: white;"></i></button>
                     </div>
                   </div>
                   <%= link_to "", supermarket_product_path(product.supermarket, product), class: "stretched-link" %>

@@ -1,9 +1,12 @@
 <div id="inner" style="margin-top: 20px;">
   <div class="index-container">
-    <div class="navbar-show">
+       <div class="navbar-show">
       <%= link_to supermarkets_path do %>
-        <i class="fas fa-chevron-left"></i>
+        <!-- <i class="fas fa-chevron-left"></i> -->
+        <i class="ti ti-chevron-left"></i>
       <% end %>
+      <div><%= @supermarket.name %></div>
+      <a href="#" style="color: transparent"><i class="ti ti-chevron-left"></i></a>
     </div>
     <%= render 'shared/supermarket_info'%>
 
@@ -15,14 +18,6 @@
           </a>
         </span>
       <% end %>
-
-      <!-- <span style="padding-left: 8px; color:#3DD26D;">
-        <a href="/supermarkets/<%= @supermarket.id %>">All</a>
-      </span>
-      <span><a href="/supermarkets/<%= @supermarket.id %>?category=fruits">Fruit</a></span>
-      <span><a href="/supermarkets/<%= @supermarket.id %>?category=vegetables">Vegetables</a></span>
-      <span><a href="/supermarkets/<%= @supermarket.id %>?category=meat-fish">Meat/Fish</a></span>
-      <span><a href="/supermarkets/<%= @supermarket.id %>?category=dairy">Dairy</a></span> -->
     </div>
 
     <div id="content-container">
@@ -51,14 +46,14 @@
                         <span class="product-card__info__body__prices__discount"><%= humanized_money_with_symbol(product.discounted_price) %></span>
                         <span class="product-card__info__body__prices__normal"><%= humanized_money_with_symbol(product.full_price) %></span>
                       </div>
-                      <button class="product-card__info__body__button"><i class="fas fa-shopping-cart" style="color: white;"></i></button>
+                      <button class="product-card__info__body__button"><i class="ti ti-shopping-cart" style="color: white;"></i></button>
                     </div>
                   </div>
                   <%= link_to "", supermarket_product_path(product.supermarket, product), class: "stretched-link" %>
                 </div>
               <% end %>
             </div>
-            <span class="supermarket-product-title">Most popular today</span>
+            <span class="supermarket-product-title">Popular today</span>
             <div class="supermarket-product-cards">
 
               <% @supermarket.products.reverse.each do |product| %>
@@ -79,7 +74,7 @@
                         <span class="product-card__info__body__prices__discount"><%= humanized_money_with_symbol(product.discounted_price) %></span>
                         <span class="product-card__info__body__prices__normal"><%= humanized_money_with_symbol(product.full_price) %></span>
                       </div>
-                      <button class="product-card__info__body__button"><i class="fas fa-shopping-cart" style="color: white;"></i></button>
+                      <button class="product-card__info__body__button"><i class="ti ti-shopping-cart" style="color: white;"></i></button>
                     </div>
                   </div>
                   <%= link_to "", supermarket_product_path(product.supermarket, product), class: "stretched-link" %>
@@ -92,5 +87,6 @@
         <div style="height:94px;"></div>
     </div>
   </div>
-  <%= render 'shared/navbar'%>
 </div>
+<%= render 'shared/navbar'%>
+
