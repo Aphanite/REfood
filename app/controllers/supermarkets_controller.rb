@@ -3,9 +3,9 @@ class SupermarketsController < ApplicationController
 
   def index
      if params[:query].present?
-      @supermarkets = policy_scope(Supermarket).search_by_address(params[:query])
+      @supermarkets = policy_scope(Supermarket).search_by_address(params[:query]).order(created_at: :asc)
      else
-      @supermarkets = policy_scope(Supermarket).order(name: :desc)
+      @supermarkets = policy_scope(Supermarket).order(created_at: :asc)
      end
     # geolocation markers
      @markers = @supermarkets.geocoded.map do |supermarket|
