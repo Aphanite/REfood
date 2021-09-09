@@ -1,4 +1,8 @@
 <div class="supermarket-info__content">
   <p style="font-weight: bold; font-size: 18px;">Open today until 8pm</p>
-  <p style="padding-right: 16px">2.5 km away</p>
+  <% if @supermarket.address == "Friedrichstraße 191, 10117 Berlin" || @supermarket.address == "Friedrichstraße 60, 10117 Berlin"%>
+    <p style="padding-right: 16px">600 m away</p>
+  <% else %>
+    <p style="padding-right: 16px">2.5 km away</p>
+  <% end %>
 </div>
