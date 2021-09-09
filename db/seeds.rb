@@ -432,7 +432,7 @@ full_price_meat_fish = rand(800..1200)
 full_price_per_kg = full_price_meat_fish
 Product.create!(
     name: "Salmon",
-    description: "Certified organic quality, produced in organic aquaculture.\nFrom the Irish Atlantic coast.\nParticularly firm meat  due to the intensive movement of the salmon in the sea as well as low stocking density of no more than 10 kg of salmon per cubic meter of water.\n2 fillets per package",
+    description: "Certified organic quality, produced in aquaculture at the Irish Atlantic coast.\n\nParticularly firm meat due to the intensive movement of the salmon in the sea as well as low stocking density.\n\n2 fillets per package",
     full_price_cents: full_price_per_kg * (unit / 1000.0),
     discounted_price_cents: (full_price_per_kg * (unit / 1000.0)) * 0.85,
     best_before_date: Faker::Date.forward(days: 7),
