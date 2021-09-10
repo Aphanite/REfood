@@ -44,6 +44,6 @@ document.addEventListener('turbolinks:load', () => {
   bindCounterButton();
   addPickUpSlot();
   bindCartButtons();
+  initMapbox();
  });
 
-initMapbox();
