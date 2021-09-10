@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :new, :create]
+  skip_before_action :authenticate_user!, only: [:index, :new, :missing_pickup]
   
   # def index
   #   @orders = policy_scope(Order).order(created_at: :desc)
@@ -15,9 +15,9 @@ class OrdersController < ApplicationController
   end
   
   def create
-    order = Order.new()
+    @order = Order.new()
     # assign user (preliminary solution)
-    current_user ? order.user = current_user : order.user = User.find_by(email: "ena@fake.com")
+    current_user ? @order.user = current_user : @order.user = User.find_by(email: "ena@fake.com")
 
     # get supermarkets in cart
     supermarkets = get_supermarkets(get_grouped_session)
@@ -29,21 +29,35 @@ class OrdersController < ApplicationController
     supermarkets.each do |s|
       pickup_dates["#{s}"] = [ date_params["date-#{s}"], date_params["time-#{s}"] ]
     end
-    order.pick_up_slots = pickup_dates
+    @order.pick_up_slots = pickup_dates
 
     prices = get_price_and_discount
 
-    order.total_price = prices[:total_price]
+    @order.total_price = prices[:total_price]
+    @order.discount = prices[:discount]
 
-    order.points = (order.total_price.to_i * 2).floor
+    @order.points = (@order.total_price.to_i * 2).floor
 
-    order.save!
-    # make associated ordered items
-    make_ordered_items(order)
-    redirect_to new_order_payment_path(order)
+    if pick_up_missing?
+      render :missing_pickup
+    else
+      @order.save
+      # make associated ordered items
+      make_ordered_items(@order)
+
+      # empty cart in session
+      session[:cart] = []
+
+      redirect_to new_order_payment_path(@order)
+    end
+
+    authorize @order
   end
 
   def confirm
+  end
+
+  def missing_pickup
   end
 
   private
@@ -88,5 +102,18 @@ class OrdersController < ApplicationController
     end
 
     return {total_price: total_price, discount: discount}
+  end
+
+  def pick_up_missing?
+    empty_check_array = []
+    @order.pick_up_slots.each do |pickup|
+      empty_check = pickup.last.any? do |el|
+        el == ""
+      end
+      empty_check_array << empty_check
+    end
+    val = empty_check_array.any? do |el|
+      el == true
+    end
   end
 end

@@ -21,3 +21,75 @@
   border-radius: 16px;
   box-shadow: 4px 4px lightgrey;
 }
+
+// .dropdown:click {
+//     .dropdown__menu {
+//       opacity: 1;
+//       transform: rotateX(0) translateX(-50%);
+//       visibility: visible;
+//     }
+//   }
+
+
+
+// .dropdown__menu {
+//   transform: rotateX(-90deg) translateX(-50%);
+//   transform-origin: top center;
+//   opacity: 0.3;
+//   transition: 280ms all ease-out;
+// }
+
+.pickup {
+  display:flex;
+  align-items: center;
+  margin: 4px 0;
+
+  img {
+    object-fit: cover;
+    height: 30px;
+  }
+
+  p {
+    padding: 4px 0 4px 12px;
+    font-weight:lighter;
+  }
+}
+
+.item__info {
+  display: flex;
+  align-items: center;
+  margin: 12px 8px 12px 12px;
+  // border: 1px solid rgba(7, 145, 69, .3);
+  // border-radius: 12px;
+}
+
+.item__info__main {
+  flex-grow: 1;
+  padding: 8px 0;
+
+  p {
+    font-size: 14px;
+    margin-bottom: 0;
+    font-weight: lighter;
+  }
+
+}
+
+.supermarket-order-container {
+  background-color: white;
+  padding: 8px 12px;
+  margin: 4px 4px 16px 4px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.06), 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.supermarket-order-info {
+  div > p {
+    margin: 0;
+  }
+}
+
+.supermarket-order-info__name {
+  font-weight: bold;
+  font-size: 22px;
+  // margin-top: 8px;
+}

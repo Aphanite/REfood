@@ -51,9 +51,9 @@ const updateCartRequest = (productId, newCount) => {
 
 export const bindCartButtons = () => {
   console.log('Inside bindCartButtons');
-  const cartContainer = document.querySelector(".order__content");
+  const cartContainer = document.querySelector(".cart__content");
   if (cartContainer) {
-    const cartItems = document.getElementsByClassName('order__content__item');
+    const cartItems = document.getElementsByClassName('cart__content__item');
     for (const cartItem of cartItems) {
       console.log(cartItem);
       bindCounterButton(cartItem);

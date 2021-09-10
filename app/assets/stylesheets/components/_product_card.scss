@@ -72,8 +72,8 @@
   line-height: 50px;
 }
 .product-card__info__body__prices__discount {
-  color: #3DD26D;
-  font-size: 18px;
+  color: #15803D;
+  font-size: 20px;
   font-weight: 600;
 }
 
@@ -90,4 +90,8 @@
   background-color: #FF7F00;
   border-radius: 12px 0px 0px 12px;
   border: none;
+
+  i {
+    font-size: 22px;
+  }
 }

@@ -44,7 +44,9 @@ document.addEventListener('turbolinks:load', () => {
   initToggleDisplay();
   bindCounterButton();
   addPickUpSlot();
-  initMapbox();
   bindCartButtons();
   makeConfetti();
+  initMapbox();
+
  });
+

@@ -2,33 +2,40 @@
     <div class="order-container">
       <div class="navbar-show">
       <%= link_to supermarkets_path do %>
-        <i class="fas fa-chevron-left"></i>
+        <!-- <i class="fas fa-chevron-left"></i> -->
+        <i class="ti ti-chevron-left"></i>
       <% end %>
+      <div>Cart</div>
+      <a href="#" style="color: transparent"><i class="ti ti-chevron-left"></i></a>
     </div>
-      <div class="order__header">Cart</div>
+     <!--  <div class="order__header">Cart</div> -->
 
       <!-- initialize total price and discount -->
       <% total_price = 0 %>
       <% discount = 0 %>
-      <div class="order__content">
+      <div class="order__content cart__content">
         <% grouped_session = session[:cart].group_by { |p| p["supermarketId"].itself } %>
         <% grouped_session.each do  |group| %>
-          <p style="font-size: 17px;"> You rescue from <%= Supermarket.find(group[0]).name %>...</p>
+          <p style="font-size: 17px;"> You rescue from <strong style="font-weight: bold;"><%= Supermarket.find(group[0]).name %></strong> ...</p>
           <% group[1].each do |item| %>
             <% product = Product.find(item["productId"]) %>
             <!-- increment total price and discount by the amount spent/saved for current product -->
             <% total_price += product.discounted_price * item["offset"]%>
             <% discount += (product.full_price - product.discounted_price) * item["offset"]%>
             <!-- get details from all items in session cart -->
-            <div class="order__content__item" data-productid=<%= product.id %>>
+            <div class="order__content__item cart__content__item" data-productid=<%= product.id %>>
               <%= image_tag "#{product.category.downcase}/#{product.name.downcase}.jpg"%>
               <div class="order__content__item__info">
                 <div class="order__content__item__info__header">
                   <h2><%= product.name %></h2>
-                  <span><%= product.unit %></span>
                 </div>
-                  <p>best by <%= product.best_before_date.strftime("%B %e")%></p>
-                  <p style="color: #079145; font-size: 16px; font-weight: normal; margin-top: 8px;"><%= humanized_money_with_symbol(product.discounted_price) %></p>
+                  <p><%= product.unit %></p>
+                  <p>best by <strong style="font-weight: bold;"><%= product.best_before_date.strftime("%b %e")%></strong></p>
+                  <div class="d-flex">
+                    <p style="color: #079145; font-size: 18px; font-weight: bold; margin-top: 0; height: 42px; line-height: 42px;"><%= humanized_money_with_symbol(product.discounted_price*item["offset"])%></p>
+                    <p style="margin-top: 0; text-decoration:line-through; height: 42px; line-height: 42px; margin-left: 12px;"><%= humanized_money_with_symbol(product.full_price*item["offset"])%></p>
+                  </div>
+
               </div>
               <!-- counter + amount display -->
               <div class="order__content__item__counter">
@@ -37,7 +44,7 @@
                     <i id="plus-icon" class="fa fa-plus" aria-hidden="true"></i>
                   </button>
                 </div>
-                <span id="counter" data-count="1" style="font-size: 14px; margin: 4px 0; text-align: center;"><%= item["offset"] %></span>
+                <span id="counter" data-count="1" style="font-size: 16px; margin: 4px 0; text-align: center; font-weight: bold;"><%= item["offset"] %></span>
                 <div style="text-align: center;">
                   <button class="minus-button incrementer minus" type="button" data-offset="-1" style="margin-right: 0;">
                     <i id="minus-icon" class="fa fa-minus" aria-hidden="true"></i>
@@ -51,9 +58,9 @@
     <div class="order__checkout">
       <hr>
       <div class="p-1">
-        <div class="d-flex justify-content-between mt-2">
+        <div class="d-flex justify-content-between mt-2" style="align-items: center;">
           <h5 style="font-weight: bold; font-size: 22px;">Total</h5>
-          <h5 style="font-weight: bold; font-size: 22px;"><%= humanized_money_with_symbol(total_price) %></h5>
+          <h5 style="font-weight: bold; font-size: 28px;"><%= humanized_money_with_symbol(total_price) %></h5>
         </div>
         <div class="d-flex justify-content-between">
           <h5>You save!</h5>
@@ -61,7 +68,7 @@
         </div>
         <div class="d-flex justify-content-between">
           <h5 style="color: #079145;">You gain!</h5>
-          <h5 style="color: #079145;"><%= (total_price.to_i * 2).floor %> Points</h5>
+          <h5 style="color: #079145;"><%= (total_price.to_i * 2).floor %> points</h5>
         </div>
       </div>
       <div class="d-flex justify-content-center">

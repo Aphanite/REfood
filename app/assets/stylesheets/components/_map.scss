@@ -1,9 +1,29 @@
-.mapboxgl-popup {
-  max-width: 200px;
-  flex-grow: 0;
-}
-
-
 .mapboxgl-popup-content {
   text-align: center;
+}
+
+//.mapboxgl-canvas {
+//  width: 450px !important;
+//  height: 500px !important;
+//}
+
+.mapboxgl-popup-content {
+  border-radius: 10px;
+}
+
+.mapboxgl-popup-content img {
+  height: 50px;
+}
+
+#map {
+  //height: 500px;
+  //width: 400px;
+  height: calc(100vh - 310px);
+  border-radius: 16px;
+}
+
+.mapboxgl-canvas {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
 }

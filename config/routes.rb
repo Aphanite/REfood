@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   end
 
   resources :orders, only: [:index, :show, :new, :create] do
+    collection do
+      get :missing_pickup
+    end
+
     resources :payments, only: :new
   end
 
@@ -16,4 +20,6 @@ Rails.application.routes.draw do
   get "/cart", to: "carts#show"
   get "/confirm", to: "orders#confirm"
   get "/empty_cart", to: "carts#empty_cart"
+
+  get "/desktop", to: "pages#desktop"
 end

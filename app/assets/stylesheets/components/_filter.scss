@@ -10,12 +10,17 @@
     font-weight: 400;
 
     a {
-     color: #A9A8AB;
+      color: #A9A8AB;
     }
 
     a.active {
-      color: #3DD26D;
+      // background-color: rgba(27, 166, 79, 0.2);
+      border: 1px solid rgba(27, 166, 79, 0.2);
+      color: #15803D;
+      padding: 4px 6px;
+      border-radius: 12px;
     }
+
     a:hover {
       text-decoration: none;
     }
