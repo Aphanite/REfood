@@ -16,8 +16,10 @@
 }
 
 #map {
-  height: 500px;
-  width: 400px;
+  //height: 500px;
+  //width: 400px;
+  height: calc(100vh - 310px);
+  border-radius: 16px;
 }
 
 .mapboxgl-canvas {

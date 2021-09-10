@@ -43,6 +43,7 @@ document.addEventListener('turbolinks:load', () => {
   initToggleDisplay();
   bindCounterButton();
   addPickUpSlot();
-  initMapbox();
   bindCartButtons();
+  initMapbox();
  });
+
